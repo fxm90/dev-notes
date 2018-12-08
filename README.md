@@ -6,41 +6,41 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-## #35 - Destructure tuples
-## #34 - Avoid huge if statements
-## #33 - Compare dates in test cases
-## #32 - Be aware of the strong reference to the target of a timer 
-## #31 - Initialize `DateFormatter` with date- and time-style
-## #30 - Map latitude and longitude to X and Y on a coordinate system
-## #29 - Make Properties & Methods private
-## #28 - Remove `UITextView` default padding
-## #27 - Name that color
-## #26 - Structure classes using `// MARK: -`
-## #25 - Structure test cases
-## #24 - Avoid forced unwrapping
-## #23 - Always check for possible dividing through zero
-## #22 - Animate `isHidden` instead of `alpha`
-## #21 - Create custom notification
-## #20 - Override `UIStatusBarStyle` the elegant way
-## #19 - Log extension on `String` using swift literal expressions
-## #18 - Use gitmoji for commit messages
-## #17 - Initialize a constant, based on a condition
-## #16 - Why `viewDidLoad` might be called before `init` has finished
-## #15 - Capture iOS Simulator video
-## #14 - Xcode open file in focused editor
-## #13 - Handle optionals in test cases
-## #12 - Safe access to an element at index
-## #11 - Check whether a value is part of a given range
-## #10 - Use `compactMap` to filter `nil` values
-## #09 - Prefer `Set` instead of array for unordered lists without duplicates
-## #08 - Remove all sub-views from `UIView`
-## #07 - Animate image change on `UIImageView`
-## #06 - Change `CALayer` without animation
-## #05 - Override `layerClass` to reduce the total amount of layers
-## #04 - Handle notifications in test cases
-## #03 - Use `didSet` on outlets to setup components
-## #02 - Most readable way to check whether an array contains a value (`isAny(of:)`)
-## #01 - Override `self` in escaping closure, to get a strong reference to `self`
+[#35 - Destructure tuples](#35---destructure-tuples)\
+[#34 - Avoid huge if statements](#34---avoid-huge-if-statements)\
+[#33 - Compare dates in test cases](#33---compare-dates-in-test-cases)\
+[#32 - Be aware of the strong reference to the target of a timer](#32---be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
+[#31 - Initialize `DateFormatter` with date- and time-style](#31---initialize-dateformatter-with-date--and-time-style)\
+[#30 - Map latitude and longitude to X and Y on a coordinate system](#30---map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
+[#29 - Make Properties & Methods private](#29---make-properties--methods-private)\
+[#28 - Remove `UITextView` default padding](#28---remove-uitextview-default-padding)\
+[#27 - Name that color](#27---name-that-color)\
+[#26 - Structure classes using `// MARK: - `](#26---structure-classes-using--mark--)\
+[#25 - Structure test cases](#25---structure-test-cases)\
+[#24 - Avoid forced unwrapping](#24---avoid-forced-unwrapping)\
+[#23 - Always check for possible dividing through zero](#23---always-check-for-possible-dividing-through-zero)\
+[#22 - Animate `isHidden` instead of `alpha`](#22---animate-ishidden-instead-of-alpha)\
+[#21 - Create custom notification](#21---create-custom-notification)\
+[#20 - Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
+[#19 - Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
+[#18 - Use gitmoji for commit messages](#18---use-gitmoji)\
+[#17 - Initialize a constant, based on a condition](#17---initialize-a-constant-based-on-a-condition)\
+[#16 - Why `viewDidLoad` might be called before `init` has finished](#16---why-viewdidload-might-be-called-before-init-has-finished)\
+[#15 - Capture iOS Simulator video](#15---capture-ios-simulator-video)\
+[#14 - Xcode open file in focused editor](#14---xcode-open-file-in-focused-editor)\
+[#13 - Handle optionals in test cases](#13---handle-optionals-in-test-cases)\
+[#12 - Safe access to an element at index](#12---safe-access-to-an-element-at-index)\
+[#11 - Check whether a value is part of a given range](#11---check-whether-a-value-is-part-of-a-given-range)\
+[#10 - Use `compactMap` to filter `nil` values](#10---use-compactmap-to-filter-nil-values)\
+[#09 - Prefer `Set` instead of array for unordered lists without duplicates](#09---prefer-set-instead-of-array-for-unordered-lists-without-duplicates)\
+[#08 - Remove all sub-views from `UIView`](#08---remove-all-sub-views-from-uiview)\
+[#07 - Animate image change on `UIImageView`](#07---animate-image-change-on-uiimageview)\
+[#06 - Change `CALayer` without animation](#06---change-calayer-without-animation)\
+[#05 - Override `layerClass` to reduce the total amount of layers](#05---override-layerclass-to-reduce-the-total-amount-of-layers)\
+[#04 - Handle notifications in test cases](#04---handle-notifications-in-test-cases)\
+[#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
+[#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
+[#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
 ## #35 - Destructure tuples
 🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. Using Swift we can destructure the tuple into two properties in just one line:
