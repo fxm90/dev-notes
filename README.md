@@ -418,6 +418,10 @@ class ImageViewController: UIViewController {
 
 
 ## #22 - Animate `isHidden` instead of `alpha`
+**Update - 12/20/2018:** It seems like the shown approach is not working anymore in iOS 12 ([rdar://46753872](https://openradar.appspot.com/46753872)). I've created a gist with an extension on `UIView` to update the the `alpha` value animated and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateIsHidden.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
+
+Feel free to use it instead 🙂
+
 🦋 Instead of animating the `alpha` value and update the `isHidden` property accordingly, we can directly animate the `isHidden` property.
 #### Before:
 ```swift
