@@ -6,6 +6,9 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#38 - Lightweight observable implementation](#38---lightweight-observable-implementation)\
+[#37 - Run test cases in a playground](#37---run-test-cases-in-playground)\
+[#36 - Show progress of WKWebView in UIProgressBar](#36---show-progress-of-wkwebview-in-uiprogressbar)\
 [#35 - Destructure tuples](#35---destructure-tuples)\
 [#34 - Avoid huge if statements](#34---avoid-huge-if-statements)\
 [#33 - Compare dates in test cases](#33---compare-dates-in-test-cases)\
