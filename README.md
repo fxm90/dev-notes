@@ -42,6 +42,14 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+
+## #38 - Lightweight observable implementation
+🕵️‍♂️ If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist:
+[Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)
+
+I've added usage examples in the comment section. Feel free to copy the files into your project 🙂
+
+
 ## #37 - Run test cases in playground
 🧪 - Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven. 
 
