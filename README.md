@@ -42,6 +42,35 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #37 - Run test cases in playground
+🧪 - Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven. 
+
+By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our project.
+
+```swift
+import Foundation
+import XCTest
+
+class MyTestCase: XCTestCase {
+
+    override func setUp() {
+        super.setUp()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    func testFooBarShouldNotBeEqual() {
+        XCTAssertNotEqual("Foo", "Bar")
+    }
+}
+
+MyTestCase.defaultTestSuite.run()
+```
+You can see the result of each test inside the debug area of the playground. 
+
+
 ## #36 - Show progress of WKWebView in UIProgressBar
 🤖 - If you want to show the loading progress of a website inside a `WKWebView` with a `UIProgressBar`, you can have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
 
