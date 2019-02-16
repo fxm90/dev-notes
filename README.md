@@ -42,6 +42,12 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #36 - Show progress of WKWebView in UIProgressBar
+🤖 - If you want to show the loading progress of a website inside a `WKWebView` with a `UIProgressBar`, you can have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+
+In the example, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see the method `setupProgressView()` for further layout details).
+
+
 ## #35 - Destructure tuples
 🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. Using Swift we can destructure the tuple into two properties in just one line:
 
