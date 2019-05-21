@@ -47,10 +47,9 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 
 ## #38 - Lightweight observable implementation
-🕵️‍♂️ If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist:
-[Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)
+🕵️‍♂️ ~~If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist: [Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)~~
 
-I've added usage examples in the comment section. Feel free to copy the files into your project 🙂
+For reusability reasons I've moved the code into a framework and released it as a CocoaPod. Please check out https://github.com/fxm90/LightweightObservable 🙂
 
 
 ## #37 - Run test cases in playground
