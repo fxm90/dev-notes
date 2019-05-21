@@ -47,7 +47,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
-## # 40. `UITableViewCell` extension that declares a static identifier
+## #40 - `UITableViewCell` extension that declares a static identifier
 🧙‍♀️ Using the extension below we can automatically register and dequeue table view cells. It prevents typos and declaring a static string on each cell.
 
 ```swift
@@ -69,7 +69,7 @@ let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.ide
 ```
 
 
-## # 39. Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
+## #39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
 🎢 In case you're iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. So instead of writing:
 
 ```swift
