@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
 [#38 - Lightweight observable implementation](#38---lightweight-observable-implementation)\
 [#37 - Run test cases in a playground](#37---run-test-cases-in-playground)\
 [#36 - Show progress of WKWebView in UIProgressBar](#36---show-progress-of-wkwebview-in-uiprogressbar)\
@@ -44,6 +45,25 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## # 39. Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
+🎢 In case you're iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. So instead of writing:
+
+```swift
+scooterList
+    .filter({ !$0.isBatteryEmpty })
+    .forEach({ scooter in
+        // Do something with each scooter, that still has some battery left.
+    })
+```
+
+it's more efficient to write 
+
+```swift
+for scooter in scooterList where !scooter.isBatteryEmpty {
+    // Do something with each scooter, that still has some battery left.
+}
+```
 
 
 ## #38 - Lightweight observable implementation
