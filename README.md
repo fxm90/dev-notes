@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#40 - `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
 [#39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
 [#38 - Lightweight observable implementation](#38---lightweight-observable-implementation)\
 [#37 - Run test cases in a playground](#37---run-test-cases-in-playground)\
@@ -45,6 +46,28 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## # 40. `UITableViewCell` extension that declares a static identifier
+🧙‍♀️ Using the extension below we can automatically register and dequeue table view cells. It prevents typos and declaring a static string on each cell.
+
+```swift
+extension UITableViewCell {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+```
+
+Register a cell:
+```swift
+tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+```
+
+Dequeue a cell:
+```swift
+let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier)
+```
+
 
 ## # 39. Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
 🎢 In case you're iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. So instead of writing:
