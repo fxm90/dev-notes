@@ -80,7 +80,7 @@ scooterList
     })
 ```
 
-it's more efficient to write 
+it's more efficient to write
 
 ```swift
 for scooter in scooterList where !scooter.isBatteryEmpty {
@@ -96,7 +96,7 @@ For reusability reasons I've moved the code into a framework and released it as 
 
 
 ## #37 - Run test cases in playground
-🧪 - Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven. 
+🧪 - Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven.
 
 By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our project.
 
@@ -121,7 +121,7 @@ class MyTestCase: XCTestCase {
 
 MyTestCase.defaultTestSuite.run()
 ```
-You can see the result of each test inside the debug area of the playground. 
+You can see the result of each test inside the debug area of the playground.
 
 
 ## #36 - Show progress of WKWebView in UIProgressBar
@@ -187,10 +187,10 @@ func testDatesAreEqual() {
     // Given
     let dateA = Date()
     let dateB = Date()
-    
+
     // When
     // ...
-    
+
     // Then
     XCTAssertEqual(dateA.timeIntervalSince1970,
                    dateB.timeIntervalSince1970,
@@ -198,7 +198,7 @@ func testDatesAreEqual() {
 }
 ```
 
-## #32 - Be aware of the strong reference to the target of a timer 
+## #32 - Be aware of the strong reference to the target of a timer
 🔁 Creating a timer with the method `scheduledTimer(timeInterval:target:selector:userInfo:repeats:)` always creates a **strong reference to the target** until the timer is invalidated. Therefore, an instance of the following class will never be deallocated:
 
 ```swift
@@ -414,7 +414,7 @@ class StructuredViewController: UIViewController {
 ⚠️ Splitting test cases into `Given`, `When`, `Then` increases the readability and helps understanding complex tests.
 
  - In the `Given` phase we setup all preconditions for the test, e.g. configuring mock objects.
- - In the `When` phase we call the function we want to test. 
+ - In the `When` phase we call the function we want to test.
  - In the `Then` phase we verify the actual results against our expected results using `XCTAssert` methods.
 
  #### Example:
@@ -455,9 +455,9 @@ class MapViewModelTestCase: XCTestCase {
 ```
 
 ## #24 - Avoid forced unwrapping
-> The only time you should be using implicitly unwrapped optionals is with @IBOutlets. 
-> In every other case, it is better to use a non-optional or regular optional property. 
-> Yes, there are cases in which you can probably "guarantee" that the property will never be nil when used, 
+> The only time you should be using implicitly unwrapped optionals is with @IBOutlets.
+> In every other case, it is better to use a non-optional or regular optional property.
+> Yes, there are cases in which you can probably "guarantee" that the property will never be nil when used,
 > but it is better to be safe and consistent. Similarly, don't use force unwraps.
 
 Source: https://github.com/linkedin/swift-style-guide
@@ -471,7 +471,7 @@ if let value = value {
 ```
 
 ```swift
-guard let value = value else { 
+guard let value = value else {
     // Write a comment, why to exit here.
     return
 }
@@ -721,10 +721,10 @@ Source: https://stackoverflow.com/a/41141801
 
 
 ## #14 - Xcode open file in focused editor
-🏃‍♂️ Shortcuts are a great way to increase productivity. I nearly always use `CMD[⌘] + Shift[⇧] + O` to quickly open a file, `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc. To connect outlets on a storyboard or xib I also often the assistant editor. 
+🏃‍♂️ Shortcuts are a great way to increase productivity. I nearly always use `CMD[⌘] + Shift[⇧] + O` to quickly open a file, `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc. To connect outlets on a storyboard or xib I also often the assistant editor.
 
-> By default, when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused. 
-> Annoying. 
+> By default, when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
+> Annoying.
 > All I want to do is open two files side-by-side, switch between them easily, and have ‘Quick Open’ target whichever side is currently focused.
 
 [Jesse Squires - Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
@@ -819,11 +819,11 @@ class ListViewModel {
 
 
 ## #09 - Prefer `Set` instead of array for unordered lists without duplicates
-👫 **Advantage over `Array`:** 
+👫 **Advantage over `Array`:**
 
  - Constant Lookup time O(1), as a `Set` stores its members based on hash value.
 
-**Disadvantage compared to `Array`:** 
+**Disadvantage compared to `Array`:**
 
  - No guaranteed order.
  - Can't contain duplicate values.
@@ -876,7 +876,7 @@ extension CALayer {
 
 
 ## #05 - Override `layerClass` to reduce the total amount of layers
-> By overriding 'layerClass' you can tell UIKit what CALayer class to use for a UIView's backing layer. 
+> By overriding 'layerClass' you can tell UIKit what CALayer class to use for a UIView's backing layer.
 > That way you can reduce the amount of layers, and don't have to do any manual layout.
 [John Sundell](https://twitter.com/johnsundell/status/1000099872580816897)
 
@@ -964,7 +964,7 @@ someService.request() { [weak self] response in
 }
 ```
 
-**Notice:** The above works as of Swift 4.2. Before you have to use: 
+**Notice:** The above works as of Swift 4.2. Before you have to use:
 
 ```
 guard let `self` = self else { return }
