@@ -759,7 +759,7 @@ class BookingViewModelTestCase: XCTestCase {
 }
 ```
 
-**Prior to Xcode 11**
+#### Prior to Xcode 11
 [Require](https://github.com/JohnSundell/Require) is a simple, yet really useful framework for handling optionals in test cases (by John Sundell again 😃). He also wrote a great blog post explaining the use-case for this framework: [Avoiding force unwrapping in Swift unit tests](https://www.swiftbysundell.com/posts/avoiding-force-unwrapping-in-swift-unit-tests)
 
 
