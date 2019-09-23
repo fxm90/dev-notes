@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#41 - Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
 [#40 - `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
 [#39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
 [#38 - Lightweight observable implementation](#38---lightweight-observable-implementation)\
@@ -46,6 +47,10 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## 41 - Create a dynamic color for light- and dark mode
+🎨 Using the gist [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e) we can create a custom `UIColor`, that generates its color data dynamically based on the current `userInterfaceStyle`. Furthermore this method falls back to the `lightVariant` color for iOS versions prior to iOS 13.
+
 
 ## #40 - `UITableViewCell` extension that declares a static identifier
 🧙‍♀️ Using the extension below we can automatically register and dequeue table view cells. It prevents typos and declaring a static string on each cell.
