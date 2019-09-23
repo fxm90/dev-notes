@@ -733,7 +733,29 @@ Luckily Jesse provides a solution for that problem: By going to `Settings » Nav
 
 
 ## #13 - Handle optionals in test cases
-✅ [Require](https://github.com/JohnSundell/Require) is a simple, yet really useful framework for handling optionals in test cases (by John Sundell again 😃). He also wrote a great blog post explaining the use-case for this framework: [Avoiding force unwrapping in Swift unit tests](https://www.swiftbysundell.com/posts/avoiding-force-unwrapping-in-swift-unit-tests)
+✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is nil, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
+
+In the example below, we initialize a view model with a list of bookings. Using the method `findBooking(byIdentifier:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the repsonse.
+```swift
+class BookingViewModelTestCase: XCTestCase {
+    func testFindBookingByIdentifierShouldReturnMockedBooking() throws {
+        // Given
+        let mockedBooking = Booking(identifier: 1)
+        let viewModel = BookingViewModel(bookings: [mockedBooking])
+
+        // When
+        let fetchedBooking = try XCTUnwrap(
+            viewModel.findBooking(byIdentifier: 1)
+        )
+
+        // Then
+        XCTAssertEqual(fetchedBooking, mockedBooking)
+    }
+}
+```
+
+**Prior to Xcode 11**
+[Require](https://github.com/JohnSundell/Require) is a simple, yet really useful framework for handling optionals in test cases (by John Sundell again 😃). He also wrote a great blog post explaining the use-case for this framework: [Avoiding force unwrapping in Swift unit tests](https://www.swiftbysundell.com/posts/avoiding-force-unwrapping-in-swift-unit-tests)
 
 
 ## #12 - Safe access to an element at index
