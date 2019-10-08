@@ -6,7 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-[#42 - Xcode multi-cursor editing](#41---xcode-multi-cursor-editing)\
+[#42 - Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
 [#41 - Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
 [#40 - `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
 [#39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
