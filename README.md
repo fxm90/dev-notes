@@ -872,12 +872,12 @@ extension UIView {
 
 
 ## #07 - Animate image change on `UIImageView`
-✍️ Easily (ex)change an image with using a transition:
+✍️ Easily (ex)change an image with using a transition (note that the `.transitionCrossDissolve` is the key to this working).
 
 ```swift
 extension UIImageView {
-    func updateImageWithTransition(_ image: UIImage?, duration: TimeInterval, options: UIViewAnimationOptions = []) {
-        UIView.transition(with: self, duration: duration, options: options, animations: { () -> Void in
+    func updateImageWithTransition(_ image: UIImage?, duration: TimeInterval) {
+        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: { () -> Void in
             self.image = image
         })
     }
