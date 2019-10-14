@@ -17,7 +17,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#34 - Avoid huge if statements](#34---avoid-huge-if-statements)\
 [#33 - Compare dates in test cases](#33---compare-dates-in-test-cases)\
 [#32 - Be aware of the strong reference to the target of a timer](#32---be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
-[#31 - Initialize `DateFormatter` with date- and time-style](#31---initialize-dateformatter-with-date--and-time-style)\
+[#31 - Initialize `DateFormatter` with formatting options](#31---initialize-dateformatter-with-formatting-options)\
 [#30 - Map latitude and longitude to X and Y on a coordinate system](#30---map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
 [#29 - Encapsulation](#29---encapsulation)\
 [#28 - Remove `UITextView` default padding](#28---remove-uitextview-default-padding)\
@@ -271,7 +271,7 @@ For iOS version below 10.0, we can use `DispatchSourceTimer` instead. There is a
 Even for non repeating timers, you should be aware of that strong reference, cause the corresponding object won't get deallocated until the timer has fired.
 
 
-## #31 - Initialize `DateFormatter` with date- and time-style
+## #31 - Initialize `DateFormatter` with formatting options
 🚀 A small extension to initialize a `DateFormatter` directly with further formatting options:
 
 ```swift
@@ -282,6 +282,12 @@ extension DateFormatter {
         self.dateStyle = dateStyle
         self.timeStyle = timeStyle
     }
+
+    convenience init(dateFormat: String) {
+        self.init()
+
+        self.dateFormat = dateFormat
+    }
 }
 ```
 
@@ -290,6 +296,9 @@ Use it like this:
 ```swift
 let dateFormatter = DateFormatter(dateStyle: .none,
                                   timeStyle: .short)
+```
+```swift
+let dateFormatter = DateFormatter(dateFormat: "E, d. MMMM")
 ```
 
 
