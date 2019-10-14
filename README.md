@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
 [#42 - Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
 [#41 - Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
 [#40 - `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
@@ -48,6 +49,11 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## 43 - How to test a delegate protocol
+🧪 Delegation is a common pattern whenever one objects needs to communicate to another object (1:1 communication). In this gist I show you how to elegantly test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
+[Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
+
 
 ## 42 - Xcode multi-cursor editing
 🏃‍ [Since Xcode 10](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/source_editor_release_notes_for_xcode_10) the Source Editor supports multi-cursor editing, allowing you to quickly edit multiple ranges of code at once. You can place additional cursors with the mouse via:
