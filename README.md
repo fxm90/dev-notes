@@ -19,7 +19,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#32 - Be aware of the strong reference to the target of a timer](#32---be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
 [#31 - Initialize `DateFormatter` with date- and time-style](#31---initialize-dateformatter-with-date--and-time-style)\
 [#30 - Map latitude and longitude to X and Y on a coordinate system](#30---map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
-[#29 - Make Properties & Methods private](#29---make-properties--methods-private)\
+[#29 - Encapsulation](#29---encapsulation)\
 [#28 - Remove `UITextView` default padding](#28---remove-uitextview-default-padding)\
 [#27 - Name that color](#27---name-that-color)\
 [#26 - Structure classes using `// MARK: - `](#26---structure-classes-using--mark--)\
@@ -312,7 +312,7 @@ The following graphics illustrate the quote above:
  - [CLLocationCoordinate2D](https://apple.co/2O1bIYn)
 
 
-## #29 - Make Properties & Methods private
+## #29 - Encapsulation
 🚪 We should always try to make as many properties and methods private as possible. Other classes don't not need know how a specific algorithm is implemented. Furthermore, this avoids side-effects due to unwanted changes on properties.
 Did you know, that even notification receivers can be marked as private?
 
