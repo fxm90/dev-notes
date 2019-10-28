@@ -175,7 +175,7 @@ You can see the result of each test inside the debug area of the playground.
 
 
 ## #36 - Show progress of WKWebView in UIProgressBar
-🤖 - If you want to show the loading progress of a website inside a `WKWebView` with a `UIProgressBar`, you can have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+🤖 - In case you need to show the loading progress of a `WKWebView` on a `UIProgressBar`, please have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
 
 In the example, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see the method `setupProgressView()` for further layout details).
 
