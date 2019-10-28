@@ -142,7 +142,7 @@ for scooter in scooterList where !scooter.isBatteryEmpty {
 ## #38 - Lightweight observable implementation
 🕵️‍♂️ ~~If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist: [Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)~~
 
-For reusability reasons I've moved the code into a framework and released it as a CocoaPod. Please check out https://github.com/fxm90/LightweightObservable 🙂
+For re-usability reasons I've moved the code into a framework and released it as a CocoaPod. Please check out https://github.com/fxm90/LightweightObservable 🙂
 
 
 ## #37 - Run test cases in playground
@@ -230,7 +230,7 @@ guard didChange else { return }
 **Notice**: By using that pattern we do not skip further checks (e.g. if we use `OR` in the statement and one condition returns `true` / we use `AND` in the statement and one condition returns `false`). So if you're having a load intensive method, it might be better to keep it as a single statement. Or, first check the "lighter" condition and then use an early return to prevent the load intensive method from being executed.
 
 ## #33 - Compare dates in test cases
-📆 Small example on how to comapre dates in tests.
+📆 Small example on how to compare dates in tests.
 
 ```swift
 func testDatesAreEqual() {
@@ -277,7 +277,7 @@ class ClockViewModel {
     // MARK: - Private methods
 
     @objc private func timerDidFire() {
-        // Do someting every x seconds here.
+        // Do something every x seconds here.
     }
 }
 ```
@@ -794,7 +794,7 @@ Luckily Jesse provides a solution for that problem: By going to `Settings » Nav
 ## #13 - Handle optionals in test cases
 ✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is nil, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
 
-In the example below, we initialize a view model with a list of bookings. Using the method `findBooking(byIdentifier:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the repsonse.
+In the example below, we initialize a view model with a list of bookings. Using the method `findBooking(byIdentifier:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the response.
 ```swift
 class BookingViewModelTestCase: XCTestCase {
     func testFindBookingByIdentifierShouldReturnMockedBooking() throws {
