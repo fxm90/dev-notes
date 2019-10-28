@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
 [#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
 [#42 - Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
 [#41 - Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
@@ -49,6 +50,34 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## 44 - Animate a view using a custom timing function
+🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animates changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
+```swift
+extension UICubicTimingParameters {
+    static let easeInBack = UICubicTimingParameters(controlPoint1: CGPoint(x: 0.6, y: -0.28),
+                                                    controlPoint2: CGPoint(x: 0.735, y: 0.045))
+}
+
+class CustomTimingAnimationViewController: UIViewController {
+
+    // ...
+
+    func userDidTapButton() {
+        let animator = UIViewPropertyAnimator(duration: 1.0,
+                                              timingParameters: UICubicTimingParameters.easeInBack)
+
+        animator.addAnimations {
+            // Add your animation code here. E.g.:
+            // `self.someConstraint?.isActive = false`
+            // `self.someOtherConstraint?.isActive = true`
+        }
+
+        animator.startAnimation()
+    }
+}
+```
+
 
 ## 43 - How to test a delegate protocol
 🧪 Delegation is a common pattern whenever one objects needs to communicate to another object (1:1 communication). In this gist I show you how to elegantly test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
