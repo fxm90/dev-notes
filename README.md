@@ -28,7 +28,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#25 - Structure test cases](#25---structure-test-cases)\
 [#24 - Avoid forced unwrapping](#24---avoid-forced-unwrapping)\
 [#23 - Always check for possible dividing through zero](#23---always-check-for-possible-dividing-through-zero)\
-[#22 - Animate `alpha` and update `isHidden` accordingly](#22---animate--alpha-and-update-ishidden-accordingly)\
+[#22 - Animate `alpha` and update `isHidden` accordingly](#22---animate-alpha-and-update-ishidden-accordingly)\
 [#21 - Create custom notification](#21---create-custom-notification)\
 [#20 - Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
 [#19 - Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
