@@ -80,7 +80,7 @@ class CustomTimingAnimationViewController: UIViewController {
 
 
 ## 43 - How to test a delegate protocol
-🧪 Delegation is a common pattern whenever one objects needs to communicate to another object (1:1 communication). In this gist I show you how to elegantly test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
+🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). In this gist I show you how to elegantly test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
 [Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
 
 
@@ -227,7 +227,7 @@ let didChange = isDifferentCategory || isDifferentSubCategory
 guard didChange else { return }
 ```
 
-**Notice**: By using that pattern we do not skip further checks (e.g. if we use `OR` in the statement and one condition returns `true` / we use `AND` in the statement and one condition returns `false`). So if you're having a load intensive method, it might be better to keep it as a single statement. Or, first check the "lighter" condition and then use an early return to prevent the load intensive method from being executed.
+**Notice**: By using that pattern we do not skip further checks on failure (e.g. if we use `OR` in the statement and one condition returns `true` / we use `AND` in the statement and one condition returns `false`). So if you're having a load intensive method, it might be better to keep it as a single statement. Or, first check the "lighter" condition and then use an early return to prevent the load intensive method from being executed.
 
 ## #33 - Compare dates in test cases
 📆 Small example on how to compare dates in tests.
@@ -338,7 +338,7 @@ let dateFormatter = DateFormatter(dateFormat: "E, d. MMMM")
 
 
 ## #30 - Map latitude and longitude to X and Y on a coordinate system
-🌍 Not really an iOS specific topic, but something to keep in mind 😃
+🌍 Not really an iOS specific topic but something to keep in mind 😃
 > On a standard north facing map, latitude is represented by horizontal lines, which go up and down (North and South) the Y axis. It's easy to think that since they are horizontal lines, they would be on the x axis, but they are not.
 > So similarly, the X axis is Longitude, as the values shift left to right (East and West) along the X axis. Confusing for the same reason since on a north facing map, these lines are vertical.
 
@@ -357,7 +357,7 @@ The following graphics illustrate the quote above:
 
 
 ## #29 - Encapsulation
-🚪 We should always try to make as many properties and methods private as possible. Other classes don't not need know how a specific algorithm is implemented. Furthermore, this avoids side-effects due to unwanted changes on properties.
+🚪 Always try to make as many properties and methods private as possible. Other classes don't not need know how a specific algorithm is implemented. Furthermore, this avoids side-effects due to unwanted changes on properties.
 Did you know, that even notification receivers can be marked as private?
 
 ```swift
@@ -396,7 +396,7 @@ class KeyboardViewModel {
 
 
 ## #28 - Remove `UITextView` default padding
-↔ With the following code, we can remove the default padding from an `UITextView`:
+↔ With the following code the default padding from an `UITextView` can be removed:
 
 ```swift
 // This brings the left edge of the text to the left edge of the container
@@ -521,7 +521,7 @@ class MapViewModelTestCase: XCTestCase {
 
 Source: https://github.com/linkedin/swift-style-guide
 
-Using the patterns shown underneath, we can easily unwrap optionals, or use early return to stop further code executing, if an optional is `nil`.
+Using the patterns shown underneath, we can easily unwrap optionals or use early return to stop further code executing, if an optional is `nil`.
 
 ```swift
 if let value = value {
@@ -540,7 +540,7 @@ guard let value = value else {
 
 
 ## #23 - Always check for possible dividing through zero
-💥 We should always make sure that a certain value is NOT zero before dividing through it.
+💥 Always make sure that a certain value is NOT zero before dividing through it.
 
 ```swift
 class ImageViewController: UIViewController {
@@ -647,7 +647,7 @@ Then, we can post it like this:
 
 By extending `Notification.Name` we make sure our notification names are unique.
 
-**Notice:** The object parameter should always contain the object, that is triggering the notification. If you need to pass custom data, you can use the `userInfo` parameter.
+**Notice:** The object parameter should always contain the object, that is triggering the notification. If you need to pass custom data, use the `userInfo` parameter.
 
 
 ## #20 - Override `UIStatusBarStyle` the elegant way
@@ -716,7 +716,7 @@ This way we can avoid using a variable and therefore prevent any mutation of `st
 
 
 ## #16 - Why `viewDidLoad` might be called before `init` has finished
-⚡️ Be aware, that the method `viewDidLoad` is being called immediately when accessing `self.view` in the initializer. The reason therefore is, that the view is not loaded at that time, but the property `self.view` should not return `nil`. So the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
+⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. It happens because that the view is not loaded at that time, but the property `self.view` should not return `nil`. So the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
 
 #### Example:
 ```swift
@@ -780,7 +780,7 @@ Source: https://stackoverflow.com/a/41141801
 
 
 ## #14 - Xcode open file in focused editor
-🏃‍♂️ Shortcuts are a great way to increase productivity. I nearly always use `CMD[⌘] + Shift[⇧] + O` to quickly open a file, `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc. To connect outlets on a storyboard or xib I also often the assistant editor.
+🏃‍♂️ Shortcuts are a great way to increase productivity. I often use `CMD[⌘] + Shift[⇧] + O` to quickly open a file or `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc.
 
 > By default, when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
 > Annoying.
@@ -788,7 +788,7 @@ Source: https://stackoverflow.com/a/41141801
 
 [Jesse Squires - Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
 
-Luckily Jesse provides a solution for that problem: By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
+Jesse Squires provides a solution for that problem: By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
 
 
 ## #13 - Handle optionals in test cases
@@ -854,7 +854,7 @@ let isClientErrorStatusCode = 400 ... 499 ~= statusCode
 let isServerErrorStatusCode = 500 ... 599 ~= statusCode
 ```
 
-Another (a bit more readable way) for checking whether a value is part of a given range can be achieved using the `contains` method:
+Another (more readable way) for checking whether a value is part of a given range can be achieved using the `contains` method:
 
 ```swift
 let statusCode = 200
@@ -890,10 +890,11 @@ extension ItemViewModel {
 }
 
 class ListViewModel {
-    func parse(response: [ItemDataModel], completion: ([ItemViewModel]) -> Void) {
+    /// ...
+
+    func mapToItemViewModel(response: [ItemDataModel]) -> ([ItemViewModel]) {
         // Using `compactMap` we filter out invalid data-models automatically.
-        let itemViewModelList = response.compactMap({ ItemViewModel(dataModel: $0) })
-        completion(itemViewModelList)
+        return response.compactMap { ItemViewModel(dataModel: $0) }
     }
 }
 ```
@@ -969,7 +970,7 @@ override class var layerClass: AnyClass {
 }
 ```
 
-I've used this technique e.g. to add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
+This is e.g. useful to add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
 ![Example][overwrite-layer-class]
 
 You can see the full code for the example in my gist for the [Vertical Gradient Image View](https://gist.github.com/fxm90/9604b0a067af46f68b80c6968736558d).
