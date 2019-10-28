@@ -28,7 +28,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [#25 - Structure test cases](#25---structure-test-cases)\
 [#24 - Avoid forced unwrapping](#24---avoid-forced-unwrapping)\
 [#23 - Always check for possible dividing through zero](#23---always-check-for-possible-dividing-through-zero)\
-[#22 - Animate `isHidden` instead of `alpha`](#22---animate-ishidden-instead-of-alpha)\
+[#22 - Animate `alpha` and update `isHidden` accordingly](#22---animate--alpha-and-update-ishidden-accordingly)\
 [#21 - Create custom notification](#21---create-custom-notification)\
 [#20 - Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
 [#19 - Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
@@ -564,45 +564,9 @@ class ImageViewController: UIViewController {
 ```
 
 
-## #22 - Animate `isHidden` instead of `alpha`
-**Update - 12/20/2018:** It seems like the shown approach is not working anymore in iOS 12 ([rdar://46753872](https://openradar.appspot.com/46753872)). I've created a gist with an extension on `UIView` to update the the `alpha` value animated and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateIsHidden.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
+## #22 - Animate `alpha` and update `isHidden` accordingly
+🦋 Using the following Gist we can animate `alpha` and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 
-Feel free to use it instead 🙂
-
-🦋 Instead of animating the `alpha` value and update the `isHidden` property accordingly, we can directly animate the `isHidden` property.
-#### Before:
-```swift
-class ExampleViewController: UIViewController {
-    func updateVisibility(_ isVisible: Bool) {
-        if isVisible {
-            view.isHidden = false
-        }
-
-        UIView.animate(withDuration: 1.0, animations: {
-            self.view.alpha = isVisible
-                ? 1.0
-                : 0.0
-        }, completion: { isFinished in
-            if isFinished && !isVisible {
-                self.view.isHidden = true
-            }
-        })
-    }
-}
-```
-#### After:
-```swift
-class ExampleViewController: UIViewController {
-    func updateVisibility(_ isVisible: Bool) {
-        UIView.transition(with: view,
-                          duration: 1.0,
-                          options: [.transitionCrossDissolve],
-                          animations: {
-                              self.view.isHidden = !isVisible
-        })
-    }
-}
-```
 
 ## #21 - Create custom notification
 📚 For creating custom notifications we first should have a look on how to name them properly:
