@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#45 - Span subview to superview](#45---span-subview-to-superview)\
 [\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
 [\#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
 [\#42 - Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
@@ -50,6 +51,27 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## 45 - Span subview to superview 
+⚓️ A small extension to span a subview to the anchors of its superview.
+
+```swift
+extension UIView {
+    /// Adds layout constraints to top, bottom, leading and trailing anchors equal to superview.
+    func fillToSuperview() {
+        guard let superview = superview else { return }
+
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superview.topAnchor),
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+        ])
+    }
+}
+```
 
 ## 44 - Animate a view using a custom timing function
 🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animates changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
