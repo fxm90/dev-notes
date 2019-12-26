@@ -33,7 +33,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#20 - Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
 [\#19 - Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
 [\#18 - Use gitmoji for commit messages](#18---use-gitmoji)\
-[\#17 - Initialize a constant, based on a condition](#17---initialize-a-constant-based-on-a-condition)\
+[\#17 - Initialize a constant based on a condition](#17---initialize-a-constant-based-on-a-condition)\
 [\#16 - Why `viewDidLoad` might be called before `init` has finished](#16---why-viewdidload-might-be-called-before-init-has-finished)\
 [\#15 - Capture iOS Simulator video](#15---capture-ios-simulator-video)\
 [\#14 - Xcode open file in focused editor](#14---xcode-open-file-in-focused-editor)\
@@ -664,8 +664,8 @@ That would create the following output:
 😃 Not an iOS specific topic, but I'd like to use [gitmoji](https://gitmoji.carloscuesta.me/) for my commit messages, e.g. `TICKET-NUMBER - ♻️ :: Description` (Credits go to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern). To easily create the corresponding emojis for the type of commit, you can use this [alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow).
 
 
-## #17 - Initialize a constant, based on a condition
-👏 A very readable way of initializing a constant not directly after the declaration.
+## #17 - Initialize a constant based on a condition
+👏 A very readable way of initializing a constant after the declaration.
 
 ```swift
 let startCoordinate: CLLocationCoordinate2D
