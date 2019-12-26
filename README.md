@@ -809,7 +809,7 @@ let invalid = fruits[safe: 7]
 
 
 ## #11 - Check whether a value is part of a given range
-💡 Instead of writing  `x >= 10 && x <= 100`, we can write `10 ... 100  ~=  x`.
+💡 Instead of writing `x >= 10 && x <= 100`, we can write `10 ... 100  ~=  x`.
 #### Example:
 ```swift
 let statusCode = 200
