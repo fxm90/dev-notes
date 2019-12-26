@@ -682,7 +682,7 @@ This way we can avoid using a variable and therefore prevent any mutation of `st
 
 
 ## #16 - Why `viewDidLoad` might be called before `init` has finished
-⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. It happens because that the view is not loaded at that time, but the property `self.view` should not return `nil`. So the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
+⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. This happens because that the view is not loaded yet, but the property `self.view` shouldn't return `nil`. Therefore the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
 
 #### Example:
 ```swift
