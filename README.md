@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#46 - Snapshot testing](#46---snapshot testing)\
 [\#45 - Span subview to superview](#45---span-subview-to-superview)\
 [\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
 [\#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
@@ -51,6 +52,9 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## 46 - Snapshot testing
+📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
 
 ## 45 - Span subview to superview 
 ⚓️ A small extension to span a subview to the anchors of its superview.
