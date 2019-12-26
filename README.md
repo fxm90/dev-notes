@@ -6,7 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-[\#46 - Snapshot testing](#46---snapshot testing)\
+[\#46 - Snapshot testing](#46---snapshot-testing)\
 [\#45 - Span subview to superview](#45---span-subview-to-superview)\
 [\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
 [\#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
