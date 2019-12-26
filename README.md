@@ -53,6 +53,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## 44 - Animate a view using a custom timing function
 🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animates changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
+
 ```swift
 extension UICubicTimingParameters {
     static let easeInBack = UICubicTimingParameters(controlPoint1: CGPoint(x: 0.6, y: -0.28),
@@ -292,6 +293,7 @@ Therefore the run loop contains a strong reference to the view-model, as long as
 
 #### Workaround:
 From iOS 10.0 we can use the method `scheduledTimer(withTimeInterval:repeats:block:)` instead and pass a `weak` reference to `self` in the closure, in order to prevent a retain cycle.
+
 ```swift
     init(interval: TimeInterval = 1.0) {
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { [weak self] _ in
