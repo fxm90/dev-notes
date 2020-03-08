@@ -6,8 +6,8 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-[\#48 - `FloatingPoint` - Protocol](48---floatingpoint---protocol)\
-[\#47 - Wait for multiple async tasks to complete](47---wait-for-multiple-async-tasks-to-complete)\
+[\#48 - `FloatingPoint` - Protocol](#48---floatingpoint---protocol)\
+[\#47 - Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
 [\#46 - Snapshot testing](#46---snapshot-testing)\
 [\#45 - Span subview to superview](#45---span-subview-to-superview)\
 [\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
