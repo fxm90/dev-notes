@@ -93,7 +93,7 @@ profileService.fetchFriends { trips in
 
 // We need to define the completion handler of our `DispatchGroup` with an unbalanced call to `enter()` and `leave()`,
 // as otherwise it will be called immediately!
-dispatchGroup?.notify(queue: .main) {
+dispatchGroup.notify(queue: .main) {
   print("We've downloaded the user profile together with all friends!")
 }
 ```
