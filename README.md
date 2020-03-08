@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#47 - Wait for multiple async tasks to complete](#46---wait-for-multiple-async-tasks-to-complete)\
 [\#46 - Snapshot testing](#46---snapshot-testing)\
 [\#45 - Span subview to superview](#45---span-subview-to-superview)\
 [\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
@@ -52,6 +53,30 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## #47 - Wait for multiple async tasks to complete
+⏰ Using a `DispatchGroup` we can wait for multiple async tasks to finish.
+
+```swift
+let dispatchGroup = DispatchGroup()
+dispatchGroup.enter()
+profileService.fetchProfile { profile in
+    // ...
+    dispatchGroup.leave()
+}
+
+dispatchGroup.enter()
+profileService.fetchFriends { trips in
+    // ...
+    dispatchGroup.leave()
+}
+
+// We need to define the completion handler of our `DispatchGroup` with an unbalanced call to `enter()` and `leave()`,
+// as otherwise it will be called immediately!
+dispatchGroup?.notify(queue: .main) {
+  print("We've downloaded the user profile together with all friends!")
+}
+```
 
 ## 46 - Snapshot testing
 📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
