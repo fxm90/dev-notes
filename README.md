@@ -404,7 +404,7 @@ let dateFormatter = DateFormatter {
 }
 ```
 ```swift
-let dateFormatter2 = DateFormatter {
+let dateFormatter = DateFormatter {
     $0.dateFormat = "E, d. MMMM"
 }
 ```
