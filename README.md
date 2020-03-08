@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#48 - `FloatingPoint` - Protocol](#46---floatingpoint---protocol)\
 [\#47 - Wait for multiple async tasks to complete](#46---wait-for-multiple-async-tasks-to-complete)\
 [\#46 - Snapshot testing](#46---snapshot-testing)\
 [\#45 - Span subview to superview](#45---span-subview-to-superview)\
@@ -53,6 +54,25 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## #48 - `FloatingPoint` - Protocol
+🎲 Ever needed an extension on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`? You can easily do this by extending the protocol `FloatingPoint`:
+
+```swift 
+extension FloatingPoint {
+    var degToRad: Self {
+        self * .pi / 180
+    }
+}
+
+let double: Double = 90
+let float: Float = 180
+let cgFloat: CGFloat = 270
+
+print("Double as radians", double.degToRad)
+print("Float as radians", float.degToRad)
+print("CGFloat as radians", cgFloat.degToRad)
+```
 
 ## #47 - Wait for multiple async tasks to complete
 ⏰ Using a `DispatchGroup` we can wait for multiple async tasks to finish.
