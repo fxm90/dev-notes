@@ -335,21 +335,16 @@ Even for non repeating timers, you should be aware of that strong reference, cau
 
 
 ## #31 - Initialize `DateFormatter` with formatting options
-🚀 A small extension to initialize a `DateFormatter` directly with further formatting options:
+🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring). 
+
+In case you need other formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
 
 ```swift
 extension DateFormatter {
-    convenience init(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) {
+    convenience init(configure: (DateFormatter) -> Void) {
         self.init()
 
-        self.dateStyle = dateStyle
-        self.timeStyle = timeStyle
-    }
-
-    convenience init(dateFormat: String) {
-        self.init()
-
-        self.dateFormat = dateFormat
+        configure(self)
     }
 }
 ```
@@ -357,13 +352,19 @@ extension DateFormatter {
 Use it like this:
 
 ```swift
-let dateFormatter = DateFormatter(dateStyle: .none,
-                                  timeStyle: .short)
+let dateFormatter = DateFormatter {
+    $0.locale = .current
+    $0.dateStyle = .long
+    $0.timeStyle = .short
+}
 ```
 ```swift
-let dateFormatter = DateFormatter(dateFormat: "E, d. MMMM")
+let dateFormatter2 = DateFormatter {
+    $0.dateFormat = "E, d. MMMM"
+}
 ```
 
+Feel free to bring this extension to other formatters, like e.g. [DateComponentsFormatter](https://developer.apple.com/documentation/foundation/datecomponentsformatter) or [DateIntervalFormatter](https://developer.apple.com/documentation/foundation/dateintervalformatter), as well.
 
 ## #30 - Map latitude and longitude to X and Y on a coordinate system
 🌍 Not really an iOS specific topic but something to keep in mind 😃
