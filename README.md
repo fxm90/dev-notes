@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#49 - Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurement-unit-type-)\
 [\#48 - `FloatingPoint` - Protocol](#48---floatingpoint---protocol)\
 [\#47 - Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
 [\#46 - Snapshot testing](#46---snapshot-testing)\
@@ -54,6 +55,31 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+## #49 - Convert units using `Measurement<UnitType>`
+🔁 Starting from iOS 10 we can use [`Measurement`](https://developer.apple.com/documentation/foundation/measurement) to convert units like e.g. angles, areas, durations, speeds, temperature, volume and [many many more](https://developer.apple.com/documentation/foundation/dimension).
+
+Using e.g. `Measurement<UnitAngle>` we can refactor the computed property shown in note #48 to a method, that allows us to convert between any [`UnitAngle`](https://developer.apple.com/documentation/foundation/unitangle):
+
+```swift
+extension BinaryFloatingPoint {
+    func converted(from fromUnit: UnitAngle, to toUnit: UnitAngle) -> Self {
+        let selfAsDouble = Double(self)
+        let convertedValueAsDouble = Measurement(value: selfAsDouble, unit: fromUnit)
+            .converted(to: toUnit)
+            .value
+
+        return type(of: self).init(convertedValueAsDouble)
+    }
+}
+```
+
+Furthermore this approach leads to a very clean call side:
+
+```swift
+let cameraBearing: CLLocationDegrees = 180
+cameraBearing.converted(from: .degrees, to: .radians)
+```
 
 ## #48 - `FloatingPoint` - Protocol
 🎲 Ever needed an extension on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`? You can easily do this by extending the protocol `FloatingPoint`:
