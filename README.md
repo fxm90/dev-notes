@@ -6,7 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-[\#49 - Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurement-unit-type-)\
+[\#49 - Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurementunittype)\
 [\#48 - `FloatingPoint` - Protocol](#48---floatingpoint---protocol)\
 [\#47 - Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
 [\#46 - Snapshot testing](#46---snapshot-testing)\
