@@ -408,7 +408,7 @@ Even for non repeating timers, you should be aware of that strong reference, cau
 ## #31 - Initialize `DateFormatter` with formatting options
 🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring). 
 
-In case you need other formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
+In case you need further formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
 
 ```swift
 extension DateFormatter {
@@ -436,6 +436,36 @@ let dateFormatter = DateFormatter {
 ```
 
 Feel free to bring this extension to other formatters, like e.g. [DateComponentsFormatter](https://developer.apple.com/documentation/foundation/datecomponentsformatter) or [DateIntervalFormatter](https://developer.apple.com/documentation/foundation/dateintervalformatter), as well.
+
+**Update:** Starting with Swift 4 we can use key-paths instead of closures:
+
+```swift
+protocol Builder {}
+
+extension Builder where Self: AnyObject {
+    func set<T>(_ keyPath: ReferenceWritableKeyPath<Self, T>, to value: T) -> Self {
+        self[keyPath: keyPath] = value
+        return self
+    }
+}
+
+extension DateFormatter: Builder {}
+extension NumberFormatter: Builder {}
+```
+
+Use it like this:
+
+```swift
+let dateFormatter = DateFormatter()
+    .set(\.locale, to: .current)
+    .set(\.dateStyle, to: .long)
+    .set(\.timeStyle, to: .short)
+```
+```swift
+let numberFormatter = NumberFormatter()
+    .set(\.locale, to: .current)
+    .set(\.numberStyle, to: .currency)
+```
 
 ## #30 - Map latitude and longitude to X and Y on a coordinate system
 🌍 Not really an iOS specific topic but something to keep in mind 😃
