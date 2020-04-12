@@ -133,16 +133,16 @@ dispatchGroup.notify(queue: .main) {
 ```swift
 extension UIView {
     /// Adds layout constraints to top, bottom, leading and trailing anchors equal to superview.
-    func fillToSuperview() {
+    func fillToSuperview(spacing: CGFloat = 0) {
         guard let superview = superview else { return }
 
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superview.topAnchor),
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            topAnchor.constraint(equalTo: superview.topAnchor, constant: spacing),
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: spacing),
 
-            leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            superview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: spacing),
+            superview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: spacing)
         ])
     }
 }
