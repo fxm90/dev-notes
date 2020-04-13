@@ -82,7 +82,7 @@ cameraBearing.converted(from: .degrees, to: .radians)
 ```
 
 ## #48 - `FloatingPoint` - Protocol
-🎲 Ever needed an extension on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`? You can easily do this by extending the protocol `FloatingPoint`:
+🎲 By extending the protocol `FloatingPoint` we can define a method / computed property on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`:
 
 ```swift 
 extension FloatingPoint {
@@ -149,7 +149,7 @@ extension UIView {
 ```
 
 ## 44 - Animate a view using a custom timing function
-🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animates changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
+🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
 
 ```swift
 extension UICubicTimingParameters {
@@ -178,7 +178,7 @@ class CustomTimingAnimationViewController: UIViewController {
 
 
 ## 43 - How to test a delegate protocol
-🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). In this gist I show you how to elegantly test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
+🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). In this gist I show you how to test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
 [Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
 
 
@@ -380,7 +380,7 @@ class ClockViewModel {
 }
 ```
 
-But didn't we declare the variable `timer` as `weak`? So even though we have a strong reference from the timer to the view-model (via the target and selector), we should not have a retain cycle? Well that's true. The solution is mentioned in the [ documentation for the class "Timer"](https://apple.co/2yY9B1M)
+But didn't we declare the variable `timer` as `weak`? So even though we have a strong reference from the timer to the view-model (via the target and selector), we should not have a retain cycle? Well, that's true. The solution is mentioned in the [ documentation for the class "Timer"](https://apple.co/2yY9B1M)
 > Timers work in conjunction with run loops. Run loops maintain strong references to their timers, so you don’t have to maintain your own strong reference to a timer after you have added it to a run loop.
 
 and the [documentation for the method "timerWithTimeInterval"](https://apple.co/2CyIHB7)
@@ -487,8 +487,9 @@ The following graphics illustrate the quote above:
 
 
 ## #29 - Encapsulation
-🚪 Always try to make as many properties and methods private as possible. Other classes don't not need know how a specific algorithm is implemented. Furthermore, this avoids side-effects due to unwanted changes on properties.
-Did you know, that even notification receivers can be marked as private?
+🚪 When working on a continuously evolving code base, one of the biggest challenges is to keep things nicely encapsulated. Having clear defined APIs can really help to avoid sharing implementation details with other types and therefore prevent unwanted side-effects.
+
+Even notification receivers or outlets can be marked as private.
 
 ```swift
 class KeyboardViewModel {
@@ -670,7 +671,7 @@ guard let value = value else {
 
 
 ## #23 - Always check for possible dividing through zero
-💥 Always make sure that a certain value is NOT zero before dividing through it.
+💥 We should always make sure that a certain value is **NOT** zero before dividing through it.
 
 ```swift
 class ImageViewController: UIViewController {
@@ -705,7 +706,7 @@ class ImageViewController: UIViewController {
 
 Source: [Coding Guidelines for Cocoa](https://apple.co/2PPywfa)
 
-Now we can create the new notification. We do this by extending the corresponding class:
+We create the new notification by extending the corresponding class:
 
 ```swift
 extension Notification.Name {
@@ -713,7 +714,7 @@ extension Notification.Name {
 }
 ```
 
-And finally post it:
+And afterwards post it like this:
 
 ```swift
 class AccountService {
@@ -745,7 +746,7 @@ By extending `Notification.Name` we make sure our notification names are unique.
 
 
 ## #20 - Override `UIStatusBarStyle` the elegant way
-✌️ Using `didSet` we can easily call `setNeedsStatusBarAppearanceUpdate()` to apply a new status-bar style:
+✌️ Using a custom property, combined with the observer `didSet` we can call `setNeedsStatusBarAppearanceUpdate()` to apply a new status-bar style:
 
 ```swift
 class SomeViewController: UIViewController {
@@ -810,7 +811,11 @@ This way we can avoid using a variable and therefore prevent any mutation of `st
 
 
 ## #16 - Why `viewDidLoad` might be called before `init` has finished
-⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. This happens because that the view is not loaded yet, but the property `self.view` shouldn't return `nil`. Therefore the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
+⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. 
+
+This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`. 
+
+Therefore the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
 
 #### Example:
 ```swift
@@ -850,7 +855,7 @@ The code will output log statements in the following order:
 📝 :: `init(nibName:bundle:)` did finish.
 ```
 
-Source: https://stackoverflow.com/a/5808477
+Source: [https://stackoverflow.com/a/5808477](https://stackoverflow.com/a/5808477)
 
 More on view life cycle: [Work with View Controllers](https://apple.co/2q8Jf9y)
 
@@ -872,21 +877,21 @@ xcrun simctl io booted recordVideo ~/appVideo.mp4
 
 Source: https://stackoverflow.com/a/41141801
 
+In case you want to **further customise the simulator**, e.g. by setting a custom battery level, check out this amazing tool by [Paul Hudson](https://twitter.com/twostraws): **[ControlRoom](https://github.com/twostraws/ControlRoom)**
+
 
 ## #14 - Xcode open file in focused editor
 🏃‍♂️ Shortcuts are a great way to increase productivity. I often use `CMD[⌘] + Shift[⇧] + O` to quickly open a file or `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc.
 
-> By default, when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
-> Annoying.
-> All I want to do is open two files side-by-side, switch between them easily, and have ‘Quick Open’ target whichever side is currently focused.
+But when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
 
-[Jesse Squires - Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
+By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
 
-Jesse Squires provides a solution for that problem: By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
+Source: [Jesse Squires - Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
 
 
 ## #13 - Handle optionals in test cases
-✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is nil, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
+✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is `nil`, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
 
 In the example below, we initialize a view model with a list of bookings. Using the method `findBooking(byIdentifier:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the response.
 ```swift
@@ -912,7 +917,7 @@ class BookingViewModelTestCase: XCTestCase {
 
 
 ## #12 - Safe access to an element at index
-⛑ Using the underneath shown range operator, we can easily create an extension to safely return an array element at the specified index, or `nil` if the index is outside the bounds.
+⛑ Using the range operator, we can easily create an extension to safely return an array element at the specified index, or `nil` if the index is outside the bounds.
 
 ```swift
 extension Array {
@@ -960,7 +965,7 @@ let isServerErrorStatusCode = (500 ... 599).contains(statusCode)
 ```
 
 ## #10 - Use `compactMap` to filter `nil` values
-🎛 By using `compactMap` we can filter out `nil` values of a list. This can be useful, e.g. while parsing a server response:
+🎛 By using `compactMap` we can filter out `nil` values of a list.
 
 ```swift
 struct ItemDataModel {
@@ -1021,7 +1026,7 @@ extension UIView {
 
 
 ## #07 - Animate image change on `UIImageView`
-✍️ Easily (ex)change an image with using a transition (note that the `.transitionCrossDissolve` is the key to this working).
+✍️ Easily (ex)change an image with using a transition (note that the `.transitionCrossDissolve` is the key to get this working).
 
 ```swift
 extension UIImageView {
@@ -1052,17 +1057,15 @@ extension CALayer {
 
 
 ## #05 - Override `layerClass` to reduce the total amount of layers
-> By overriding 'layerClass' you can tell UIKit what CALayer class to use for a UIView's backing layer.
-> That way you can reduce the amount of layers, and don't have to do any manual layout.
-[John Sundell](https://twitter.com/johnsundell/status/1000099872580816897)
-
-This can be archived with the following code:
-
 ```swift
 override class var layerClass: AnyClass {
     return CAGradientLayer.self
 }
 ```
+
+> By overriding 'layerClass' you can tell UIKit what CALayer class to use for a UIView's backing layer.
+> That way you can reduce the amount of layers, and don't have to do any manual layout.
+[John Sundell](https://twitter.com/johnsundell/status/1000099872580816897)
 
 This is e.g. useful to add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
 ![Example][overwrite-layer-class]
@@ -1100,7 +1103,7 @@ class FooBarViewController: UIViewController {
 
 
 ## #02 - Most readable way to check whether an array contains a value (`isAny(of:)`)
-✨ A small extension to check whether a value is part of e.g. an array, in a very readable way (by [John Sundell](https://twitter.com/johnsundell/status/943510426586959873))
+✨ A small extension to check whether a value is part of a list of candidates, in a very readable way (by [John Sundell](https://twitter.com/johnsundell/status/943510426586959873))
 
 ```swift
 extension Equatable {
@@ -1112,20 +1115,20 @@ extension Equatable {
 
 #### Example:
 ```swift
-enum Product {
-    case macBook
-    case iPad
-    case iPhone
-    case watch
+enum Device {
+    case iPhone7
+    case iPhone8
+    case iPhoneX
+    case iPhone11
 }
 
-let device: Product = .iPhone
+let device: Device = .iPhoneX
 
 // Before
-let isIOSDevice = [.iPad, .iPhone].contains(device)
+let hasSafeAreas = [.iPhoneX, .iPhone11].contains(device)
 
 // After
-let isIOSDevice = device.isAny(of: .iPad, .iPhone)
+let hasSafeAreas = device.isAny(of: .iPhoneX, .iPhone11)
 ```
 
 
