@@ -449,8 +449,7 @@ extension Builder where Self: AnyObject {
     }
 }
 
-extension DateFormatter: Builder {}
-extension NumberFormatter: Builder {}
+extension Formatter: Builder {}
 ```
 
 Use it like this:
