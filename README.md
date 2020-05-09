@@ -84,7 +84,7 @@ cameraBearing.converted(from: .degrees, to: .radians)
 ## #48 - `FloatingPoint` - Protocol
 🎲 By extending the protocol `FloatingPoint` we can define a method / computed property on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`:
 
-```swift 
+```swift
 extension FloatingPoint {
     var degToRad: Self {
         self * .pi / 180
@@ -127,7 +127,7 @@ dispatchGroup.notify(queue: .main) {
 ## 46 - Snapshot testing
 📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
 
-## 45 - Span subview to superview 
+## 45 - Span subview to superview
 ⚓️ A small extension to span a subview to the anchors of its superview.
 
 ```swift
@@ -406,7 +406,7 @@ Even for non repeating timers, you should be aware of that strong reference, cau
 
 
 ## #31 - Initialize `DateFormatter` with formatting options
-🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring). 
+🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring).
 
 In case you need further formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
 
@@ -810,9 +810,9 @@ This way we can avoid using a variable and therefore prevent any mutation of `st
 
 
 ## #16 - Why `viewDidLoad` might be called before `init` has finished
-⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer. 
+⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer.
 
-This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`. 
+This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`.
 
 Therefore the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
 
@@ -1148,10 +1148,10 @@ someService.request() { [weak self] response in
 guard let `self` = self else { return }
 ```
 
-[overwrite-layer-class]: https://felix.hamburg/files/github/dev-notes/overwrite-layer-class.jpg
+[overwrite-layer-class]: Assets/overwrite-layer-class.jpg
 
-[latitude]: https://felix.hamburg/files/github/dev-notes/latitude.jpg
-[latitude--thumbnail]: https://felix.hamburg/files/github/dev-notes/latitude--thumbnail.jpg
+[latitude]: Assets/latitude.jpg
+[latitude--thumbnail]: Assets/latitude--thumbnail.jpg
 
-[longitude]: https://felix.hamburg/files/github/dev-notes/longitude.jpg
-[longitude--thumbnail]: https://felix.hamburg/files/github/dev-notes/longitude--thumbnail.jpg
+[longitude]: Assets/longitude.jpg
+[longitude--thumbnail]: Assets/longitude--thumbnail.jpg
