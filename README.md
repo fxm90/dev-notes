@@ -781,11 +781,15 @@ Especially with default parameters those expressions are really useful, as in th
 We could use a [simple extension on String](https://gist.github.com/fxm90/08a187c5d6b365ce2305c194905e61c2) to create a basic logger:
 
 ```swift
-"Lorem Ipsum Dolor Sit Amet 👋".log(level: .release)
+"Lorem Ipsum Dolor Sit Amet 👋".log(level: .info)
 ```
 
 That would create the following output:
-> 2018/09/16 19:46:45.189 - ViewController.swift - viewDidLoad():15 - Lorem Ipsum Dolor Sit Amet 👋
+
+```
+ℹ️ – 2018/09/16 19:46:45.189 - ViewController.swift - viewDidLoad():15
+> Lorem Ipsum Dolor Sit Amet 👋
+```
 
 
 ## 18 - Use gitmoji
