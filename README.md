@@ -442,10 +442,12 @@ Feel free to bring this extension to other formatters, like e.g. [DateComponents
 ```swift
 protocol Builder {}
 
-extension Builder where Self: AnyObject {
-    func set<T>(_ keyPath: ReferenceWritableKeyPath<Self, T>, to value: T) -> Self {
-        self[keyPath: keyPath] = value
-        return self
+extension Builder {
+    func set<T>(_ keyPath: WritableKeyPath<Self, T>, to value: T) -> Self {
+        var mutableCopy = self
+        mutableCopy[keyPath: keyPath] = value
+
+        return mutableCopy
     }
 }
 
@@ -465,6 +467,8 @@ let numberFormatter = NumberFormatter()
     .set(\.locale, to: .current)
     .set(\.numberStyle, to: .currency)
 ```
+
+Based on: [Vadim Bulavin – KeyPath Based Builder](https://twitter.com/V8tr/status/1242846971188183047)
 
 ## #30 - Map latitude and longitude to X and Y on a coordinate system
 🌍 Not really an iOS specific topic but something to keep in mind 😃
