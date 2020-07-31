@@ -6,6 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#50 - Basic Combine Examples](#50---basic-combine-examples)\
 [\#49 - Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurementunittype)\
 [\#48 - `FloatingPoint` - Protocol](#48---floatingpoint---protocol)\
 [\#47 - Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
@@ -55,6 +56,16 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
 [\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+
+
+## #50 - Basic Combine Examples
+🧪 For note number fifty I'd like to share two gists regarding Apple's new Combine framework:
+- [Combine-PassthroughSubject-CurrentValueSubject.swift](https://gist.github.com/fxm90/fcb2eb9d92655889d549e7f57168a0fb)\
+This gist explains the difference between a [`PassthroughSubject`](https://developer.apple.com/documentation/combine/passthroughsubject) and a [`CurrentValueSubject`](https://developer.apple.com/documentation/combine/currentvaluesubject).
+- [Combine-CLLocationManagerDelegate.swift](https://gist.github.com/fxm90/8b6c9753f12fcf19991f6c3f0cd635d3)\
+This gists shows how to convert a delegate pattern to combine publishers, in this case the `CLLocationManagerDelegate`.
+
+Feel free to copy the code a playground and get your hands dirty with Combine 😃
 
 ## #49 - Convert units using `Measurement<UnitType>`
 🔁 Starting from iOS 10 we can use [`Measurement`](https://developer.apple.com/documentation/foundation/measurement) to convert units like e.g. angles, areas, durations, speeds, temperature, volume and [many many more](https://developer.apple.com/documentation/foundation/dimension).
