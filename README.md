@@ -1107,8 +1107,8 @@ You can see the full code for the example in my gist for the [Vertical Gradient 
 ## #04 – Handle notifications in test cases
 📬 Examples on how to test notifications in test cases:
 
- – [XCTest – Assert notification (not) triggered](https://gist.github.com/fxm90/23dc7debc5ee8245237c08e5af8679bc)
- – [XCTest – Use custom notification center in test case and assert notification (not) triggered](https://gist.github.com/fxm90/3c6f146ed977100d21f0a1f3e7bb37a2)
+ - [XCTest – Assert notification (not) triggered](https://gist.github.com/fxm90/23dc7debc5ee8245237c08e5af8679bc)
+ - [XCTest – Use custom notification center in test case and assert notification (not) triggered](https://gist.github.com/fxm90/3c6f146ed977100d21f0a1f3e7bb37a2)
 
 
 ## #03 – Use `didSet` on outlets to setup components
