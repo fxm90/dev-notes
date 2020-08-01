@@ -722,7 +722,7 @@ class ImageViewController: UIViewController {
 
 
 ## #22 – Animate `alpha` and update `isHidden` accordingly
-🦋 Using the following gist we can animate `alpha` and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
+🦋 Using the following gist we can animate the `alpha` property and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 
 
 ## #21 – Create custom notification
