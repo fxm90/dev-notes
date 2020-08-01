@@ -136,7 +136,9 @@ dispatchGroup.notify(queue: .main) {
 ```
 
 ## 46 – Snapshot testing
-📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
+📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. 
+
+Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
 
 ## 45 – Span subview to superview
 ⚓️ A small extension to span a subview to the anchors of its superview.
@@ -160,7 +162,11 @@ extension UIView {
 ```
 
 ## 44 – Animate a view using a custom timing function
-🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
+🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views. 
+
+Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). 
+
+Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
 
 ```swift
 extension UICubicTimingParameters {
@@ -189,7 +195,9 @@ class CustomTimingAnimationViewController: UIViewController {
 
 
 ## 43 – How to test a delegate protocol
-🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). In this gist I show you how to test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
+🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). 
+
+The following gist shows you how to test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
 [Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
 
 
@@ -203,7 +211,9 @@ shift + control + ↓
 
 
 ## 41 – Create a dynamic color for light- and dark mode
-🎨 Using the gist [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e) we can create a custom `UIColor`, that generates its color data dynamically based on the current `userInterfaceStyle`. Furthermore this method falls back to the `lightVariant` color for iOS versions prior to iOS 13.
+🎨 Using the gist [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e) we can create a custom `UIColor` that generates its color data dynamically based on the current `userInterfaceStyle`. 
+
+Furthermore this method falls back to the `lightVariant` color for iOS versions prior to iOS 13.
 
 
 ## #40 – `UITableViewCell` extension that declares a static identifier
@@ -229,7 +239,9 @@ let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.ide
 
 
 ## #39 – Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
-🎢 In case you're iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. So instead of writing:
+🎢 For iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. 
+
+So instead of writing:
 
 ```swift
 scooterList
@@ -239,7 +251,7 @@ scooterList
     })
 ```
 
-it's more efficient to write
+it is more efficient to write:
 
 ```swift
 for scooter in scooterList where !scooter.isBatteryEmpty {
@@ -257,7 +269,7 @@ For re-usability reasons I've moved the code into a framework and released it as
 ## #37 – Run test cases in playground
 🧪 Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven.
 
-By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our project.
+By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our "real" project.
 
 ```swift
 import Foundation
@@ -284,13 +296,13 @@ You can see the result of each test inside the debug area of the playground.
 
 
 ## #36 – Show progress of WKWebView in UIProgressBar
-🤖 In case you need to show the loading progress of a `WKWebView` on a `UIProgressBar`, please have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+🤖 For showing the loading-progress of a `WKWebView` on a `UIProgressBar`, please have a look at the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
 
-In the example, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see the method `setupProgressView()` for further layout details).
+In the example code, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see method `setupProgressView()` for further layout details).
 
 
 ## #35 – Destructure tuples
-🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. Using Swift we can destructure the tuple into two properties in just one line:
+🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. We can destructure the tuple into two properties in just one line:
 
 ```swift
 let (firstName, lastName) = accountService.fullName()
@@ -300,7 +312,7 @@ print(lastName)
 ```
 
 ## #34 – Avoid huge if statements
-✨ Instead of writing something like this:
+✨ Instead of writing long "if statements" like this:
 
 ```swift
 struct HugeDataObject {
@@ -501,7 +513,7 @@ The following graphics illustrate the quote above:
 
 
 ## #29 - Encapsulation
-🚪 When working on a continuously evolving code base, one of the biggest challenges is to keep things nicely encapsulated. Having clear defined APIs can really help to avoid sharing implementation details with other types and therefore prevent unwanted side-effects.
+🚪 When working on a continuously evolving code base, one of the biggest challenges is to keep things nicely encapsulated. Having clear defined APIs avoids sharing implementation details with other types and therefore prevent unwanted side-effects.
 
 Even notification receivers or outlets can be marked as private.
 
@@ -565,7 +577,7 @@ The above code can also be applied inside the interface builder within the "User
 
 
 ## #26 – Structure classes using `// MARK: -`
-🔖 Using `// MARK:` we can add some additional information that is shown in the quick jump bar. Adding a dash the end (`// MARK: -`) causes a separation line to show up. Using this technique we can structure classes and make them easier to read.
+🔖 Using `// MARK:` we can add some additional information that is shown in the quick jump bar. Adding a dash at the end (`// MARK: -`) causes a separation line to show up. Using this technique we can structure classes and make them easier to read.
 
 ```swift
 class StructuredViewController: UIViewController {
@@ -670,7 +682,7 @@ Using the patterns shown underneath, we can easily unwrap optionals or use early
 
 ```swift
 if let value = value {
-    // Do stuff with value here..
+    // Do something with value here..
 }
 ```
 
@@ -680,7 +692,7 @@ guard let value = value else {
     return
 }
 
-// Do stuff with value here..
+// Do something with value here..
 ```
 
 
@@ -710,7 +722,7 @@ class ImageViewController: UIViewController {
 
 
 ## #22 – Animate `alpha` and update `isHidden` accordingly
-🦋 Using the following Gist we can animate `alpha` and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
+🦋 Using the following gist we can animate `alpha` and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 
 
 ## #21 – Create custom notification
@@ -808,7 +820,8 @@ That would create the following output:
 
 
 ## 18 – Use gitmoji
-😃 Not an iOS specific topic, but I'd like to use [gitmoji](https://gitmoji.carloscuesta.me/) for my commit messages, e.g. `TICKET-NUMBER - ♻️ :: Description` (Credits go to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern). To easily create the corresponding emojis for the type of commit, you can use this [alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow).
+😃 Not an iOS specific topic, but I'd like to use [gitmoji](https://gitmoji.carloscuesta.me/) for my commit messages, e.g. `TICKET-NUMBER - ♻️ :: Description` (Credits go to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern).
+To easily create the corresponding emojis for the type of commit, you can use this [alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow).
 
 
 ## #17 – Initialize a constant based on a condition
@@ -833,7 +846,7 @@ This way we can avoid using a variable and therefore prevent any mutation of `st
 
 This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`.
 
-Therefore the view controller will load the view directly and call the corresponding method `viewDidLoad` afterwards.
+Therefore the view controller will load the view immediately and call the corresponding method `viewDidLoad` afterwards.
 
 #### Example:
 ```swift
@@ -983,7 +996,7 @@ let isServerErrorStatusCode = (500 ... 599).contains(statusCode)
 ```
 
 ## #10 – Use `compactMap` to filter `nil` values
-🎛 By using `compactMap` we can filter out `nil` values of a list.
+🎛 Using `compactMap` we can filter out any `nil` values of an array.
 
 ```swift
 struct ItemDataModel {
@@ -1011,7 +1024,7 @@ class ListViewModel {
 
     func mapToItemViewModel(response: [ItemDataModel]) -> ([ItemViewModel]) {
         // Using `compactMap` we filter out invalid data-models automatically.
-        return response.compactMap { ItemViewModel(dataModel: $0) }
+        response.compactMap { ItemViewModel(dataModel: $0) }
     }
 }
 ```
@@ -1028,7 +1041,7 @@ class ListViewModel {
  - Can't contain duplicate values.
  - All items we want to store must conform to `Hashable` protocol.
 
-Please have a look at ["The power of sets in Swift" (by John Sundell)](https://medium.com/@johnsundell/the-power-of-sets-in-swift-57be8b223da0) for further examples and use-cases.
+For further examples and use-cases please have a look at ["The power of sets in Swift" (by John Sundell)](https://medium.com/@johnsundell/the-power-of-sets-in-swift-57be8b223da0).
 
 
 ## #08 – Remove all sub-views from `UIView`
@@ -1062,11 +1075,11 @@ extension UIImageView {
 
 ```swift
 extension CALayer {
-    class func performWithoutAnimation(_ actionsWithoutAnimation: () -> Void) {
+    class func performWithoutAnimation(_ runWithoutAnimation: () -> Void) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
 
-        actionsWithoutAnimation()
+        runWithoutAnimation()
 
         CATransaction.commit()
     }
@@ -1085,7 +1098,7 @@ override class var layerClass: AnyClass {
 > That way you can reduce the amount of layers, and don't have to do any manual layout.
 [John Sundell](https://twitter.com/johnsundell/status/1000099872580816897)
 
-This is e.g. useful to add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
+This is useful to e.g. add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
 ![Example][overwrite-layer-class]
 
 You can see the full code for the example in my gist for the [Vertical Gradient Image View](https://gist.github.com/fxm90/9604b0a067af46f68b80c6968736558d).
@@ -1099,7 +1112,7 @@ You can see the full code for the example in my gist for the [Vertical Gradient 
 
 
 ## #03 – Use `didSet` on outlets to setup components
-👏 By using `didSet` on outlets, we can setup our view components (declared in a storyboard or xib) in a very readable way:
+👏 By using `didSet` on outlets we can setup our view components (declared in a storyboard or xib) in a very readable way:
 
 ```swift
 class FooBarViewController: UIViewController {
