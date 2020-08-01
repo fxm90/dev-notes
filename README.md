@@ -6,59 +6,59 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
-[\#50 - Basic Combine Examples](#50---basic-combine-examples)\
-[\#49 - Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurementunittype)\
-[\#48 - `FloatingPoint` - Protocol](#48---floatingpoint---protocol)\
-[\#47 - Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
-[\#46 - Snapshot testing](#46---snapshot-testing)\
-[\#45 - Span subview to superview](#45---span-subview-to-superview)\
-[\#44 - Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
-[\#43 - How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
-[\#42 - Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
-[\#41 - Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
-[\#40 - `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
-[\#39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
-[\#38 - Lightweight observable implementation](#38---lightweight-observable-implementation)\
-[\#37 - Run test cases in a playground](#37---run-test-cases-in-playground)\
-[\#36 - Show progress of WKWebView in UIProgressBar](#36---show-progress-of-wkwebview-in-uiprogressbar)\
-[\#35 - Destructure tuples](#35---destructure-tuples)\
-[\#34 - Avoid huge if statements](#34---avoid-huge-if-statements)\
-[\#33 - Compare dates in test cases](#33---compare-dates-in-test-cases)\
-[\#32 - Be aware of the strong reference to the target of a timer](#32---be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
-[\#31 - Initialize `DateFormatter` with formatting options](#31---initialize-dateformatter-with-formatting-options)\
-[\#30 - Map latitude and longitude to X and Y on a coordinate system](#30---map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
-[\#29 - Encapsulation](#29---encapsulation)\
-[\#28 - Remove `UITextView` default padding](#28---remove-uitextview-default-padding)\
-[\#27 - Name that color](#27---name-that-color)\
-[\#26 - Structure classes using `// MARK: - `](#26---structure-classes-using--mark--)\
-[\#25 - Structure test cases](#25---structure-test-cases)\
-[\#24 - Avoid forced unwrapping](#24---avoid-forced-unwrapping)\
-[\#23 - Always check for possible dividing through zero](#23---always-check-for-possible-dividing-through-zero)\
-[\#22 - Animate `alpha` and update `isHidden` accordingly](#22---animate-alpha-and-update-ishidden-accordingly)\
-[\#21 - Create custom notification](#21---create-custom-notification)\
-[\#20 - Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
-[\#19 - Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
-[\#18 - Use gitmoji for commit messages](#18---use-gitmoji)\
-[\#17 - Initialize a constant based on a condition](#17---initialize-a-constant-based-on-a-condition)\
-[\#16 - Why `viewDidLoad` might be called before `init` has finished](#16---why-viewdidload-might-be-called-before-init-has-finished)\
-[\#15 - Capture iOS Simulator video](#15---capture-ios-simulator-video)\
-[\#14 - Xcode open file in focused editor](#14---xcode-open-file-in-focused-editor)\
-[\#13 - Handle optionals in test cases](#13---handle-optionals-in-test-cases)\
-[\#12 - Safe access to an element at index](#12---safe-access-to-an-element-at-index)\
-[\#11 - Check whether a value is part of a given range](#11---check-whether-a-value-is-part-of-a-given-range)\
-[\#10 - Use `compactMap` to filter `nil` values](#10---use-compactmap-to-filter-nil-values)\
-[\#09 - Prefer `Set` instead of array for unordered lists without duplicates](#09---prefer-set-instead-of-array-for-unordered-lists-without-duplicates)\
-[\#08 - Remove all sub-views from `UIView`](#08---remove-all-sub-views-from-uiview)\
-[\#07 - Animate image change on `UIImageView`](#07---animate-image-change-on-uiimageview)\
-[\#06 - Change `CALayer` without animation](#06---change-calayer-without-animation)\
-[\#05 - Override `layerClass` to reduce the total amount of layers](#05---override-layerclass-to-reduce-the-total-amount-of-layers)\
-[\#04 - Handle notifications in test cases](#04---handle-notifications-in-test-cases)\
-[\#03 - Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
-[\#02 - Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
-[\#01 - Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+[\#50 – Basic Combine Examples](#50---basic-combine-examples)\
+[\#49 – Convert units using `Measurement<UnitType>`](#49---convert-units-using-measurementunittype)\
+[\#48 – `FloatingPoint` Protocol](#48---floatingpoint-protocol)\
+[\#47 – Wait for multiple async tasks to complete](#47---wait-for-multiple-async-tasks-to-complete)\
+[\#46 – Snapshot testing](#46---snapshot-testing)\
+[\#45 – Span subview to superview](#45---span-subview-to-superview)\
+[\#44 – Animate a view using a custom timing function](#44---animate-a-view-using-a-custom-timing-function)\
+[\#43 – How to test a delegate protocol](#43---how-to-test-a-delegate-protocol)\
+[\#42 – Xcode multi-cursor editing](#42---xcode-multi-cursor-editing)\
+[\#41 – Create a dynamic color for light- and dark mode](#41---create-a-dynamic-color-for-light--and-dark-mode)\
+[\#40 – `UITableViewCell` extension that declares a static identifier](#40---uitableviewcell-extension-that-declares-a-static-identifier)\
+[\#39 – Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39---prefer-for--in--where-loop-over-filter-and-forach-)\
+[\#38 – Lightweight observable implementation](#38---lightweight-observable-implementation)\
+[\#37 – Run test cases in a playground](#37---run-test-cases-in-playground)\
+[\#36 – Show progress of WKWebView in UIProgressBar](#36---show-progress-of-wkwebview-in-uiprogressbar)\
+[\#35 – Destructure tuples](#35---destructure-tuples)\
+[\#34 – Avoid huge if statements](#34---avoid-huge-if-statements)\
+[\#33 – Compare dates in test cases](#33---compare-dates-in-test-cases)\
+[\#32 – Be aware of the strong reference to the target of a timer](#32---be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
+[\#31 – Initialize `DateFormatter` with formatting options](#31---initialize-dateformatter-with-formatting-options)\
+[\#30 – Map latitude and longitude to X and Y on a coordinate system](#30---map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
+[\#29 – Encapsulation](#29---encapsulation)\
+[\#28 – Remove `UITextView` default padding](#28---remove-uitextview-default-padding)\
+[\#27 – Name that color](#27---name-that-color)\
+[\#26 – Structure classes using `// MARK: - `](#26---structure-classes-using--mark--)\
+[\#25 – Structure test cases](#25---structure-test-cases)\
+[\#24 – Avoid forced unwrapping](#24---avoid-forced-unwrapping)\
+[\#23 – Always check for possible dividing through zero](#23---always-check-for-possible-dividing-through-zero)\
+[\#22 – Animate `alpha` and update `isHidden` accordingly](#22---animate-alpha-and-update-ishidden-accordingly)\
+[\#21 – Create custom notification](#21---create-custom-notification)\
+[\#20 – Override `UIStatusBarStyle` the elegant way](#20---override-uistatusbarstyle-the-elegant-way)\
+[\#19 – Log extension on `String` using swift literal expressions](#19---log-extension-on-string-using-swift-literal-expressions)\
+[\#18 – Use gitmoji for commit messages](#18---use-gitmoji)\
+[\#17 – Initialize a constant based on a condition](#17---initialize-a-constant-based-on-a-condition)\
+[\#16 – Why `viewDidLoad` might be called before `init` has finished](#16---why-viewdidload-might-be-called-before-init-has-finished)\
+[\#15 – Capture iOS Simulator video](#15---capture-ios-simulator-video)\
+[\#14 – Xcode open file in focused editor](#14---xcode-open-file-in-focused-editor)\
+[\#13 – Handle optionals in test cases](#13---handle-optionals-in-test-cases)\
+[\#12 – Safe access to an element at index](#12---safe-access-to-an-element-at-index)\
+[\#11 – Check whether a value is part of a given range](#11---check-whether-a-value-is-part-of-a-given-range)\
+[\#10 – Use `compactMap` to filter `nil` values](#10---use-compactmap-to-filter-nil-values)\
+[\#09 – Prefer `Set` instead of array for unordered lists without duplicates](#09---prefer-set-instead-of-array-for-unordered-lists-without-duplicates)\
+[\#08 – Remove all sub-views from `UIView`](#08---remove-all-sub-views-from-uiview)\
+[\#07 – Animate image change on `UIImageView`](#07---animate-image-change-on-uiimageview)\
+[\#06 – Change `CALayer` without animation](#06---change-calayer-without-animation)\
+[\#05 – Override `layerClass` to reduce the total amount of layers](#05---override-layerclass-to-reduce-the-total-amount-of-layers)\
+[\#04 – Handle notifications in test cases](#04---handle-notifications-in-test-cases)\
+[\#03 – Use `didSet` on outlets to setup components](#03---use-didset-on-outlets-to-setup-components)\
+[\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02---most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
+[\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01---override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
 
-## #50 - Basic Combine Examples
+## #50 – Basic Combine Examples
 🧪 For note number fifty I'd like to share two gists regarding Apple's new Combine framework:
 - [Combine-PassthroughSubject-CurrentValueSubject.swift](https://gist.github.com/fxm90/fcb2eb9d92655889d549e7f57168a0fb)\
 This gist explains the difference between a [`PassthroughSubject`](https://developer.apple.com/documentation/combine/passthroughsubject) and a [`CurrentValueSubject`](https://developer.apple.com/documentation/combine/currentvaluesubject).
@@ -67,7 +67,7 @@ This gists shows how to convert a delegate pattern to combine publishers, in thi
 
 Feel free to copy the code a playground and get your hands dirty with Combine 😃
 
-## #49 - Convert units using `Measurement<UnitType>`
+## #49 – Convert units using `Measurement<UnitType>`
 🔁 Starting from iOS 10 we can use [`Measurement`](https://developer.apple.com/documentation/foundation/measurement) to convert units like e.g. angles, areas, durations, speeds, temperature, volume and [many many more](https://developer.apple.com/documentation/foundation/dimension).
 
 Using e.g. `Measurement<UnitAngle>` we can refactor the computed property shown in note #48 to a method, that allows us to convert between any [`UnitAngle`](https://developer.apple.com/documentation/foundation/unitangle):
@@ -92,7 +92,7 @@ let cameraBearing: CLLocationDegrees = 180
 cameraBearing.converted(from: .degrees, to: .radians)
 ```
 
-## #48 - `FloatingPoint` - Protocol
+## #48 – `FloatingPoint` Protocol
 🎲 By extending the protocol `FloatingPoint` we can define a method / computed property on all floating point datatypes, e.g. `Double`, `Float` or `CGFloat`:
 
 ```swift
@@ -111,7 +111,7 @@ print("Float as radians", float.degToRad)
 print("CGFloat as radians", cgFloat.degToRad)
 ```
 
-## #47 - Wait for multiple async tasks to complete
+## #47 – Wait for multiple async tasks to complete
 ⏰ Using a `DispatchGroup` we can wait for multiple async tasks to finish.
 
 ```swift
@@ -135,10 +135,10 @@ dispatchGroup.notify(queue: .main) {
 }
 ```
 
-## 46 - Snapshot testing
+## 46 – Snapshot testing
 📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
 
-## 45 - Span subview to superview
+## 45 – Span subview to superview
 ⚓️ A small extension to span a subview to the anchors of its superview.
 
 ```swift
@@ -159,7 +159,7 @@ extension UIView {
 }
 ```
 
-## 44 - Animate a view using a custom timing function
+## 44 – Animate a view using a custom timing function
 🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views. Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
 
 ```swift
@@ -188,12 +188,12 @@ class CustomTimingAnimationViewController: UIViewController {
 ```
 
 
-## 43 - How to test a delegate protocol
+## 43 – How to test a delegate protocol
 🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication). In this gist I show you how to test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
 [Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
 
 
-## 42 - Xcode multi-cursor editing
+## 42 – Xcode multi-cursor editing
 🏃‍ [Since Xcode 10](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/source_editor_release_notes_for_xcode_10) the Source Editor supports multi-cursor editing, allowing you to quickly edit multiple ranges of code at once. You can place additional cursors with the mouse via:
 ```
 shift + control + click
@@ -202,11 +202,11 @@ shift + control + ↓
 ```
 
 
-## 41 - Create a dynamic color for light- and dark mode
+## 41 – Create a dynamic color for light- and dark mode
 🎨 Using the gist [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e) we can create a custom `UIColor`, that generates its color data dynamically based on the current `userInterfaceStyle`. Furthermore this method falls back to the `lightVariant` color for iOS versions prior to iOS 13.
 
 
-## #40 - `UITableViewCell` extension that declares a static identifier
+## #40 – `UITableViewCell` extension that declares a static identifier
 🧙‍♀️ Using the extension below we can automatically register and dequeue table view cells. It prevents typos and declaring a static string on each cell.
 
 ```swift
@@ -228,7 +228,7 @@ let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.ide
 ```
 
 
-## #39 - Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
+## #39 – Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
 🎢 In case you're iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration. So instead of writing:
 
 ```swift
@@ -248,14 +248,14 @@ for scooter in scooterList where !scooter.isBatteryEmpty {
 ```
 
 
-## #38 - Lightweight observable implementation
+## #38 – Lightweight observable implementation
 🕵️‍♂️ ~~If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist: [Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)~~
 
 For re-usability reasons I've moved the code into a framework and released it as a CocoaPod. Please check out https://github.com/fxm90/LightweightObservable 🙂
 
 
-## #37 - Run test cases in playground
-🧪 - Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven.
+## #37 – Run test cases in playground
+🧪 Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven.
 
 By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our project.
 
@@ -283,13 +283,13 @@ MyTestCase.defaultTestSuite.run()
 You can see the result of each test inside the debug area of the playground.
 
 
-## #36 - Show progress of WKWebView in UIProgressBar
-🤖 - In case you need to show the loading progress of a `WKWebView` on a `UIProgressBar`, please have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+## #36 – Show progress of WKWebView in UIProgressBar
+🤖 In case you need to show the loading progress of a `WKWebView` on a `UIProgressBar`, please have a look at the sample code in the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
 
 In the example, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see the method `setupProgressView()` for further layout details).
 
 
-## #35 - Destructure tuples
+## #35 – Destructure tuples
 🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. Using Swift we can destructure the tuple into two properties in just one line:
 
 ```swift
@@ -299,7 +299,7 @@ print(firstName)
 print(lastName)
 ```
 
-## #34 - Avoid huge if statements
+## #34 – Avoid huge if statements
 ✨ Instead of writing something like this:
 
 ```swift
@@ -338,7 +338,7 @@ guard didChange else { return }
 
 **Notice**: By using that pattern we do not skip further checks on failure (e.g. if we use `OR` in the statement and one condition returns `true` / we use `AND` in the statement and one condition returns `false`). So if you're having a load intensive method, it might be better to keep it as a single statement. Or, first check the "lighter" condition and then use an early return to prevent the load intensive method from being executed.
 
-## #33 - Compare dates in test cases
+## #33 – Compare dates in test cases
 📆 Small example on how to compare dates in tests.
 
 ```swift
@@ -357,7 +357,7 @@ func testDatesAreEqual() {
 }
 ```
 
-## #32 - Be aware of the strong reference to the target of a timer
+## #32 – Be aware of the strong reference to the target of a timer
 🔁 Creating a timer with the method `scheduledTimer(timeInterval:target:selector:userInfo:repeats:)` always creates a **strong reference to the target** until the timer is invalidated. Therefore, an instance of the following class will never be deallocated:
 
 ```swift
@@ -416,7 +416,7 @@ For iOS version below 10.0, we can use `DispatchSourceTimer` instead. There is a
 Even for non repeating timers, you should be aware of that strong reference, cause the corresponding object won't get deallocated until the timer has fired.
 
 
-## #31 - Initialize `DateFormatter` with formatting options
+## #31 – Initialize `DateFormatter` with formatting options
 🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring).
 
 In case you need further formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
@@ -481,7 +481,7 @@ let numberFormatter = NumberFormatter()
 
 Based on: [Vadim Bulavin – KeyPath Based Builder](https://twitter.com/V8tr/status/1242846971188183047)
 
-## #30 - Map latitude and longitude to X and Y on a coordinate system
+## #30 – Map latitude and longitude to X and Y on a coordinate system
 🌍 Not really an iOS specific topic but something to keep in mind 😃
 > On a standard north facing map, latitude is represented by horizontal lines, which go up and down (North and South) the Y axis. It's easy to think that since they are horizontal lines, they would be on the x axis, but they are not.
 > So similarly, the X axis is Longitude, as the values shift left to right (East and West) along the X axis. Confusing for the same reason since on a north facing map, these lines are vertical.
@@ -540,7 +540,7 @@ class KeyboardViewModel {
 ```
 
 
-## #28 - Remove `UITextView` default padding
+## #28 – Remove `UITextView` default padding
 ↔ With the following code the default padding from an `UITextView` can be removed:
 
 ```swift
@@ -560,11 +560,11 @@ The above code can also be applied inside the interface builder within the "User
 | textContainerInset                | Rect   | {{0, 0}, {0, 0}}                                |
 
 
-## #27 - Name that color
+## #27 – Name that color
 🎨 Not an iOS specific topic, but if your designer comes up with the 9th gray tone and you somehow need to find a proper name inside your code, check out this site: [Name That Color](http://chir.ag/projects/name-that-color/). It automatically generates a name for the given color 🧙‍
 
 
-## #26 - Structure classes using `// MARK: -`
+## #26 – Structure classes using `// MARK: -`
 🔖 Using `// MARK:` we can add some additional information that is shown in the quick jump bar. Adding a dash the end (`// MARK: -`) causes a separation line to show up. Using this technique we can structure classes and make them easier to read.
 
 ```swift
@@ -614,7 +614,7 @@ class StructuredViewController: UIViewController {
 }
 ```
 
-## #25 - Structure test cases
+## #25 – Structure test cases
 ⚠️ Splitting test cases into `Given`, `When`, `Then` increases the readability and helps understanding complex tests.
 
  - In the `Given` phase we setup all preconditions for the test, e.g. configuring mock objects.
@@ -658,7 +658,7 @@ class MapViewModelTestCase: XCTestCase {
 }
 ```
 
-## #24 - Avoid forced unwrapping
+## #24 – Avoid forced unwrapping
 > The only time you should be using implicitly unwrapped optionals is with @IBOutlets.
 > In every other case, it is better to use a non-optional or regular optional property.
 > Yes, there are cases in which you can probably "guarantee" that the property will never be nil when used,
@@ -684,7 +684,7 @@ guard let value = value else {
 ```
 
 
-## #23 - Always check for possible dividing through zero
+## #23 – Always check for possible dividing through zero
 💥 We should always make sure that a certain value is **NOT** zero before dividing through it.
 
 ```swift
@@ -709,11 +709,11 @@ class ImageViewController: UIViewController {
 ```
 
 
-## #22 - Animate `alpha` and update `isHidden` accordingly
+## #22 – Animate `alpha` and update `isHidden` accordingly
 🦋 Using the following Gist we can animate `alpha` and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 
 
-## #21 - Create custom notification
+## #21 – Create custom notification
 📚 For creating custom notifications we first should have a look on how to name them properly:
 
 > [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
@@ -759,7 +759,7 @@ By extending `Notification.Name` we make sure our notification names are unique.
 **Notice:** The object parameter should always contain the object, that is triggering the notification. If you need to pass custom data, use the `userInfo` parameter.
 
 
-## #20 - Override `UIStatusBarStyle` the elegant way
+## #20 – Override `UIStatusBarStyle` the elegant way
 ✌️ Using a custom property, combined with the observer `didSet` we can call `setNeedsStatusBarAppearanceUpdate()` to apply a new status-bar style:
 
 ```swift
@@ -781,7 +781,7 @@ class SomeViewController: UIViewController {
 }
 ```
 
-## 19 - Log extension on `String` using swift literal expressions
+## 19 – Log extension on `String` using swift literal expressions
 👌 Swift contains some special literals:
 
 | Literal   | Type   | Value                                           |
@@ -790,7 +790,7 @@ class SomeViewController: UIViewController {
 | #line     | Int    | The line number on which it appears.            |
 | #column   | Int    | The column number in which it begins.           |
 | #function | String | The name of the declaration in which it appears.|
-Source: [Swift.org - Expressions](https://docs.swift.org/swift-book/ReferenceManual/Expressions.html)
+Source: [Swift.org – Expressions](https://docs.swift.org/swift-book/ReferenceManual/Expressions.html)
 
 Especially with default parameters those expressions are really useful, as in that case the expression is evaluated at the call site.
 We could use a [simple extension on String](https://gist.github.com/fxm90/08a187c5d6b365ce2305c194905e61c2) to create a basic logger:
@@ -807,11 +807,11 @@ That would create the following output:
 ```
 
 
-## 18 - Use gitmoji
+## 18 – Use gitmoji
 😃 Not an iOS specific topic, but I'd like to use [gitmoji](https://gitmoji.carloscuesta.me/) for my commit messages, e.g. `TICKET-NUMBER - ♻️ :: Description` (Credits go to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern). To easily create the corresponding emojis for the type of commit, you can use this [alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow).
 
 
-## #17 - Initialize a constant based on a condition
+## #17 – Initialize a constant based on a condition
 👏 A very readable way of initializing a constant after the declaration.
 
 ```swift
@@ -828,7 +828,7 @@ if let userCoordinate = userLocationService.userCoordinate, CLLocationCoordinate
 This way we can avoid using a variable and therefore prevent any mutation of `startCoordinate` in further code.
 
 
-## #16 - Why `viewDidLoad` might be called before `init` has finished
+## #16 – Why `viewDidLoad` might be called before `init` has finished
 ⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer.
 
 This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`.
@@ -878,7 +878,7 @@ Source: [https://stackoverflow.com/a/5808477](https://stackoverflow.com/a/580847
 More on view life cycle: [Work with View Controllers](https://apple.co/2q8Jf9y)
 
 
-## #15 - Capture iOS Simulator video
+## #15 – Capture iOS Simulator video
 📹 A small tutorial on how create a video of what's happening in the simulator.
 
 1. Run your App in the simulator
@@ -898,17 +898,17 @@ Source: https://stackoverflow.com/a/41141801
 In case you want to **further customise the simulator**, e.g. by setting a custom battery level, check out this amazing tool by [Paul Hudson](https://twitter.com/twostraws): **[ControlRoom](https://github.com/twostraws/ControlRoom)**
 
 
-## #14 - Xcode open file in focused editor
+## #14 – Xcode open file in focused editor
 🏃‍♂️ Shortcuts are a great way to increase productivity. I often use `CMD[⌘] + Shift[⇧] + O` to quickly open a file or `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc.
 
 But when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
 
 By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
 
-Source: [Jesse Squires - Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
+Source: [Jesse Squires – Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
 
 
-## #13 - Handle optionals in test cases
+## #13 – Handle optionals in test cases
 ✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is `nil`, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
 
 In the example below, we initialize a view model with a list of bookings. Using the method `findBooking(byIdentifier:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the response.
@@ -934,7 +934,7 @@ class BookingViewModelTestCase: XCTestCase {
 [Require](https://github.com/JohnSundell/Require) is a simple, yet really useful framework for handling optionals in test cases (by John Sundell again 😃). He also wrote a great blog post explaining the use-case for this framework: [Avoiding force unwrapping in Swift unit tests](https://www.swiftbysundell.com/posts/avoiding-force-unwrapping-in-swift-unit-tests)
 
 
-## #12 - Safe access to an element at index
+## #12 – Safe access to an element at index
 ⛑ Using the range operator, we can easily create an extension to safely return an array element at the specified index, or `nil` if the index is outside the bounds.
 
 ```swift
@@ -959,7 +959,7 @@ let invalid = fruits[safe: 7]
 ```
 
 
-## #11 - Check whether a value is part of a given range
+## #11 – Check whether a value is part of a given range
 💡 Instead of writing `x >= 10 && x <= 100`, we can write `10 ... 100  ~=  x`.
 #### Example:
 ```swift
@@ -982,7 +982,7 @@ let isClientErrorStatusCode = (400 ... 499).contains(statusCode)
 let isServerErrorStatusCode = (500 ... 599).contains(statusCode)
 ```
 
-## #10 - Use `compactMap` to filter `nil` values
+## #10 – Use `compactMap` to filter `nil` values
 🎛 By using `compactMap` we can filter out `nil` values of a list.
 
 ```swift
@@ -1017,7 +1017,7 @@ class ListViewModel {
 ```
 
 
-## #09 - Prefer `Set` instead of array for unordered lists without duplicates
+## #09 – Prefer `Set` instead of array for unordered lists without duplicates
 👫 **Advantage over `Array`:**
 
  - Constant Lookup time O(1), as a `Set` stores its members based on hash value.
@@ -1031,8 +1031,8 @@ class ListViewModel {
 Please have a look at ["The power of sets in Swift" (by John Sundell)](https://medium.com/@johnsundell/the-power-of-sets-in-swift-57be8b223da0) for further examples and use-cases.
 
 
-## #08 - Remove all sub-views from `UIView`
-📭 - A small extension to remove all sub-views.
+## #08 – Remove all sub-views from `UIView`
+📭 A small extension to remove all sub-views.
 
 ```swift
 extension UIView {
@@ -1043,7 +1043,7 @@ extension UIView {
 ```
 
 
-## #07 - Animate image change on `UIImageView`
+## #07 – Animate image change on `UIImageView`
 ✍️ Easily (ex)change an image with using a transition (note that the `.transitionCrossDissolve` is the key to get this working).
 
 ```swift
@@ -1057,7 +1057,7 @@ extension UIImageView {
 ```
 
 
-## #06 - Change `CALayer` without animation
+## #06 – Change `CALayer` without animation
 👨‍🎨 CALayer has a default implicit animation duration of [0.25 seconds](https://apple.co/2PVTCsB). Using the following extension we can do changes without an animation:
 
 ```swift
@@ -1074,7 +1074,7 @@ extension CALayer {
 ```
 
 
-## #05 - Override `layerClass` to reduce the total amount of layers
+## #05 – Override `layerClass` to reduce the total amount of layers
 ```swift
 override class var layerClass: AnyClass {
     return CAGradientLayer.self
@@ -1091,14 +1091,14 @@ This is e.g. useful to add a linear gradient behind an image. Furthermore we cou
 You can see the full code for the example in my gist for the [Vertical Gradient Image View](https://gist.github.com/fxm90/9604b0a067af46f68b80c6968736558d).
 
 
-## #04 - Handle notifications in test cases
+## #04 – Handle notifications in test cases
 📬 Examples on how to test notifications in test cases:
 
- - [XCTest - Assert notification (not) triggered](https://gist.github.com/fxm90/23dc7debc5ee8245237c08e5af8679bc)
- - [XCTest - Use custom notification center in test case and assert notification (not) triggered](https://gist.github.com/fxm90/3c6f146ed977100d21f0a1f3e7bb37a2)
+ – [XCTest – Assert notification (not) triggered](https://gist.github.com/fxm90/23dc7debc5ee8245237c08e5af8679bc)
+ – [XCTest – Use custom notification center in test case and assert notification (not) triggered](https://gist.github.com/fxm90/3c6f146ed977100d21f0a1f3e7bb37a2)
 
 
-## #03 - Use `didSet` on outlets to setup components
+## #03 – Use `didSet` on outlets to setup components
 👏 By using `didSet` on outlets, we can setup our view components (declared in a storyboard or xib) in a very readable way:
 
 ```swift
@@ -1120,7 +1120,7 @@ class FooBarViewController: UIViewController {
 ```
 
 
-## #02 - Most readable way to check whether an array contains a value (`isAny(of:)`)
+## #02 – Most readable way to check whether an array contains a value (`isAny(of:)`)
 ✨ A small extension to check whether a value is part of a list of candidates, in a very readable way (by [John Sundell](https://twitter.com/johnsundell/status/943510426586959873))
 
 ```swift
@@ -1150,7 +1150,7 @@ let hasSafeAreas = device.isAny(of: .iPhoneX, .iPhone11)
 ```
 
 
-## #01 - Override `self` in escaping closure, to get a strong reference to `self`
+## #01 – Override `self` in escaping closure, to get a strong reference to `self`
 🚸 To avoid retain cycles we often have to pass a `weak` reference to `self` into closures. By using the following pattern, we can get a strong reference to `self` for the lifetime of the closure.
 
 ```swift
