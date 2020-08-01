@@ -164,7 +164,7 @@ extension UIView {
 ## 44 – Animate a view using a custom timing function
 🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views. 
 
-Using the initializer `init(duration:timingParameters:)` we can pass a `UITimingCurveProvider`, which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). 
+Using the initializer [`init(duration:timingParameters:)`](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator/1648362-init) we can pass a [`UITimingCurveProvider`](https://developer.apple.com/documentation/uikit/uitimingcurveprovider), which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/). 
 
 Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
 
