@@ -886,7 +886,7 @@ The code will output log statements in the following order:
 📝 :: `init(nibName:bundle:)` did finish.
 ```
 
-Source: [https://stackoverflow.com/a/5808477](https://stackoverflow.com/a/5808477)
+Source: https://stackoverflow.com/a/5808477
 
 More on view life cycle: [Work with View Controllers](https://apple.co/2q8Jf9y)
 
