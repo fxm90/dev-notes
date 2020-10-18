@@ -292,7 +292,13 @@ class MyTestCase: XCTestCase {
 
 MyTestCase.defaultTestSuite.run()
 ```
+
 You can see the result of each test inside the debug area of the playground.
+
+For running asynchronous test cases you have to add the following line:
+```swift
+PlaygroundPage.current.needsIndefiniteExecution = true
+```
 
 
 ## #36 – Show progress of WKWebView in UIProgressBar
