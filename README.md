@@ -58,8 +58,27 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
 
+## #52 – Animated reload of a `UITableView`
+🚀 Calling [`tableView.reloadData()`](https://developer.apple.com/documentation/uikit/uitableview/1614862-reloaddata) inside the animation block of [UIView.transition(with:duration:options:animations:completion:)](https://developer.apple.com/documentation/uikit/uiview/1622574-transition) will result in an animated reload of the table view cells.
+
+```swift
+UIView.transition(with: tableView,
+                  duration: 0.3,
+                  options: .transitionCrossDissolve,
+                  animations: { self.tableView.reloadData() })
+```
+
+You can pass any [`UIView.AnimationOptions`](https://developer.apple.com/documentation/uikit/uiview/animationoptions) mentioned here.
+
+Source: https://stackoverflow.com/a/13261683
+
+## #51 – Redux & SwiftUI Example
+🔄 The following gist shows you how to integrate basic Redux functionality in SwiftUI (without using any additional frameworks): [Redux.swift](https://gist.github.com/fxm90/c3f74f2c695377b17b1f80cf96a31114)
+
+Feel free to copy the code into a Xcode Playground and try it out 😃
+
 ## #50 – Basic Combine Examples
-🧪 For note number fifty I'd like to share two gists regarding Apple's new Combine framework:
+🧪 Here are two Gists regarding Apple's new Combine framework:
 - [Combine-PassthroughSubject-CurrentValueSubject.swift](https://gist.github.com/fxm90/fcb2eb9d92655889d549e7f57168a0fb)\
 This gist explains the difference between a [`PassthroughSubject`](https://developer.apple.com/documentation/combine/passthroughsubject) and a [`CurrentValueSubject`](https://developer.apple.com/documentation/combine/currentvaluesubject).
 - [Combine-CLLocationManagerDelegate.swift](https://gist.github.com/fxm90/8b6c9753f12fcf19991f6c3f0cd635d3)\
