@@ -7,7 +7,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 ## Table of contents
 
 [\#54 – Convert string with basic HTML tags to SwiftUI's Text](#54--convert-string-with-basic-html-tags-to-swiftuis-text)\
-[\#53 – Connect two Texts in SwiftUI](#53--connect-two-texts-in-swiftui)\
+[\#53 – Concatenate two Texts in SwiftUI](#53--concatenate-two-texts-in-swiftui)\
 [\#52 – Animated reload of a UITableView](#52--animated-reload-of-a-uitableview)\
 [\#51 – Redux & SwiftUI Example](#51--redux--swiftui-example)\
 [\#50 – Basic Combine Examples](#50--basic-combine-examples)\
@@ -68,7 +68,7 @@ Please have a look at the comments for some usage examples.
 
 If you need a more advanced parsing of `NSAttributedString`, please have a look at this great article by Javier Nigro: [Attributed Strings with SwiftUI](https://swiftui-lab.com/attributed-strings-with-swiftui/).
 
-## #53 – Connect two Texts in SwiftUI
+## #53 – Concatenate two Texts in SwiftUI
 🧙‍♀️ The `+` operator can concatenate two `Text` in SwiftUI. 
 
 ```swift
