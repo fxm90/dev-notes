@@ -6,6 +6,10 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 
+[\#54 – Convert string with basic HTML tags to SwiftUI's Text](#54--convert-string-with-basic-html-tags-to-swiftuis-text)\
+[\#53 – Connect two Texts in SwiftUI](#53--connect-two-texts-in-swiftui)\
+[\#52 – Animated reload of a UITableView](#52--animated-reload-of-a-uitableview)\
+[\#51 – Redux & SwiftUI Example](#51--redux--swiftui-example)\
 [\#50 – Basic Combine Examples](#50--basic-combine-examples)\
 [\#49 – Convert units using `Measurement<UnitType>`](#49--convert-units-using-measurementunittype)\
 [\#48 – `FloatingPoint` Protocol](#48--floatingpoint-protocol)\
@@ -57,7 +61,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
-## #54 - Convert string with basic HTML tags to SwiftUI's Text
+## #54 – Convert string with basic HTML tags to SwiftUI's Text
 🖌 Using the underneath shown `+` operator we can build an [extension on SwiftUI's Text](https://gist.github.com/fxm90/fc977d346d2372cfdad11bc822b69a82), that allows us to parse basic HTML tags (like `<strong>`, `‌<em>` etc).
 
 Please have a look at the comments for some usage examples.
