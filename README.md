@@ -57,6 +57,23 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #54 - Convert string with basic HTML tags to SwiftUI's Text
+🖌 Using the underneath shown `+` operator we can build an [extension on SwiftUI's Text](https://gist.github.com/fxm90/fc977d346d2372cfdad11bc822b69a82), that allows us to parse basic HTML tags (like `<strong>`, `‌<em>` etc).
+
+Please have a look at the comments for some usage examples.
+
+If you need a more advanced parsing of `NSAttributedString`, please have a look at this great article by Javier Nigro: [Attributed Strings with SwiftUI](https://swiftui-lab.com/attributed-strings-with-swiftui/).
+
+## #53 – Connect two Texts in SwiftUI
+🧙‍♀️ The `+` operator can concatenate two `Text` in SwiftUI. 
+
+```swift
+Text("Note:")
+    .bold() + 
+Text(" Lorem Ipsum Dolor Sit Amet.")
+```
+
+This will render: "**Note:** Lorem Ipsum Dolor Sit Amet."
 
 ## #52 – Animated reload of a `UITableView`
 🚀 Calling [`tableView.reloadData()`](https://developer.apple.com/documentation/uikit/uitableview/1614862-reloaddata) inside the animation block of [UIView.transition(with:duration:options:animations:completion:)](https://developer.apple.com/documentation/uikit/uiview/1622574-transition) will result in an animated reload of the table view cells.
