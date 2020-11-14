@@ -70,12 +70,12 @@ UIView.transition(with: tableView,
 
 You can pass any [`UIView.AnimationOptions`](https://developer.apple.com/documentation/uikit/uiview/animationoptions) mentioned here.
 
-Source: https://stackoverflow.com/a/13261683
+Source: <https://stackoverflow.com/a/13261683>
 
 ## #51 – Redux & SwiftUI Example
 🔄 The following gist shows you how to integrate basic Redux functionality in SwiftUI (without using any additional frameworks): [Redux.swift](https://gist.github.com/fxm90/c3f74f2c695377b17b1f80cf96a31114)
 
-Feel free to copy the code into a Xcode Playground and try it out 😃
+Feel free to copy the code into a Xcode Playground and give it a try 😃
 
 ## #50 – Basic Combine Examples
 🧪 Here are two Gists regarding Apple's new Combine framework:
