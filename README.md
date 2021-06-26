@@ -61,6 +61,26 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #55 – SwiftUI make a child view respect the safe area
+📲 Neat trick for having the content of a `View` respect the safe-area, while having the background covering the entire device.
+
+```swift
+struct FullScreenBackgroundView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .background(Color.red.edgesIgnoringSafeArea(.all))
+    }
+}
+
+struct FullScreenBackgroundViewPreviews: PreviewProvider {
+    static var previews: some View {
+        FullScreenBackgroundView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+    }
+}
+```
+
 ## #54 – Convert string with basic HTML tags to SwiftUI's Text
 🖌 Using the underneath shown `+` operator we can build an [extension on SwiftUI's Text](https://gist.github.com/fxm90/fc977d346d2372cfdad11bc822b69a82), that allows us to parse basic HTML tags (like `<strong>`, `‌<em>` etc).
 
