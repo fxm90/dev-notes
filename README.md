@@ -5,7 +5,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 
 ## Table of contents
-[\#59 – SwiftUI `ToggleStyle` Protocol](#59--swiftui-toggle-style)\
+[\#59 – SwiftUI `ToggleStyle` Protocol](#59--swiftui-togglestyle-protocol)\
 [\#58 – Getting the size of a view as defined by Auto Layout](#58--getting-the-size-of-a-view-as-defined-by-auto-layout)\
 [\#57 – Decode Array while filtering invalid entries](#57--decode-array-while-filtering-invalid-entries)\
 [\#56 – Codable cheat sheet](#56--codable-cheat-sheet)\
