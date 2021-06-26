@@ -1226,6 +1226,8 @@ someService.request() { [weak self] response in
 guard let `self` = self else { return }
 ```
 
+There is a great article about [when to use `weak self` and why it's needed](https://matteomanferdini.com/swift-weak-self/).
+
 [overwrite-layer-class]: Assets/overwrite-layer-class.jpg
 
 [latitude]: Assets/latitude.jpg
