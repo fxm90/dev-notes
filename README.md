@@ -61,6 +61,17 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #59 – SwiftUI Toggle Style
+🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol to completly customize the appearance of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
+
+**Important:** When you customize a `Toggle` using this protocol, it’s down to you to flip the state! Therefore the method [`makeBody(configuration:)`](https://developer.apple.com/documentation/swiftui/togglestyle/makebody(configuration:)) is passed with a parameter `configuration` that contains the current state and allows toggling it by calling  `configuration.isOn.toggle()`.
+
+To demonstrate custom Toggle styles I've added two gists with screenshots in the comments:
+ - [A fully configurable toggle style for SwiftUI.
+](https://gist.github.com/fxm90/6afe050ac331d8f719029d7fec87e961)
+ - [A toggle style for SwiftUI, making the Toggle look like a checkbox.
+](https://gist.github.com/fxm90/b56d537d9fb8bf20d573a45367e18c4f)
+
 ## #58 – Getting the size of a view as defined by Auto Layout
 ↔️ Using the [`systemLayoutSizeFitting(targetSize:)`](https://developer.apple.com/documentation/uikit/uiview/1622624-systemlayoutsizefitting) method on `UIView`, we can obtain the size of a view as defined by Auto Layout.
 
