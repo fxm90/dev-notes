@@ -61,6 +61,19 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #58 – Getting the size of a view as defined by Auto Layout
+↔️ Using the [`systemLayoutSizeFitting(targetSize:)`](https://developer.apple.com/documentation/uikit/uiview/1622624-systemlayoutsizefitting) method on `UIView`, we can obtain the size of a view as defined by Auto Layout.
+
+For example we could ask for the height of a view, using a given width:
+
+```swift
+let size = view.systemLayoutSizeFitting(
+    CGSize(width: view.bounds.width, height: UIView.layoutFittingCompressedSize.height),
+    withHorizontalFittingPriority: .required,
+    verticalFittingPriority: .fittingSizeLevel
+)
+```
+
 ## #57 – Decode Array while filtering invalid entries
 🪄 Usually an API should have a clear interface and the App should know which data to receive. But there are cases when you can't be 100% sure about a response.
 
