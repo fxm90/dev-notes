@@ -61,6 +61,58 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #57 – Decode Array while filtering invalid entries
+🪄 Usually an API should have a clear interface and the App should know which data to receive. But there are cases when you can't be 100% sure about a response.
+
+Imagine fetching a list of flights for an airport. You don't want the entire decoding to fail in case one flight has a malformed departure date.
+
+As a workaround we define a helper type, that wraps the actual data-model, in our case a `Flight` data-model.
+
+```swift
+/// Helper to filter-out invalid array entries when parsing a JSON response.
+///
+/// This way we prevent the encoding-failure of an entire array, if the decoding of a single element fails.
+///
+/// Source: https://stackoverflow.com/a/46369152/3532505
+private struct FailableDecodable<Base: Decodable>: Decodable {
+
+  let base: Base?
+
+  init(from decoder: Decoder) throws {
+    let container = try decoder.singleValueContainer()
+    base = try? container.decode(Base.self)
+  }
+}
+```
+
+In our service we decode the array of `Flight`s to `FailableDecodable<Flight>`, to filter out invalid array elements, but don't let the entire decoding fail (only the property `base` will be `nil` on failure).
+
+Afterwards we use `compactMap { $0.base }` to filter out array-values where the property `base` is `nil`.
+
+```swift
+/// Data-model
+struct Flight {
+    let number: String
+    let departure: Date
+}
+
+/// Service-method
+func fetchDepartures(for url: URL) -> AnyPublisher<[Flight], Error> {
+  URLSession.shared
+      .dataTaskPublisher(for: url)
+      .map { $0.data }
+      // We explicitly use `FailableDecodable<T>` here, to filter out invalid array elements afterwards.
+      .decode(type: [FailableDecodable<Flight>].self, decoder: JsonDecoder())
+      .map {
+        // Map the array of type `FailableDecodable<Flight>` to `Flight`, while filtering invalid (`nil`) elements.
+        $0.compactMap { $0.base }
+      }
+      .eraseToAnyPublisher()
+  }
+}
+```
+
+
 ## #56 – Codable cheat sheet
 📝 [Paul Hudson](https://twitter.com/twostraws) has written a great [cheat sheet](https://www.hackingwithswift.com/articles/119/codable-cheat-sheet) about converting between JSON and Swift data types.
 
