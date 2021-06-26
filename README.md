@@ -5,7 +5,11 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 
 ## Table of contents
-
+[\#59 – SwiftUI Toggle Style](59--swiftui-toggle-style)\
+[\#58 – Getting the size of a view as defined by Auto Layout](#58--getting-the-size-of-a-view-as-defined-by-auto-layout)\
+[\#57 – Decode Array while filtering invalid entries](#57--decode-array-while-filtering-invalid-entries)\
+[\#56 – Codable cheat sheet](#56--codable-cheat-sheet)\
+[\#55 – SwiftUI make a child view respect the safe area](#55--swiftui-make-a-child-view-respect-the-safe-area)\
 [\#54 – Convert string with basic HTML tags to SwiftUI's Text](#54--convert-string-with-basic-html-tags-to-swiftuis-text)\
 [\#53 – Concatenate two Texts in SwiftUI](#53--concatenate-two-texts-in-swiftui)\
 [\#52 – Animated reload of a UITableView](#52--animated-reload-of-a-uitableview)\
