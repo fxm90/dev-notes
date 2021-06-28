@@ -169,7 +169,11 @@ struct FullScreenBackgroundViewPreviews: PreviewProvider {
 
 Please have a look at the comments for some usage examples.
 
-If you need a more advanced parsing of `NSAttributedString`, please have a look at this great article by Javier Nigro: [Attributed Strings with SwiftUI](https://swiftui-lab.com/attributed-strings-with-swiftui/).
+**Update 28.05.2021**
+
+iOS 15.0 brings `AttributedString` to `SwiftUI` including [Markdown support](https://developer.apple.com/documentation/foundation/attributedstring#3829760). 
+
+Converting basic HTML formatting tags to Markdown is not too difficult, so I added a second gist showing exactly that and further adds support for hyperlinks: [SwiftUI+HTML.swift](https://gist.github.com/fxm90/abd949e4258050f2f3cd80118024e5bd)
 
 ## #53 – Concatenate two Texts in SwiftUI
 🧙‍♀️ The `+` operator can concatenate two `Text` in SwiftUI. 
