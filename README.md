@@ -6,7 +6,7 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 ## Table of contents
 [\#65 – Get the size of a child view in SwiftUI](#65--get-the-size-of-a-child-view-in-swiftui)\
-[\#64 – Check for enabled state in `ButtonStyle](#64--check-for-enabled-state-in-buttonstyle)\
+[\#64 – Check for enabled state in `ButtonStyle`](#64--check-for-enabled-state-in-buttonstyle)\
 [\#63 – Animate text-color with SwiftUI](#63--animate-text-color-with-swiftui)\
 [\#62 – Custom localized date format](#62--custom-localized-date-format)\
 [\#61 – Animate `isHidden` on a `UIStackView](#61--animate-ishidden-on-a-uistackview)\
