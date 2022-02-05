@@ -66,9 +66,9 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
 ## #59 – SwiftUI `ToggleStyle` Protocol
-🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol to completly customize the appearance of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
+🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol to completely customize the appearance of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
 
-**Important:** When you customize a `Toggle` using this protocol, it’s down to you to flip the state! Therefore the method [`makeBody(configuration:)`](https://developer.apple.com/documentation/swiftui/togglestyle/makebody(configuration:)) is passed with a parameter `configuration` that contains the current state and allows toggling it by calling  `configuration.isOn.toggle()`.
+**Important:** When customizing a `Toggle` using this protocol, it’s down to you to visualize the state! Therefore the method [`makeBody(configuration:)`](https://developer.apple.com/documentation/swiftui/togglestyle/makebody(configuration:)) is passed with a parameter `configuration` that contains the current state and allows toggling it by calling  `configuration.isOn.toggle()`.
 
 To demonstrate custom Toggle styles I've added two gists with screenshots in the comments:
  - [A fully configurable toggle style for SwiftUI.
