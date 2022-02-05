@@ -65,6 +65,50 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+
+## #65 – Get the size of a child view in SwiftUI 
+📏 Using a `PreferenceKey` it's possible to get the size of a child view in SwiftUI.
+
+```swift
+struct SizePreferenceKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
+struct SizeModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content.background(
+            GeometryReader { geometry in
+                Color.clear.preference(key: SizePreferenceKey.self, value: geometry.size)
+            }
+        )
+    }
+}
+```
+
+In the following example the property `textSize` will contain the size of the `Text` view.
+
+```swift
+struct ContentView: View {
+
+    @State
+    private var textSize: CGSize = .zero
+
+    var body: some View {
+        Text("Hello World")
+            .modifier(SizeModifier())
+            .onPreferenceChange(SizePreferenceKey.self) { textSize in
+                self.textSize = textSize
+            }
+    }
+}
+```
+
+Further information on `PreferenceKey` can be found here: [The magic of view preferences in SwiftUI](https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/)
+
 ## #64 – Check for enabled state in `ButtonStyle`
 🎨 The `ButtonStyle` protocol allows us to customise buttons through our application without copy-pasting the styling code. 
 
