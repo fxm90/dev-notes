@@ -5,6 +5,12 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 
 
 ## Table of contents
+[\#65 – Get the size of a child view in SwiftUI](#65--get-the-size-of-a-child-view-in-swiftui)\
+[\#64 – Check for enabled state in `ButtonStyle](#64--check-for-enabled-state-in-buttonstyle)\
+[\#63 – Animate text-color with SwiftUI](#63--animate-text-color-with-swiftui)\
+[\#62 – Custom localized date format](#62--custom-localized-date-format)\
+[\#61 – Animate `isHidden` on a `UIStackView](#61--animate-ishidden-on-a-uistackview)\
+[\#60 – Making types expressible by literals](#60--making-types-expressible-by-literals)\
 [\#59 – SwiftUI `ToggleStyle` Protocol](#59--swiftui-togglestyle-protocol)\
 [\#58 – Getting the size of a view as defined by Auto Layout](#58--getting-the-size-of-a-view-as-defined-by-auto-layout)\
 [\#57 – Decode Array while filtering invalid entries](#57--decode-array-while-filtering-invalid-entries)\
