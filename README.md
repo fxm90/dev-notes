@@ -65,6 +65,45 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #62 – Custom localized date format
+📝 Using the method [`dateFormat(fromTemplate:options:locale:)`](https://developer.apple.com/documentation/foundation/dateformatter/1408112-dateformat) we can further customise a date-format (e.g.  `MMMd`) to a specific locale.
+
+```swift
+extension Date {
+
+    /// Returns a localized string from the current instance for the given `template` and `locale`.
+    ///
+    /// - Parameters:
+    ///   - template: A string containing date format patterns (such as “MM” or “h”).
+    ///   - locale: The locale for which the template is required.
+    ///
+    /// - SeeAlso: [dateFormat(fromTemplate:options:locale:)](https://developer.apple.com/documentation/foundation/dateformatter/1408112-dateformat)
+    func localizedString(from template: String, for locale: Locale) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = locale
+
+        let localizedDateFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: locale)
+        dateFormatter.dateFormat = localizedDateFormat
+
+        return dateFormatter.string(from: self)
+    }
+}
+```
+
+```swift
+let template = "MMMd"
+let now: Date = .now
+
+let usLocale = Locale(identifier: "en_US")
+print("United States:", now.localizedString(from: template, for: usLocale))
+// United States: Oct 1
+
+let deLocale = Locale(identifier: "de")
+print("Germany:", now.localizedString(from: template, for: deLocale))
+// Germany: 1. Okt.
+```
+
+
 ## #61 – Animate `isHidden` on a `UIStackView`
 🧙‍♀️ It's easily possible to animate the visibility of an arranged subview inside a `UIStackView`. In this example the corresponding view will slide out when setting the property `isHidden` to `true`.
 
