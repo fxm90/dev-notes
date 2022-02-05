@@ -65,6 +65,34 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #63 – Animate text-color with SwiftUI
+🎨 Unfortunately in SwiftUI the property `foregroundColor` can't be animated. But it's possible to animate  `colorMultiply` instead.
+
+Therefore we set `foregroundColor` to `white` and use `colorMultiply` to set the actual color we want. This color is then animatable.
+
+```swift
+struct AnimateTextColor: View {
+    
+    // MARK: - Private properties
+
+    @State
+    private var textColor: Color = .red
+
+    // MARK: - Render
+
+    var body: some View {
+        Text("Lorem Ipsum Dolor Sit Amet.")
+            .foregroundColor(.white)
+            .colorMultiply(textColor)
+            .onTapGesture {
+                withAnimation(.easeInOut) {
+                    textColor = .blue
+                }
+            }
+    }
+}
+```
+
 ## #62 – Custom localized date format
 📝 Using the method [`dateFormat(fromTemplate:options:locale:)`](https://developer.apple.com/documentation/foundation/dateformatter/1408112-dateformat) we can further customise a date-format (e.g.  `MMMd`) to a specific locale.
 
