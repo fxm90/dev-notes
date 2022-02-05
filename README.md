@@ -65,6 +65,48 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #64 – Check for enabled state in `ButtonStyle`
+🎨 The `ButtonStyle` protocol allows us to customise buttons through our application without copy-pasting the styling code. 
+
+Unfortunately it's not possible to get the environment property `isEnabled` inside `ButtonStyle`. But it's possible to get it inside a `View` as a workaround.
+
+```swift
+struct PrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        PrimaryButtonStyleView(configuration: configuration)
+    }
+}
+
+private struct PrimaryButtonStyleView: View {
+
+    // MARK: - Public properties
+
+    let configuration: ButtonStyle.Configuration
+
+    // MARK: - Private properties
+
+    @SwiftUI .Environment(\.isEnabled)
+    private var isEnabled: Bool
+
+    private var foregroundColor: Color {
+        guard isEnabled else {
+            return .gray
+        }
+
+        return configuration.isPressed
+            ? .white.opacity(0.5)
+            : .white
+    }
+
+    // MARK: - Render
+
+    var body: some View {
+        configuration.label
+            .foregroundColor(foregroundColor)
+    }
+}
+```
+
 ## #63 – Animate text-color with SwiftUI
 🎨 Unfortunately in SwiftUI the property `foregroundColor` can't be animated. But it's possible to animate  `colorMultiply` instead.
 
