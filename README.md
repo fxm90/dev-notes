@@ -263,22 +263,54 @@ print("CGFloat as radians", cgFloat.degToRad)
 
 ```swift
 let dispatchGroup = DispatchGroup()
+
+var profile: Profile?
 dispatchGroup.enter()
-profileService.fetchProfile { profile in
-    // ...
+profileService.fetchProfile {
+    profile = $0
     dispatchGroup.leave()
 }
 
+var friends: Friends?
 dispatchGroup.enter()
-profileService.fetchFriends { trips in
-    // ...
+profileService.fetchFriends {
+    friends = $0
     dispatchGroup.leave()
 }
 
 // We need to define the completion handler of our `DispatchGroup` with an unbalanced call to `enter()` and `leave()`,
 // as otherwise it will be called immediately!
 dispatchGroup.notify(queue: .main) {
-  print("We've downloaded the user profile together with all friends!")
+    guard let profile = profile, let friends = friends else { return }
+
+    print("We've downloaded the user profile together with all friends!")
+}
+```
+
+**Update for Projects targeting iOS >= 13.0**
+Starting from iOS 13 we can use `CombineLatest` to wait for multiple publishers to at least fire publish one message.
+
+```swift
+let fetchProfileFuture = profileService.fetchProfile()
+let fetchFriendsFuture = profileService.fetchFriends()
+
+cancellable = Publishers.CombineLatest(fetchProfileFuture, fetchFriendsFuture)
+    .sink { result in
+        let (profile, friends) = result
+        print("We've downloaded the user profile together with all friends!")
+    }
+```
+
+
+Starting from ~~iOS 15~~ iOS 13 we can also use `async let` to wait for multiple async values.
+
+```swift
+Task {
+    async let profileTask = profileService.fetchProfile()
+    async let friendsTask = profileService.fetchFriends()
+
+    let (profile, friends) = await(profileTask, friendsTask)
+    print("We've downloaded the user profile together with all friends!")
 }
 ```
 
