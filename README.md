@@ -65,6 +65,16 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #61 – Animate `isHidden` on a `UIStackView`
+🧙‍♀️ It's easily possible to animate the visibility of an arranged subview inside a `UIStackView`. In this example the corresponding view will slide out when setting the property `isHidden` to `true`.
+
+```swift
+UIView.animateWithDuration(0.3) {
+    viewInsideStackView.isHidden = true
+    stackView.layoutIfNeeded()
+}
+```
+
 ## #60 – Making types expressible by literals
 🖌 Swift provides protocols which enable you to initialize a type using literals, e.g.:
 
