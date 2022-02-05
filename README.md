@@ -65,6 +65,72 @@ I'm happy for any feedback, so feel free to write me on [twitter](https://twitte
 [\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
 [\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
 
+## #60 – Making types expressible by literals
+🖌 Swift provides protocols which enable you to initialize a type using literals, e.g.:
+
+```swift
+let int = 0                       // ExpressibleByIntegerLiteral
+let string = "Hello World!"       // ExpressibleByStringLiteral
+let array = [0, 1, 2, 3, 4, 5]    // ExpressibleByArrayLiteral
+let dictionary = ["Key": "Value"] // ExpressibleByDictionaryLiteral
+let boolean = true                // ExpressibleByBooleanLiteral
+```
+
+A complete list of these protocols can be found in the documentation: [Initialization with Literals
+](https://developer.apple.com/documentation/swift/swift_standard_library/initialization_with_literals)
+
+Here we focus on `ExpressibleByStringLiteral` and `ExpressibleByStringInterpolation` for initialising a custom type.
+
+```swift
+struct StorageKey {
+    let path: String
+}
+
+extension StorageKey: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
+    init(stringLiteral path: String) {
+        self.init(path: path)
+    }
+}
+```
+
+Build an instance of `StorageKey` using `ExpressibleByStringLiteral`:
+
+```swift
+let storageKey: StorageKey = "/cache/"
+```
+
+Build an instance of `StorageKey` using `ExpressibleByStringInterpolation`:
+
+```swift
+let username = "f.mau" 
+let storageKey: StorageKey = "/users/\(username)/cache"
+```
+
+This pattern is especially handy when creating an URL instance from a string: 
+
+```swift
+extension URL: ExpressibleByStringLiteral {
+    /// Initializes an URL instance from a string literal, e.g.:
+    /// ```
+    /// let url: URL = "https://felix.hamburg"
+    /// ```
+    public init(stringLiteral value: StaticString) {
+        guard let url = URL(string: "\(value)") else {
+            fatalError("⚠️ – Failed to create a valid URL instance from `\(value)`.")
+        }
+
+        self = url
+    }
+}
+```
+
+For safety reason we only conform to `ExpressibleByStringLiteral` and thereof use `StaticString`, as we don't want any dynamic string interpolation to crash our app.
+
+Based on
+ - [Defining static URLs using string literals](https://www.swiftbysundell.com/tips/defining-static-urls-using-string-literals/)
+ - [Making types expressible by string interpolation](https://www.swiftbysundell.com/tips/making-types-expressible-by-string-interpolation/)
+ - [Expressible literals in Swift explained by 3 useful examples](https://www.avanderlee.com/swift/expressible-literals/)
+
 ## #59 – SwiftUI `ToggleStyle` Protocol
 🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol to completely customize the appearance of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
 
