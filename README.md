@@ -1,10 +1,11 @@
 # iOS Dev-Notes 🗒 🚀
-My personal collections of things, tips & tricks I've learned during iOS development so far and do not want to forget.
 
-I'm happy for any feedback, so feel free to write me on [twitter](https://twitter.com/_fxm90).
+My personal collection of tips, tricks, and patterns I've learned during iOS development so far and do not want to forget.
 
+Feedback is always welcome! Feel free to reach out 👋
 
 ## Table of contents
+
 [\#65 – Get the size of a child view in SwiftUI](#65--get-the-size-of-a-child-view-in-swiftui)\
 [\#64 – Check for enabled state in `ButtonStyle`](#64--check-for-enabled-state-in-buttonstyle)\
 [\#63 – Animate text-color with SwiftUI](#63--animate-text-color-with-swiftui)\
