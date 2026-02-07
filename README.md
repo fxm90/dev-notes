@@ -4,99 +4,79 @@ My personal collection of tips, tricks, and patterns I've learned during iOS dev
 
 Feedback is always welcome! Feel free to reach out 👋
 
-## Table of contents
+## Table of Contents
 
-[\#65 – Get the size of a child view in SwiftUI](#65--get-the-size-of-a-child-view-in-swiftui)\
-[\#64 – Check for enabled state in `ButtonStyle`](#64--check-for-enabled-state-in-buttonstyle)\
-[\#63 – Animate text-color with SwiftUI](#63--animate-text-color-with-swiftui)\
-[\#62 – Custom localized date format](#62--custom-localized-date-format)\
-[\#61 – Animate `isHidden` on a `UIStackView`](#61--animate-ishidden-on-a-uistackview)\
+[\#65 – Tracking geometry changes in SwiftUI](#65--tracking-geometry-changes-in-swiftui)\
+[\#64 – Responding to enabled state in a custom `ButtonStyle`](#64--responding-to-enabled-state-in-a-custom-buttonstyle)\
+[\#63 – Animating text color in SwiftUI](#63--animating-text-color-in-swiftui)\
+[\#62 – Creating custom localized date formats](#62--creating-custom-localized-date-formats)\
+[\#61 – Animate `isHidden` in a `UIStackView`](#61--animate-ishidden-in-a-uistackview)\
 [\#60 – Making types expressible by literals](#60--making-types-expressible-by-literals)\
-[\#59 – SwiftUI `ToggleStyle` Protocol](#59--swiftui-togglestyle-protocol)\
-[\#58 – Getting the size of a view as defined by Auto Layout](#58--getting-the-size-of-a-view-as-defined-by-auto-layout)\
-[\#57 – Decode Array while filtering invalid entries](#57--decode-array-while-filtering-invalid-entries)\
+[\#59 – Customizing toggles with `ToggleStyle` in SwiftUI](#59--customizing-toggles-with-togglestyle-in-swiftui)\
+[\#58 – Determining a view's size with Auto Layout](#58--determining-a-views-size-with-auto-layout)\
+[\#57 – Decode array while filtering invalid entries](#57--decode-array-while-filtering-invalid-entries)\
 [\#56 – Codable cheat sheet](#56--codable-cheat-sheet)\
-[\#55 – SwiftUI make a child view respect the safe area](#55--swiftui-make-a-child-view-respect-the-safe-area)\
-[\#54 – Convert string with basic HTML tags to SwiftUI's Text](#54--convert-string-with-basic-html-tags-to-swiftuis-text)\
-[\#53 – Concatenate two Texts in SwiftUI](#53--concatenate-two-texts-in-swiftui)\
-[\#52 – Animated reload of a `UITableView`](#52--animated-reload-of-a-uitableview)\
-[\#51 – Redux & SwiftUI Example](#51--redux--swiftui-example)\
-[\#50 – Basic Combine Examples](#50--basic-combine-examples)\
-[\#49 – Convert units using `Measurement<UnitType>`](#49--convert-units-using-measurementunittype)\
-[\#48 – `FloatingPoint` Protocol](#48--floatingpoint-protocol)\
+[\#55 – Respecting safe areas in SwiftUI while extending backgrounds](#55--respecting-safe-areas-in-swiftui-while-extending-backgrounds)\
+[\#54 – Rendering basic HTML tags in SwiftUI's Text](#54--rendering-basic-html-tags-in-swiftuis-text)\
+[\#53 – Combining Text views in SwiftUI](#53--combining-text-views-in-swiftui)\
+[\#52 – Animate a `UITableView` reload](#52--animate-a-uitableview-reload)\
+[\#51 – Integrating Redux with SwiftUI](#51--integrating-redux-with-swiftui)\
+[\#50 – Exploring Combine: A couple of practical examples](#50--exploring-combine-a-couple-of-practical-examples)\
+[\#49 – Effortless unit conversion with `Measurement`](#49--effortless-unit-conversion-with-measurement)\
+[\#48 – `FloatingPoint` protocol](#48--floatingpoint-protocol)\
 [\#47 – Wait for multiple async tasks to complete](#47--wait-for-multiple-async-tasks-to-complete)\
 [\#46 – Snapshot testing](#46--snapshot-testing)\
-[\#45 – Span subview to superview](#45--span-subview-to-superview)\
-[\#44 – Animate a view using a custom timing function](#44--animate-a-view-using-a-custom-timing-function)\
-[\#43 – How to test a delegate protocol](#43--how-to-test-a-delegate-protocol)\
+[\#45 – Pin a view to its superview](#45--pin-a-view-to-its-superview)\
+[\#44 – Animating with custom timing curves](#44--animating-with-custom-timing-curves)\
+[\#43 – Testing delegate protocols in Swift](#43--testing-delegate-protocols-in-swift)\
 [\#42 – Xcode multi-cursor editing](#42--xcode-multi-cursor-editing)\
 [\#41 – Create a dynamic color for light- and dark mode](#41--create-a-dynamic-color-for-light--and-dark-mode)\
-[\#40 – `UITableViewCell` extension that declares a static identifier](#40--uitableviewcell-extension-that-declares-a-static-identifier)\
-[\#39 – Prefer "for .. in .. where"-loop over `filter()` and `forach {}`](#39--prefer-for--in--where-loop-over-filter-and-forach-)\
+[\#40 – Derive reuse identifiers from `UITableViewCell` type](#40--derive-reuse-identifiers-from-uitableviewcell-type)\
+[\#39 – Prefer "for .. in .. where" over `filter()` followed by `forEach {}`](#39--prefer-for--in--where-over-filter-followed-by-foreach-)\
 [\#38 – Lightweight observable implementation](#38--lightweight-observable-implementation)\
-[\#37 – Run test cases in a playground](#37--run-test-cases-in-playground)\
-[\#36 – Show progress of a `WKWebView` in a `UIProgressBar`](#36--show-progress-of-wkwebview-in-uiprogressbar)\
+[\#37 – Running test cases in a playground](#37--running-test-cases-in-a-playground)\
+[\#36 – Displaying `WKWebView` loading progress with `UIProgressView`](#36--displaying-wkwebview-loading-progress-with-uiprogressview)\
 [\#35 – Destructure tuples](#35--destructure-tuples)\
 [\#34 – Avoid huge if statements](#34--avoid-huge-if-statements)\
-[\#33 – Compare dates in test cases](#33--compare-dates-in-test-cases)\
-[\#32 – Be aware of the strong reference to the target of a timer](#32--be-aware-of-the-strong-reference-to-the-target-of-a-timer)\
+[\#33 – Compare dates in tests](#33--compare-dates-in-tests)\
+[\#32 – Understand the strong reference behavior of `Timer` targets](#32--understand-the-strong-reference-behavior-of-timer-targets)\
 [\#31 – Initialize `DateFormatter` with formatting options](#31--initialize-dateformatter-with-formatting-options)\
-[\#30 – Map latitude and longitude to X and Y on a coordinate system](#30--map-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
+[\#30 – Mapping latitude and longitude to X and Y on a coordinate system](#30--mapping-latitude-and-longitude-to-x-and-y-on-a-coordinate-system)\
 [\#29 – Encapsulation](#29--encapsulation)\
 [\#28 – Remove `UITextView` default padding](#28--remove-uitextview-default-padding)\
 [\#27 – Name that color](#27--name-that-color)\
-[\#26 – Structure classes using `// MARK: - `](#26--structure-classes-using--mark--)\
+[\#26 – Structure classes using `// MARK: -`](#26--structure-classes-using--mark--)\
 [\#25 – Structure test cases](#25--structure-test-cases)\
 [\#24 – Avoid forced unwrapping](#24--avoid-forced-unwrapping)\
-[\#23 – Always check for possible dividing through zero](#23--always-check-for-possible-dividing-through-zero)\
+[\#23 – Guard against division by zero](#23--guard-against-division-by-zero)\
 [\#22 – Animate `alpha` and update `isHidden` accordingly](#22--animate-alpha-and-update-ishidden-accordingly)\
-[\#21 – Create custom notification](#21--create-custom-notification)\
-[\#20 – Override `UIStatusBarStyle` the elegant way](#20--override-uistatusbarstyle-the-elegant-way)\
-[\#19 – Log extension on `String` using swift literal expressions](#19--log-extension-on-string-using-swift-literal-expressions)\
-[\#18 – Use gitmoji for commit messages](#18--use-gitmoji)\
-[\#17 – Initialize a constant based on a condition](#17--initialize-a-constant-based-on-a-condition)\
-[\#16 – Why `viewDidLoad` might be called before `init` has finished](#16--why-viewdidload-might-be-called-before-init-has-finished)\
+[\#21 – Define a custom notification](#21--define-a-custom-notification)\
+[\#20 – Overriding `UIStatusBarStyle` the elegant way](#20--overriding-uistatusbarstyle-the-elegant-way)\
+[\#19 – Log extension on `String` using Swift literal expressions](#19--log-extension-on-string-using-swift-literal-expressions)\
+[\#18 – Use Gitmoji for commit messages](#18--use-gitmoji-for-commit-messages)\
+[\#17 – Initialize a constant conditionally](#17--initialize-a-constant-conditionally)\
+[\#16 – Why `viewDidLoad` can be called before initialization completes](#16--why-viewdidload-can-be-called-before-initialization-completes)\
 [\#15 – Capture iOS Simulator video](#15--capture-ios-simulator-video)\
-[\#14 – Xcode open file in focused editor](#14--xcode-open-file-in-focused-editor)\
+[\#14 – Xcode shortcuts](#14--xcode-shortcuts)\
 [\#13 – Handle optionals in test cases](#13--handle-optionals-in-test-cases)\
 [\#12 – Safe access to an element at index](#12--safe-access-to-an-element-at-index)\
 [\#11 – Check whether a value is part of a given range](#11--check-whether-a-value-is-part-of-a-given-range)\
 [\#10 – Use `compactMap` to filter `nil` values](#10--use-compactmap-to-filter-nil-values)\
-[\#09 – Prefer `Set` instead of array for unordered lists without duplicates](#09--prefer-set-instead-of-array-for-unordered-lists-without-duplicates)\
-[\#08 – Remove all sub-views from `UIView`](#08--remove-all-sub-views-from-uiview)\
+[\#09 – Prefer `Set` instead of `Array` for unordered lists without duplicates](#09--prefer-set-instead-of-array-for-unordered-lists-without-duplicates)\
+[\#08 – Adding and removing child view controllers](#08--adding-and-removing-child-view-controllers)\
 [\#07 – Animate image change on `UIImageView`](#07--animate-image-change-on-uiimageview)\
 [\#06 – Change `CALayer` without animation](#06--change-calayer-without-animation)\
 [\#05 – Override `layerClass` to reduce the total amount of layers](#05--override-layerclass-to-reduce-the-total-amount-of-layers)\
 [\#04 – Handle notifications in test cases](#04--handle-notifications-in-test-cases)\
-[\#03 – Use `didSet` on outlets to setup components](#03--use-didset-on-outlets-to-setup-components)\
-[\#02 – Most readable way to check whether an array contains a value (`isAny(of:)`)](#02--most-readable-way-to-check-whether-an-array-contains-a-value-isanyof)\
-[\#01 – Override `self` in escaping closure, to get a strong reference to `self`](#01--override-self-in-escaping-closure-to-get-a-strong-reference-to-self)\
+[\#03 – Use `didSet` on outlets to set up components](#03--use-didset-on-outlets-to-set-up-components)\
+[\#02 – A readable way to check whether a value exists in a set of candidates (`isAny(of:)`)](#02--a-readable-way-to-check-whether-a-value-exists-in-a-set-of-candidates-isanyof)\
+[\#01 – Memory management: `weak self` in closures vs. tasks](#01--memory-management-weak-self-in-closures-vs-tasks)
 
-## #65 – Get the size of a child view in SwiftUI
+## #65 – Tracking geometry changes in SwiftUI
 
-📏 Using a `PreferenceKey` it's possible to get the size of a child view in SwiftUI.
+📏 Starting in iOS 16, SwiftUI provides the `onGeometryChange(for:of:action:)` view modifier, which lets you respond to changes in a view’s geometry — such as its size or position.
 
-```swift
-struct SizePreferenceKey: PreferenceKey {
-  static var defaultValue: CGSize = .zero
-
-  static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-    value = nextValue()
-  }
-}
-
-struct SizeModifier: ViewModifier {
-  func body(content: Content) -> some View {
-    content.background(
-      GeometryReader { geometry in
-        Color.clear.preference(key: SizePreferenceKey.self, value: geometry.size)
-      }
-    )
-  }
-}
-```
-
-In the following example the property `textSize` will contain the size of the `Text` view.
+In the example below, the width of a rounded rectangle automatically matches the width of a `Text` view. As the text’s layout changes, SwiftUI updates the rectangle in sync.
 
 ```swift
 struct ContentView: View {
@@ -105,22 +85,36 @@ struct ContentView: View {
   private var textSize: CGSize = .zero
 
   var body: some View {
-    Text("Hello World")
-      .modifier(SizeModifier())
-      .onPreferenceChange(SizePreferenceKey.self) { textSize in
-        self.textSize = textSize
-      }
+    VStack {
+      Text("Hello World!")
+        .onGeometryChange(for: CGSize.self, of: \.size) { textSize in
+          self.textSize = textSize
+        }
+
+      RoundedRectangle(cornerRadius: 4)
+        .frame(
+          width: textSize.width,
+          height: 8,
+        )
+        .foregroundStyle(.indigo)
+    }
   }
 }
 ```
 
-Further information on `PreferenceKey` can be found here: [The magic of view preferences in SwiftUI](https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/)
+The same approach can be used to track other geometry values, such as a **scroll position**. A complete example demonstrating **scroll offset tracking** is available here:
 
-## #64 – Check for enabled state in `ButtonStyle`
+https://gist.github.com/fxm90/5bc949e4d6f2f56901b47250a25fc64d
 
-🎨 The `ButtonStyle` protocol allows us to customise buttons through our application without copy-pasting the styling code.
+## #64 – Responding to enabled state in a custom `ButtonStyle`
 
-Unfortunately it's not possible to get the environment property `isEnabled` inside `ButtonStyle`. But it's possible to get it inside a `View` as a workaround.
+🎨 The `ButtonStyle` protocol makes it easy to define consistent, reusable button designs across your app, without repeating code.
+
+However, there is one subtle detail: a `ButtonStyle` doesn’t have direct access to the `isEnabled` environment value.
+
+When you need to adjust your styling based on whether a button is enabled, you can move that logic into a supporting `View`. Because views participate fully in SwiftUI’s environment system, they can read `@Environment(\.isEnabled)` and adapt accordingly.
+
+Here’s one way to structure it:
 
 ```swift
 struct PrimaryButtonStyle: ButtonStyle {
@@ -129,41 +123,48 @@ struct PrimaryButtonStyle: ButtonStyle {
   }
 }
 
-private struct PrimaryButtonStyleView: View {
+private extension PrimaryButtonStyle {
 
-  // MARK: - Public Properties
+  struct PrimaryButtonStyleView: View {
 
-  let configuration: ButtonStyle.Configuration
+    // MARK: - Public Properties
 
-  // MARK: - Private Properties
+    let configuration: ButtonStyle.Configuration
 
-  @Environment(\.isEnabled)
-  private var isEnabled: Bool
+    // MARK: - Private Properties
 
-  private var foregroundColor: Color {
-    guard isEnabled else {
-      return .gray
+    @Environment(\.isEnabled)
+    private var isEnabled: Bool
+
+    private var foregroundColor: Color {
+      guard isEnabled else {
+        return .gray
+      }
+
+      return configuration.isPressed
+        ? .white.opacity(0.5)
+        : .white
     }
 
-    return configuration.isPressed
-      ? .white.opacity(0.5)
-      : .white
-  }
+    // MARK: - Render
 
-  // MARK: - Render
-
-  var body: some View {
-    configuration.label
-      .foregroundColor(foregroundColor)
+    var body: some View {
+      configuration.label
+        .foregroundColor(foregroundColor)
+    }
   }
 }
 ```
 
-## #63 – Animate text-color with SwiftUI
+In this approach, the style delegates its rendering to a view that reads from the environment. This allows the button’s appearance to automatically reflect its enabled state.
 
-🎨 Unfortunately in SwiftUI the property `foregroundColor` can't be animated. But it's possible to animate `colorMultiply` instead.
+## #63 – Animating text color in SwiftUI
 
-Therefore we set `foregroundColor` to `white` and use `colorMultiply` to set the actual color we want. This color is then animatable.
+🎨 SwiftUI makes it easy to animate many visual properties. However, `foregroundColor(_:)` isn’t directly animatable.
+
+When you need to smoothly transition text between colors, there’s a simple workaround.
+
+Instead of animating `foregroundColor`, apply a neutral base color (such as `.white`) and animate the `colorMultiply(_:)` modifier. Because `colorMultiply` participates in SwiftUI’s animation system, the color transition becomes fluid and seamless.
 
 ```swift
 struct AnimateTextColor: View {
@@ -188,31 +189,43 @@ struct AnimateTextColor: View {
 }
 ```
 
-## #62 – Custom localized date format
+## #62 – Creating custom localized date formats
 
-📝 Using the method [`dateFormat(fromTemplate:options:locale:)`](https://developer.apple.com/documentation/foundation/dateformatter/1408112-dateformat) we can further customize a date format (e.g. `MMMd`) to a specific locale.
+📝 When presenting dates in your app, it's important to consider the user's locale. Month names, day order, and punctuation can vary significantly across regions. Rather than hard-coding a format string, you can generate one dynamically using [`dateFormat(fromTemplate:options:locale:)`](<https://developer.apple.com/documentation/foundation/dateformatter/dateformat(fromtemplate:options:locale:)>).
+
+This approach lets the system determine the correct ordering and formatting for a given locale, based on a template like `MMMd`.
+
+Here’s a convenient `Date` extension that wraps this behavior:
 
 ```swift
 extension Date {
 
-  /// Returns a localized string from the current instance for the given `template` and `locale`.
+  /// Returns a localized string representation of the date,
+  /// generated from the provided date format template and locale.
   ///
   /// - Parameters:
-  ///   - template: A string containing date format patterns (such as "MM" or "h").
-  ///   - locale: The locale for which the template is required.
+  ///   - template: A date format template (for example, "MMMd" or "yMMMMd").
+  ///   - locale: The locale that determines the final date format.
   ///
-  /// - SeeAlso: [dateFormat(fromTemplate:options:locale:)](https://developer.apple.com/documentation/foundation/dateformatter/1408112-dateformat)
+  /// - Returns: A locale-aware formatted date string.
   func localizedString(from template: String, for locale: Locale) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.locale = locale
 
-    let localizedDateFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: locale)
-    dateFormatter.dateFormat = localizedDateFormat
+    if let dateFormat = DateFormatter.dateFormat(
+      fromTemplate: template,
+      options: 0,
+      locale: locale
+    ) {
+      dateFormatter.dateFormat = dateFormat
+    }
 
     return dateFormatter.string(from: self)
   }
 }
 ```
+
+#### Example
 
 ```swift
 let template = "MMMd"
@@ -227,20 +240,28 @@ print("Germany:", now.localizedString(from: template, for: deLocale))
 // Germany: 1. Okt.
 ```
 
-## #61 – Animate `isHidden` on a `UIStackView`
+## #61 – Animate `isHidden` in a `UIStackView`
 
-🧙‍♀️ It's easily possible to animate the visibility of an arranged subview inside a `UIStackView`. In this example the corresponding view will slide out when setting the property `isHidden` to `true`.
+🧙‍♀️ When working with `UIStackView`, animating the visibility of an arranged subview is straightforward.
+
+Because a stack view automatically manages the layout of its arranged subviews, changes to the `isHidden` property can be animated seamlessly alongside layout updates.
+
+For example, setting `isHidden` to `true` removes the view from the stack’s layout, allowing the remaining content to smoothly adjust its position.
 
 ```swift
-UIView.animateWithDuration(0.3) {
+UIView.animate(withDuration: 0.3) {
   viewInsideStackView.isHidden = true
   stackView.layoutIfNeeded()
 }
 ```
 
+By calling `layoutIfNeeded()` inside the animation block, the stack view animates to its updated layout, producing a smooth slide-out effect as the hidden view collapses within the stack.
+
 ## #60 – Making types expressible by literals
 
-🖌 Swift provides protocols which enable you to initialize a type using literals, e.g.:
+🖌 Swift includes a family of protocols that allow your custom types to be initialized using familiar literal syntax. This makes APIs feel natural, expressive, and consistent with the language itself.
+
+For example, many standard library types conform to literal protocols:
 
 ```swift
 let int = 0                       // ExpressibleByIntegerLiteral
@@ -250,16 +271,23 @@ let dictionary = ["Key": "Value"] // ExpressibleByDictionaryLiteral
 let boolean = true                // ExpressibleByBooleanLiteral
 ```
 
-A complete list of these protocols can be found in the documentation: [Initialization with Literals
-](https://developer.apple.com/documentation/swift/swift_standard_library/initialization_with_literals)
+A complete list of these protocols can be found in the documentation: [Initialization with Literals](https://developer.apple.com/documentation/swift/initialization-with-literals)
 
-Here we focus on `ExpressibleByStringLiteral` and `ExpressibleByStringInterpolation` for initializing a custom type.
+#### Creating custom literal-convertible types
+
+Literal protocols are especially powerful when applied to your own types. By conforming to them, you enable readable initialization without sacrificing type safety.
+
+Consider a simple `StorageKey` type:
 
 ```swift
 struct StorageKey {
   let path: String
 }
+```
 
+By conforming to `ExpressibleByStringLiteral` and `ExpressibleByStringInterpolation`, you can initialize `StorageKey` directly from string literals:
+
+```swift
 extension StorageKey: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
   init(stringLiteral path: String) {
     self.init(path: path)
@@ -267,24 +295,28 @@ extension StorageKey: ExpressibleByStringLiteral, ExpressibleByStringInterpolati
 }
 ```
 
-Build an instance of `StorageKey` using `ExpressibleByStringLiteral`:
+Now you can create instances using natural string syntax:
 
 ```swift
 let storageKey: StorageKey = "/cache/"
 ```
 
-Build an instance of `StorageKey` using `ExpressibleByStringInterpolation`:
+And because it also supports string interpolation:
 
 ```swift
 let username = "f.mau"
 let storageKey: StorageKey = "/users/\(username)/cache"
 ```
 
-This pattern is especially handy when creating an URL instance from a string:
+#### Applying the pattern to URL
+
+This approach can also improve ergonomics when working with existing types. For example, you can make `URL` conform to `ExpressibleByStringLiteral`:
 
 ````swift
 extension URL: ExpressibleByStringLiteral {
-  /// Initializes an URL instance from a string literal, e.g.:
+  /// Initializes a URL from a string literal.
+  ///
+  /// Example:
   /// ```
   /// let url: URL = "https://felix.hamburg"
   /// ```
@@ -298,30 +330,47 @@ extension URL: ExpressibleByStringLiteral {
 }
 ````
 
-For safety reasons we only conform to `ExpressibleByStringLiteral` and therefore use `StaticString`, as we don't want any dynamic string interpolation to crash our app.
+In this case, the conformance is intentionally limited to `ExpressibleByStringLiteral`, using `StaticString`. This ensures only compile-time string literals are accepted, avoiding runtime failures from dynamic string interpolation.
 
-Based on
+Based on:
 
 - [Defining static URLs using string literals](https://www.swiftbysundell.com/tips/defining-static-urls-using-string-literals/)
 - [Making types expressible by string interpolation](https://www.swiftbysundell.com/tips/making-types-expressible-by-string-interpolation/)
 - [Expressible literals in Swift explained by 3 useful examples](https://www.avanderlee.com/swift/expressible-literals/)
 
-## #59 – SwiftUI `ToggleStyle` Protocol
+## #59 – Customizing toggles with `ToggleStyle` in SwiftUI
 
-🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol to completely customize the appearance of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
+🎨 SwiftUI provides a [ToggleStyle](https://developer.apple.com/documentation/swiftui/togglestyle) protocol, giving you full control over the appearance and interaction of a [Toggle](https://developer.apple.com/documentation/swiftui/toggle).
 
-**Important:** When customizing a `Toggle` using this protocol, it’s down to you to visualize the state! Therefore the method [`makeBody(configuration:)`](<https://developer.apple.com/documentation/swiftui/togglestyle/makebody(configuration:)>) is passed with a parameter `configuration` that contains the current state and allows toggling it by calling `configuration.isOn.toggle()`.
+By adopting this protocol, you can design a toggle that aligns perfectly with your app’s visual language — whether that’s a refined switch, a checkbox, or something entirely unique.
 
-To demonstrate custom Toggle styles I've added two gists with screenshots in the comments:
+#### Understanding `makeBody(configuration:)`
 
-- [A fully configurable toggle style for SwiftUI.](https://gist.github.com/fxm90/6afe050ac331d8f719029d7fec87e961)
-- [A toggle style for SwiftUI, making the Toggle look like a checkbox.](https://gist.github.com/fxm90/b56d537d9fb8bf20d573a45367e18c4f)
+When you create a custom toggle style, you take responsibility for rendering and managing its visual state.
 
-## #58 – Getting the size of a view as defined by Auto Layout
+The required method, `makeBody(configuration:)`, provides a configuration value that includes:
 
-↔️ Using the [`systemLayoutSizeFitting(targetSize:)`](https://developer.apple.com/documentation/uikit/uiview/1622624-systemlayoutsizefitting) method on `UIView`, we can obtain the size of a view as defined by Auto Layout.
+- `configuration.isOn`: A Boolean that reflects the current state of the toggle.
+- `configuration.label`: The view representing the toggle’s label.
 
-For example we could ask for the height of a view, using a given width:
+Because you are defining the entire visual representation, you are also responsible for clearly communicating the toggle’s state to the user.
+
+#### Examples of custom toggle styles
+
+The following examples demonstrate custom `ToggleStyle` implementations, complete with screenshots in the comments:
+
+- **A fully configurable toggle style for SwiftUI**\
+  https://gist.github.com/fxm90/6afe050ac331d8f719029d7fec87e961
+- **A toggle style for SwiftUI, making the Toggle look like a checkbox**\
+  https://gist.github.com/fxm90/b56d537d9fb8bf20d573a45367e18c4f
+
+## #58 – Determining a view's size with Auto Layout
+
+↔️ Auto Layout doesn’t just position your views — it can also tell you how large they need to be.
+
+When you want to determine the optimal size of a view based on its constraints, `UIView` provides the [`systemLayoutSizeFitting(_:)`](<https://developer.apple.com/documentation/uikit/uiview/systemlayoutsizefitting(_:)>) method.
+
+For example, if you know the width of a view and want to determine the height required to fit its content, you can specify a fixed horizontal dimension and allow Auto Layout to calculate the vertical one:
 
 ```swift
 let size = view.systemLayoutSizeFitting(
@@ -331,24 +380,36 @@ let size = view.systemLayoutSizeFitting(
 )
 ```
 
-## #57 – Decode Array while filtering invalid entries
+In this configuration:
 
-🪄 Usually an API should have a clear interface and the App should know which data to receive. But there are cases when you can't be 100% sure about a response.
+- The horizontal fitting priority is set to `.required`, ensuring the width remains fixed.
+- The vertical fitting priority is set to `.fittingSizeLevel`, allowing Auto Layout to determine the height that best fits the content.
 
-Imagine fetching a list of flights for an airport. You don't want the entire decoding to fail in case one flight has a malformed departure date.
+## #57 – Decode array while filtering invalid entries
 
-As a workaround we define a helper type, that wraps the actual data-model, in our case a `Flight` data-model.
+🪄 Ideally, an API has a well-defined interface and the app knows exactly which data to expect. However, there are cases when you can't be 100% sure about a response.
+
+Consider fetching a list of flights for an airport. If one flight includes an incorrectly formatted departure date, you likely don’t want the entire response to fail decoding. Instead, you may prefer to keep the valid flights and discard the problematic entry.
+
+To support this pattern, you can introduce a lightweight wrapper that attempts to decode a value while allowing individual failures to resolve to `nil`. This enables partial success when decoding collections of potentially unreliable data.
 
 ```swift
-/// Helper to filter-out invalid array entries when parsing a JSON response.
+/// A wrapper that attempts to decode a value of type `Base` but gracefully degrades to `nil` if decoding fails.
 ///
-/// This way we prevent the encoding-failure of an entire array, if the decoding of a single element fails.
+/// `FailableDecodable` is useful when working with unreliable or partially-invalid data (e.g. third-party APIs)
+/// where you want decoding to continue even if a single field is malformed.
 ///
-/// Source: https://stackoverflow.com/a/46369152/3532505
-private struct FailableDecodable<Base: Decodable>: Decodable {
+/// - Warning: Because decoding errors are swallowed, this can mask schema or data issues.
+///            Use sparingly and only when partial failure is acceptable.
+///
+/// Source: <https://stackoverflow.com/a/46369152/3532505>
+struct FailableDecodable<Base: Decodable>: Decodable {
 
+  /// The successfully decoded value, or `nil` if decoding failed.
   let base: Base?
 
+  /// Attempts to decode `Base` from a single-value container.
+  /// If decoding throws, the error is ignored and `base` is set to `nil`.
   init(from decoder: Decoder) throws {
     let container = try decoder.singleValueContainer()
     base = try? container.decode(Base.self)
@@ -356,40 +417,42 @@ private struct FailableDecodable<Base: Decodable>: Decodable {
 }
 ```
 
-In our service we decode the array of `Flight`s to `FailableDecodable<Flight>`, to filter out invalid array elements, but don't let the entire decoding fail (only the property `base` will be `nil` on failure).
+#### Example
 
-Afterwards we use `compactMap { $0.base }` to filter out array-values where the property `base` is `nil`.
+In this example, we decode the array of `Flight`s as `FailableDecodable<Flight>`. This way, invalid elements don't cause the entire decoding to fail — only the `base` property will be `nil` on failure.
+
+Afterwards, we use `compactMap(\.base)` to filter out entries where `base` is `nil`.
 
 ```swift
-/// Data-model
-struct Flight {
-    let number: String
-    let departure: Date
+/// Data Model
+struct Flight: Decodable {
+  let number: String
+  let departure: Date
 }
 
-/// Service-method
-func fetchDepartures(for url: URL) -> AnyPublisher<[Flight], Error> {
-  URLSession.shared
-      .dataTaskPublisher(for: url)
-      .map { $0.data }
-      // We explicitly use `FailableDecodable<T>` here, to filter out invalid array elements afterwards.
-      .decode(type: [FailableDecodable<Flight>].self, decoder: JSONDecoder())
-      .map {
-        // Map the array of type `FailableDecodable<Flight>` to `Flight`, while filtering invalid (`nil`) elements.
-        $0.compactMap { $0.base }
-      }
-      .eraseToAnyPublisher()
-  }
+/// HTTP Client Method
+func fetchDepartures(for url: URL) async throws -> [Flight] {
+  let (data, _) = try await URLSession.shared.data(from: url)
+
+  let decoder = JSONDecoder()
+  decoder.dateDecodingStrategy = .iso8601
+
+  let decodedFlights = try decoder.decode([FailableDecodable<Flight>].self, from: data)
+  return decodedFlights.compactMap(\.base)
 }
 ```
 
 ## #56 – Codable cheat sheet
 
-📝 [Paul Hudson](https://twitter.com/twostraws) has written a great [cheat sheet](https://www.hackingwithswift.com/articles/119/codable-cheat-sheet) about converting between JSON and Swift data types.
+📝 Working with JSON data is a fundamental part of modern app development. Swift's `Codable` protocol provides a type-safe way to convert between your Swift data types and external representations like JSON.
 
-## #55 – SwiftUI make a child view respect the safe area
+Paul Hudson has created a helpful [Codable cheat sheet](https://www.hackingwithswift.com/articles/119/codable-cheat-sheet) that walks through the essentials — from simple encoding and decoding to handling more advanced scenarios.
 
-📲 Neat trick for having the content of a `View` respect the safe-area, while having the background covering the entire device.
+## #55 – Respecting safe areas in SwiftUI while extending backgrounds
+
+📲 In SwiftUI, it’s common to want a view’s content to respect the device’s safe areas while allowing the background to extend to the edges of the screen. This pattern ensures your layout feels natural on all devices, from iPhones with notches to iPads with rounded corners.
+
+Here’s a simple example:
 
 ```swift
 struct FullScreenBackgroundView: View {
@@ -397,46 +460,66 @@ struct FullScreenBackgroundView: View {
     Text("Hello, World!")
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
       .background(
-        Color.red.edgesIgnoringSafeArea(.all)
+        Color.red.ignoresSafeArea()
       )
   }
 }
 
-struct FullScreenBackgroundViewPreviews: PreviewProvider {
-  static var previews: some View {
-    FullScreenBackgroundView()
-      .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-  }
+#Preview {
+  FullScreenBackgroundView()
 }
 ```
 
-## #54 – Convert string with basic HTML tags to SwiftUI's Text
+In this example:
 
-🖌 Using the underneath shown `+` operator we can build an [extension on SwiftUI's Text](https://gist.github.com/fxm90/fc977d346d2372cfdad11bc822b69a82), that allows us to parse basic HTML tags (like `<strong>`, `‌<em>` etc).
+- The `Text` view respects the safe area, staying visible and readable.
+- The `Color.red` background ignores safe area insets, creating a full-bleed background effect.
 
-Please have a look at the comments for some usage examples.
+This approach is a great way to combine a polished, safe content layout with immersive backgrounds that span the entire screen.
 
-**Update 28.05.2021**
+## #54 – Rendering basic HTML tags in SwiftUI's Text
 
-iOS 15.0 brings `AttributedString` to `SwiftUI` including [Markdown support](https://developer.apple.com/documentation/foundation/attributedstring#3829760).
+🖌 With **iOS 15**, `Text` now fully embraces `AttributedString`, bringing rich text capabilities and [Markdown support](https://developer.apple.com/documentation/foundation/attributedstring) directly into your views.
 
-Converting basic HTML formatting tags to Markdown is not too difficult, so I added a second gist showing exactly that and further adds support for hyperlinks: [SwiftUI+HTML.swift](https://gist.github.com/fxm90/abd949e4258050f2f3cd80118024e5bd)
+This makes it simple to display content that originates from HTML. By mapping basic HTML tags to Markdown, you can render styled text and even interactive hyperlinks in SwiftUI.
 
-## #53 – Concatenate two Texts in SwiftUI
+For a practical example, see this [SwiftUI+HTML.swift](https://gist.github.com/fxm90/abd949e4258050f2f3cd80118024e5bd) snippet, which demonstrates converting HTML to an `AttributedString` ready for SwiftUI’s `Text`.
 
-🧙‍♀️ The `+` operator can concatenate two `Text` in SwiftUI.
+## #53 – Combining Text views in SwiftUI
+
+🧙‍♀️ In SwiftUI, you can **concatenate multiple `Text` views** using the `+` operator. This allows you to style each portion of text independently while presenting them as a single cohesive line.
 
 ```swift
-Text("Note:")
-  .bold() +
-Text(" Lorem Ipsum Dolor Sit Amet.")
+Text("Hello ")
+  .foregroundStyle(.red)
++
+Text("World")
+  .foregroundStyle(.green)
++
+Text("!")
 ```
 
-This will render: "**Note:** Lorem Ipsum Dolor Sit Amet."
+Each `Text` segment retains its own modifiers, giving you fine-grained control over appearance and style.
 
-## #52 – Animated reload of a `UITableView`
+**Note:** The plus operator for Text concatenation has been deprecated in iOS 26, and Apple recommends using text interpolation instead:
 
-🚀 Calling [`tableView.reloadData()`](https://developer.apple.com/documentation/uikit/uitableview/1614862-reloaddata) inside the animation block of [UIView.transition(with:duration:options:animations:completion:)](https://developer.apple.com/documentation/uikit/uiview/1622574-transition) will result in an animated reload of the table view cells.
+```swift
+Text(
+  """
+  \(Text("Hello ")
+    .foregroundStyle(.red))\
+  \(Text("World")
+    .foregroundStyle(.green))\
+  \(Text("!"))
+  """
+)
+```
+
+## #52 – Animate a `UITableView` reload
+
+🚀 Refreshing the contents of a `UITableView` can be enhanced with smooth animations using `UIView` transitions.
+
+By invoking [`tableView.reloadData()`](<https://developer.apple.com/documentation/uikit/uitableview/reloaddata()>) inside the animation block of [`UIView.transition(with:duration:options:animations:completion:)`](<https://developer.apple.com/documentation/uikit/uiview/transition(with:duration:options:animations:completion:)>), you can create a seamless, crossfade effect when updating table view cells.
 
 ```swift
 UIView.transition(
@@ -447,76 +530,88 @@ UIView.transition(
 )
 ```
 
-You can pass any [`UIView.AnimationOptions`](https://developer.apple.com/documentation/uikit/uiview/animationoptions) mentioned here.
+You can experiment with any of the [`UIView.AnimationOptions`](https://developer.apple.com/documentation/uikit/uiview/animationoptions) to achieve different transition effects.
 
 Source: <https://stackoverflow.com/a/13261683>
 
-## #51 – Redux & SwiftUI Example
+## #51 – Integrating Redux with SwiftUI
 
-🔄 The following gist shows you how to integrate basic Redux functionality in SwiftUI (without using any additional frameworks): [Redux.swift](https://gist.github.com/fxm90/c3f74f2c695377b17b1f80cf96a31114)
+🔄 SwiftUI’s declarative design makes state management a core part of building robust apps. In this example, we explore how to implement a simple Redux-style architecture **directly in SwiftUI**, without relying on external frameworks.
 
-Feel free to copy the code into a Xcode Playground and give it a try 😃
+Check out the full gist here: [Redux.swift](https://gist.github.com/fxm90/c3f74f2c695377b17b1f80cf96a31114)
 
-## #50 – Basic Combine Examples
+You can easily copy the code into an Xcode Playground to experiment with state flow and see Redux in action. This is a great way to understand unidirectional data flow in SwiftUI.
 
-🧪 Here are two Gists regarding Apple's new Combine framework:
+## #50 – Exploring Combine: A couple of practical examples
 
-- [Combine-PassthroughSubject-CurrentValueSubject.swift](https://gist.github.com/fxm90/fcb2eb9d92655889d549e7f57168a0fb)\
-  This gist explains the difference between a [`PassthroughSubject`](https://developer.apple.com/documentation/combine/passthroughsubject) and a [`CurrentValueSubject`](https://developer.apple.com/documentation/combine/currentvaluesubject).
-- [Combine-CLLocationManagerDelegate.swift](https://gist.github.com/fxm90/8b6c9753f12fcf19991f6c3f0cd635d3)\
-  This gists shows how to convert a delegate pattern to combine publishers, in this case the `CLLocationManagerDelegate`.
+🧪 Combine provides a declarative Swift API for processing values over time, making it easier to work with asynchronous events. To help you get started, here are two practical examples that illustrate common Combine patterns:
 
-Feel free to copy the code to a playground and get your hands dirty with Combine 😃
+- [PassthroughSubject vs. CurrentValueSubject](https://gist.github.com/fxm90/fcb2eb9d92655889d549e7f57168a0fb)\
+  This example demonstrates the difference between [`PassthroughSubject`](https://developer.apple.com/documentation/combine/passthroughsubject) and [`CurrentValueSubject`](https://developer.apple.com/documentation/combine/currentvaluesubject), two foundational building blocks in Combine for emitting and observing values over time.
+- [Bridging Delegates to Combine](https://gist.github.com/fxm90/8b6c9753f12fcf19991f6c3f0cd635d3)\
+  Here, you’ll see how to convert a traditional delegate pattern into Combine publishers, using `CLLocationManagerDelegate` as an example. This pattern makes it easier to integrate existing APIs with the reactive Combine framework.
 
-## #49 – Convert units using `Measurement<UnitType>`
+Feel free to copy the code to a playground and get your hands dirty with Combine 🙂
 
-🔁 Starting from iOS 10 we can use [`Measurement`](https://developer.apple.com/documentation/foundation/measurement) to convert units like e.g. angles, areas, durations, speeds, temperature, volume and [many many more](https://developer.apple.com/documentation/foundation/dimension).
+## #49 – Effortless unit conversion with `Measurement`
 
-Using e.g. `Measurement<UnitAngle>` we can refactor the computed property shown in note #48 to a method, that allows us to convert between any [`UnitAngle`](https://developer.apple.com/documentation/foundation/unitangle):
+🔁 With iOS 10 and later, Swift provides a unified and type-safe way to work with measurements through [`Measurement`](https://developer.apple.com/documentation/foundation/measurement).
+
+Whether you’re dealing with angles, areas, durations, speeds, temperatures, volumes, or other dimensions, `Measurement` makes conversions straightforward and expressive.
+
+For example, using `Measurement<UnitAngle>` we can refactor the computed property shown in note #48 into a method that converts between any [`UnitAngle`](https://developer.apple.com/documentation/foundation/unitangle):
 
 ```swift
 extension BinaryFloatingPoint {
+  /// Converts a value from one `UnitAngle` to another.
   func converted(from fromUnit: UnitAngle, to toUnit: UnitAngle) -> Self {
-    let selfAsDouble = Double(self)
-    let convertedValueAsDouble = Measurement(value: selfAsDouble, unit: fromUnit)
+    let valueAsDouble = Double(self)
+    let convertedValue = Measurement(value: valueAsDouble, unit: fromUnit)
       .converted(to: toUnit)
       .value
 
-    return type(of: self).init(convertedValueAsDouble)
+    return Self(convertedValue)
   }
 }
 ```
 
-Furthermore this approach leads to a very clean call site:
+This approach leads to a very clean call site:
 
 ```swift
 let cameraBearing: CLLocationDegrees = 180
-cameraBearing.converted(from: .degrees, to: .radians)
+let bearingInRadians = cameraBearing.converted(from: .degrees, to: .radians)
 ```
 
-## #48 – `FloatingPoint` Protocol
+## #48 – `FloatingPoint` protocol
 
-🎲 By extending the protocol `FloatingPoint` we can define a method / computed property on all floating-point data types, e.g. `Double`, `Float` or `CGFloat`:
+🎲 Swift’s protocols are incredibly powerful. By extending the `FloatingPoint` protocol, you can seamlessly add functionality to all floating-point types (e.g. `Double`, `Float`, `CGFloat`) without writing repetitive code.
+
+For example, converting degrees to radians is a common task in graphics and animations. With a simple protocol extension, you can make this conversion available on any floating-point value:
 
 ```swift
 extension FloatingPoint {
-  var degToRad: Self {
+  /// Converts an angle in degrees to radians.
+  var degreesToRadians: Self {
     self * .pi / 180
   }
 }
 
-let double: Double = 90
-let float: Float = 180
-let cgFloat: CGFloat = 270
+let angleDouble: Double = 90
+let angleFloat: Float = 180
+let angleCGFloat: CGFloat = 270
 
-print("Double as radians", double.degToRad)
-print("Float as radians", float.degToRad)
-print("CGFloat as radians", cgFloat.degToRad)
+print("Double in radians:", angleDouble.degreesToRadians)
+print("Float in radians:", angleFloat.degreesToRadians)
+print("CGFloat in radians:", angleCGFloat.degreesToRadians)
 ```
 
 ## #47 – Wait for multiple async tasks to complete
 
-⏰ Using a `DispatchGroup` we can wait for multiple async tasks to finish.
+⏰ Apps frequently need to fetch data from multiple sources before updating the interface.
+
+### Using DispatchGroup
+
+`DispatchGroup` allows you to track a collection of asynchronous tasks and receive a callback once they’ve all completed.
 
 ```swift
 let dispatchGroup = DispatchGroup()
@@ -535,30 +630,41 @@ profileService.fetchFriends {
   dispatchGroup.leave()
 }
 
-// We need to define the completion handler of our `DispatchGroup` with an unbalanced call to `enter()` and `leave()`,
-// as otherwise it will be called immediately!
 dispatchGroup.notify(queue: .main) {
-  guard let profile = profile, let friends = friends else { return }
+  guard
+    let profile = profile,
+    let friends = friends
+  else {
+    return
+  }
 
   print("We've downloaded the user profile together with all friends!")
 }
 ```
 
-**Update for Projects targeting iOS >= 13.0**
-Starting from iOS 13 we can use `CombineLatest` to wait for multiple publishers to at least fire publish one message.
+### Modern alternatives (iOS 13 and later)
+
+Starting with iOS 13, Swift offers more expressive tools for handling asynchronous coordination.
+
+#### Combining publishers with `CombineLatest`
+
+If your APIs return Combine publishers, you can use `Publishers.CombineLatest` to wait until each publisher emits at least one value.
 
 ```swift
 let fetchProfileFuture = profileService.fetchProfile()
 let fetchFriendsFuture = profileService.fetchFriends()
 
 cancellable = Publishers.CombineLatest(fetchProfileFuture, fetchFriendsFuture)
-  .sink { result in
-    let (profile, friends) = result
+  .sink { profile, friends in
     print("We've downloaded the user profile together with all friends!")
   }
 ```
 
-Starting from ~~iOS 15~~ iOS 13 we can also use `async let` to wait for multiple async values.
+`CombineLatest` produces a tuple containing the latest values from both publishers once each has emitted.
+
+#### Structured concurrency with `async let`
+
+Swift’s structured concurrency model provides an even more concise and readable approach. With `async let`, you can start multiple asynchronous operations concurrently and await their results together.
 
 ```swift
 Task {
@@ -570,19 +676,26 @@ Task {
 }
 ```
 
+This approach keeps related asynchronous work clearly scoped and eliminates the need for manual bookkeeping. It’s the preferred solution for modern Swift codebases targeting iOS 13 and later.
+
 ## #46 – Snapshot testing
 
-📸 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
+📸 Snapshot tests are a powerful way to ensure your interface looks exactly the way you expect — and continues to do so over time.
 
-Using the library [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) from [Point-Free](https://github.com/pointfreeco) you can easily start testing snapshots of your `UIView`, `UIViewController`, `UIImage` or even `URLRequest`.
+As your app evolves, even small changes can introduce subtle visual regressions. Snapshot testing helps you catch those changes early by capturing a reference image (or representation) of your UI and comparing it against future test runs.
 
-## #45 – Span subview to superview
+With the open-source [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing) library from [Point-Free](https://github.com/pointfreeco), you can verify snapshots of `UIView`, `UIViewController`, `UIImage`, and even `URLRequest` instances.
 
-⚓️ A small extension to span a subview to the anchors of its superview.
+## #45 – Pin a view to its superview
+
+⚓️ A common pattern in Auto Layout is anchoring a view so it fully spans its container. With a small extension on `UIView`, you can make this intent reusable throughout your project.
+
+This helper method pins a view’s edges to its superview with optional spacing, reducing boilerplate while keeping your layout code easy to read.
 
 ```swift
 extension UIView {
-  /// Adds layout constraints to top, bottom, leading and trailing anchors equal to superview.
+  /// Constrains the view’s edges to match its superview’s edges.
+  /// - Parameter spacing: Optional inset applied to all edges. Defaults to 0.
   func fillToSuperview(spacing: CGFloat = 0) {
     guard let superview = superview else { return }
 
@@ -598,13 +711,19 @@ extension UIView {
 }
 ```
 
-## #44 – Animate a view using a custom timing function
+## #44 – Animating with custom timing curves
 
-🚀 Starting from iOS 10 we can use a `UIViewPropertyAnimator` to animate changes on views.
+🚀 Starting with iOS 10, `UIViewPropertyAnimator` gives you precise, interruptible control over your animations.
 
-Using the initializer [`init(duration:timingParameters:)`](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator/1648362-init) we can pass a [`UITimingCurveProvider`](https://developer.apple.com/documentation/uikit/uitimingcurveprovider), which allows us to provide a custom timing function. You can find lots of these functions on [Easings.net](https://easings.net/).
+While the built-in timing curves such as `.easeInOut` work beautifully in many cases, there are times when you want to craft a more distinctive motion.
 
-Using e.g. "[easeInBack](https://easings.net/#easeInBack)" your animation code could look like this:
+By using the [`init(duration:timingParameters:)`](<https://developer.apple.com/documentation/uikit/uiviewpropertyanimator/init(duration:timingparameters:)>) initializer, you can provide your own object conforming to `UITimingCurveProvider` and define a fully custom timing curve.
+
+One convenient way to do this is with `UICubicTimingParameters`, which lets you specify Bézier control points for fine-tuned motion.
+
+If you’re looking for inspiration, resources like [Easings.net](https://easings.net) provide a variety of well-known timing curves that can help you achieve a specific feel.
+
+For example, here’s how you could implement an “easeInBack” curve — a motion that briefly moves in the opposite direction before accelerating forward:
 
 ```swift
 extension UICubicTimingParameters {
@@ -625,9 +744,11 @@ final class CustomTimingAnimationViewController: UIViewController {
     )
 
     animator.addAnimations {
-      // Add your animation code here. E.g.:
-      // `self.someConstraint?.isActive = false`
-      // `self.someOtherConstraint?.isActive = true`
+      // Update constraints, transforms, alpha, or other animatable properties.
+      // For example:
+      // self.someConstraint?.isActive = false
+      // self.someOtherConstraint?.isActive = true
+      // self.view.layoutIfNeeded()
     }
 
     animator.startAnimation()
@@ -635,16 +756,21 @@ final class CustomTimingAnimationViewController: UIViewController {
 }
 ```
 
-## #43 – How to test a delegate protocol
+Because `UIViewPropertyAnimator` is interruptible and fully controllable, you can pause, reverse, or scrub through the animation as needed.
 
-🧪 Delegation is a common pattern whenever one object needs to communicate to another object (1:1 communication).
+## #43 – Testing delegate protocols in Swift
 
-The following gist shows you how to test a delegate-protocol from a view-model, by creating a mock and validate the invoked method(s) using an enum:
-[Example on how to elegantly test a delegate protocol](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
+🧪 Delegation is a common Swift design pattern, enabling **one-to-one communication between objects** in a clean and modular way.
+
+When building apps, it's essential to ensure that delegate callbacks are triggered correctly. One approach is to use a **mock** in your tests. By implementing an enum to track invoked methods, you can verify that e.g. your view models interact with their delegates exactly as expected.
+
+Explore a practical example of this approach in action: [Testing a Delegate Protocol with a Mock](https://gist.github.com/fxm90/106fd802f869d3d259d672d0416b66fa)
 
 ## #42 – Xcode multi-cursor editing
 
-🏃‍ [Since Xcode 10](https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes/source_editor_release_notes_for_xcode_10) the Source Editor supports multi-cursor editing, allowing you to quickly edit multiple ranges of code at once. You can place additional cursors with the mouse via:
+🏃‍ Since **Xcode 10**, the Source Editor has included **multi-cursor support**, making it easier than ever to edit multiple locations in your code simultaneously. This feature lets you insert, delete, or modify code across several lines at once, streamlining repetitive edits and improving your workflow.
+
+To add additional cursors, simply use:
 
 ```
 shift + control + click
@@ -654,67 +780,83 @@ shift + control + ↓
 
 ## #41 – Create a dynamic color for light- and dark mode
 
-🎨 Using the gist [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e) we can create a custom `UIColor` that generates its color data dynamically based on the current `userInterfaceStyle`.
+🎨 Using the helper in [UIColor+MakeDynamicColor.swift](https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e), we can define a custom `UIColor` that adapts automatically to the current `userInterfaceStyle`.
 
-Furthermore this method falls back to the `lightVariant` color for iOS versions prior to iOS 13.
+The color resolves itself at runtime, seamlessly matching Light or Dark Mode as the interface appearance changes.
 
-## #40 – `UITableViewCell` extension that declares a static identifier
+On systems earlier than **iOS 13**, the implementation gracefully defaults to the provided **light variant**, ensuring consistent behavior across all supported OS versions.
 
-🧙‍♀️ Using the extension below we can automatically register and dequeue table view cells. It prevents typos and declaring a static string on each cell.
+## #40 – Derive reuse identifiers from `UITableViewCell` type
+
+🧙‍♀️ When working with table views, reuse identifiers are an essential detail. Defining them as string literals, however, introduces unnecessary duplication and the risk of subtle typos.
+
+You can eliminate both by deriving the reuse identifier directly from the cell’s type. The following extension adds a static identifier to `UITableViewCell` that reflects the class name automatically:
 
 ```swift
 extension UITableViewCell {
   static var identifier: String {
-    return String(describing: self)
+    String(describing: self)
   }
 }
 ```
 
-Register a cell:
+With this in place, registering and dequeuing cells becomes simpler and more consistent.
+
+Registering a cell:
 
 ```swift
 tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
 ```
 
-Dequeue a cell:
+Dequeuing a cell:
 
 ```swift
 let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier)
 ```
 
-## #39 – Prefer "for .. in .. where"-loop over `filter()` and `forach {}`
+## #39 – Prefer "for .. in .. where" over `filter()` followed by `forEach {}`
 
-🎢 For iterating over a large array using a "for .. in .. where" loop is two times faster than combing `filter()` and `forach {}`, as it saves one iteration.
+🎢 In performance-sensitive code, a `for-in-where` loop is often more efficient than chaining `filter()` with `forEach`, as it performs the conditional check during iteration rather than requiring an additional pass over the collection.
 
-So instead of writing:
+For example, instead of writing:
 
 ```swift
 scooterList
-  .filter({ !$0.isBatteryEmpty })
-  .forEach({ scooter in
-    // Do something with each scooter, that still has some battery left.
-  })
+  .filter { !$0.isBatteryEmpty }
+  .forEach { scooter in
+    // Operate on each scooter with remaining battery.
+  }
 ```
 
-it is more efficient to write:
+you can express the same intent more efficiently using a `for-in-where` loop:
 
 ```swift
 for scooter in scooterList where !scooter.isBatteryEmpty {
-  // Do something with each scooter, that still has some battery left.
+  // Operate on each scooter with remaining battery.
 }
 ```
 
+This approach avoids the creation of an intermediate collection and can be significantly faster when working with large arrays.
+
 ## #38 – Lightweight observable implementation
 
-🕵️‍♂️ ~~If you need a simple and lightweight observable implementation for e.g. UI bindings check out the following gist: [Observable.swift](https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314)~~
+🕵️‍♂️ For a simple and lightweight observable implementation — suitable for UI bindings and similar use cases — refer to the [LightweightObservable](https://github.com/fxm90/LightweightObservable) framework (also available as a CocoaPod).
 
-For re-usability reasons I've moved the code into a framework and released it as a CocoaPod. Please check out https://github.com/fxm90/LightweightObservable 🙂
+**Update 2026:** Over time, Apple has introduced several frameworks that support reactive and asynchronous programming. Depending on your deployment target, consider adopting one of the following technologies:
 
-## #37 – Run test cases in playground
+- [Combine](https://developer.apple.com/documentation/combine) (iOS 13.0+)\
+  A declarative Swift API for processing values over time.
+- [Async Sequence](https://developer.apple.com/documentation/swift/asyncsequence) (iOS 13.0+)\
+  A protocol that enables asynchronous iteration using Swift’s concurrency features.
+- [Observation](https://developer.apple.com/documentation/Observation) (iOS 17.0+)\
+  A modern observation system designed to integrate seamlessly with Swift.\
+  In UIKit-based apps, you can respond to observation-driven changes by overriding the [`updateProperties()`](<https://developer.apple.com/documentation/uikit/uiviewcontroller/updateproperties()>) lifecycle method (iOS 26.0+).
 
-🧪 Playgrounds are an easy way to try out simple ideas. It is a good approach to directly think about the corresponding test-cases for the idea or even start the implementation test driven.
+## #37 – Running test cases in a playground
 
-By calling `MyTestCase.defaultTestSuite.run()` inside the playground we can run a test-case and later copy it into our "real" project.
+🧪 Swift Playgrounds are an easy way to explore ideas. As you prototype, it’s often useful to think through the expected behavior up front — or even take a test-driven approach from the start.
+
+You can run `XCTest`-based test cases directly inside a playground by invoking the test suite explicitly. This makes it easy to validate behavior early, then move the code into your app or framework when it’s ready.
 
 ```swift
 import XCTest
@@ -729,23 +871,31 @@ final class MyTestCase: XCTestCase {
 MyTestCase.defaultTestSuite.run()
 ```
 
-You can see the result of each test inside the debug area of the playground.
+When you run the playground, the results of each test appear in the debug area.
 
-For running asynchronous test cases you have to add the following line:
+#### Asynchronous tests
+
+If your tests rely on asynchronous work, enable indefinite execution to allow the playground to continue running:
 
 ```swift
 PlaygroundPage.current.needsIndefiniteExecution = true
 ```
 
-## #36 – Show progress of WKWebView in UIProgressBar
+This ensures that asynchronous expectations have time to complete before the playground exits.
 
-🤖 For showing the loading-progress of a `WKWebView` on a `UIProgressBar`, please have a look at the following gist: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+**Note:** The Swift Testing framework is currently not supported in playgrounds.
 
-In the example code, the `UIProgressBar` is attached to the bottom anchor of an `UINavigationBar` (see method `setupProgressView()` for further layout details).
+## #36 – Displaying `WKWebView` loading progress with `UIProgressView`
+
+🤖 To reflect the loading progress of a `WKWebView`, you can observe its `estimatedProgress` property and present the value using a `UIProgressView`.
+
+The complete implementation is available in the following example: [WebViewExampleViewController.swift](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931)
+
+In this example, the progress view is positioned along the bottom edge of the navigation bar.
 
 ## #35 – Destructure tuples
 
-🧙‍ Image having a tuple with the following properties: `(firstName: String, lastName: String)`. We can destructure the tuple into two properties in just one line:
+🧙‍ When a tuple’s elements are named — such as `(firstName: String, lastName: String)` — you can decompose it into individual constants in a single, expressive statement.
 
 ```swift
 let (firstName, lastName) = accountService.fullName()
@@ -756,23 +906,27 @@ print(lastName)
 
 ## #34 – Avoid huge if statements
 
-✨ Instead of writing long "if statements" like this:
+✨ Long conditional expressions can quickly become difficult to read and reason about — especially as a type grows more complex.
+
+Consider the following example:
 
 ```swift
 struct HugeDataObject {
   let category: Int
   let subCategory: Int
 
-  // Imagine lots of other properties, so we can't simply conform to `Equatable` ...
+  // Imagine many additional properties,
+  // making `Equatable` impractical in this case.
 }
 
-if hugeDataObject.category != previousDataObject.category || hugeDataObject.subCategory != previousDataObject.subCategory {
+if hugeDataObject.category != previousDataObject.category ||
+   hugeDataObject.subCategory != previousDataObject.subCategory {
   // ...
 }
 
 ```
 
-We can split the long statement into several properties beforehand, to increase readability:
+While functionally correct, the intent of this condition isn’t immediately obvious at the call site. Breaking the logic into named Boolean values makes the code more expressive and easier to scan:
 
 ```swift
 let isDifferentCategory = hugeDataObject.category != previousDataObject.category
@@ -783,7 +937,9 @@ if isDifferentCategory || isDifferentSubCategory {
 }
 ```
 
-Or use `guard` to do an early return:
+By naming each comparison, you communicate _why_ the condition exists — not just _how_ it’s computed.
+
+For early-exit scenarios, `guard` can further clarify intent by moving the “happy path” out of the conditional:
 
 ```swift
 let isDifferentCategory = hugeDataObject.category != previousDataObject.category
@@ -791,13 +947,29 @@ let isDifferentSubCategory = hugeDataObject.subCategory != previousDataObject.su
 
 let didChange = isDifferentCategory || isDifferentSubCategory
 guard didChange else { return }
+
+// Proceed knowing the data has changed
 ```
 
-**Notice**: By using that pattern we do not skip further checks on failure (e.g. if we use `OR` in the statement and one condition returns `true` / we use `AND` in the statement and one condition returns `false`). So if you're having a load intensive method, it might be better to keep it as a single statement. Or, first check the "lighter" condition and then use an early return to prevent the load intensive method from being executed.
+#### A note on evaluation
 
-## #33 – Compare dates in test cases
+This pattern evaluates all conditions upfront. Unlike a single expression using `||` or `&&`, it does not short-circuit once the result is known.
 
-📆 Small example on how to compare dates in tests.
+If you have a **computationally expensive check**, it may be better to keep it as a **single statement** or check the **lightweight condition first with an early return** to avoid the expensive evaluation.
+
+## #33 – Compare dates in tests
+
+📆 `Date` stores time as a `Double` (seconds since a reference point). Because of floating-point precision, two logically equivalent dates can differ by a tiny fraction of a second, causing direct equality checks with `==` to fail unexpectedly.
+
+Instead, compare their underlying time intervals with a small tolerance. The right tolerance depends on the context, but for most cases, 1 millisecond is a reasonable choice.
+
+A shared helper keeps the tolerance consistent across your test suite:
+
+```swift
+private extension TimeInterval {
+  static let oneMillisecond = 0.001
+}
+```
 
 #### Using XCTest
 
@@ -814,7 +986,7 @@ func testDatesAreEqual() {
   XCTAssertEqual(
     dateA.timeIntervalSince1970,
     dateB.timeIntervalSince1970,
-    accuracy: .ulpOfOne
+    accuracy: .oneMillisecond,
   )
 }
 ```
@@ -832,15 +1004,14 @@ func verifyDatesAreEqual() {
   // ...
 
   // Then
-  #expect(
-    abs(dateA.timeIntervalSince1970 - dateB.timeIntervalSince1970) < .ulpOfOne
-  )
+  let diff = abs(dateA.timeIntervalSince1970 - dateB.timeIntervalSince1970)
+  #expect(diff < .oneMillisecond)
 }
 ```
 
-## #32 – Be aware of the strong reference to the target of a timer
+## #32 – Understand the strong reference behavior of `Timer` targets
 
-🔁 Creating a timer with the method `scheduledTimer(timeInterval:target:selector:userInfo:repeats:)` always creates a **strong reference to the target** until the timer is invalidated. Therefore, an instance of the following class will never be deallocated:
+🔁 When you create a timer using `scheduledTimer(timeInterval:target:selector:userInfo:repeats:)`, the timer creates a **strong reference to the target** until the timer is invalidated. As a result, instances like the one below are never deallocated:
 
 ```swift
 final class ClockViewModel {
@@ -851,7 +1022,7 @@ final class ClockViewModel {
 
   // MARK: - Instance Lifecycle
 
-  init(interval: TimeInterval = 1.0) {
+  init(interval: TimeInterval = 1) {
     timer = Timer.scheduledTimer(
       timeInterval: interval,
       target: self,
@@ -862,7 +1033,7 @@ final class ClockViewModel {
   }
 
   deinit {
-    print("This will never be called 🙈")
+    print("⚠️ - This will never be called!")
 
     timer?.invalidate()
     timer = nil
@@ -870,44 +1041,54 @@ final class ClockViewModel {
 
   // MARK: - Private Methods
 
-  @objc private func timerDidFire() {
-    // Do something every x seconds here.
+  @objc
+  private func timerDidFire() {
+    // Perform work at the specified interval.
   }
 }
 ```
 
-But didn't we declare the variable `timer` as `weak`? So even though we have a strong reference from the timer to the view-model (via the target and selector), we should not have a retain cycle? Well, that's true. The solution is mentioned in the [ documentation for the class "Timer"](https://apple.co/2yY9B1M)
+At first glance, this may look surprising. The timer property is declared as weak, and although the timer retains its target, there is no retain cycle. The issue lies elsewhere.
+
+According to the documentation for [`Timer`](https://developer.apple.com/documentation/foundation/timer):
 
 > Timers work in conjunction with run loops. Run loops maintain strong references to their timers, so you don’t have to maintain your own strong reference to a timer after you have added it to a run loop.
 
-and the [documentation for the method "timerWithTimeInterval"](https://apple.co/2CyIHB7)
+And the documentation for [`init(timeInterval:target:selector:userInfo:repeats:)`](<https://developer.apple.com/documentation/foundation/timer/init(timeinterval:target:selector:userinfo:repeats:)>) further clarifies:
 
-> target: The timer maintains a strong reference to this object until it (the timer) is invalidated.
+> **target:**\
+> The timer maintains a strong reference to this object until it (the timer) is invalidated.
 
-Therefore the run loop contains a strong reference to the view-model, as long as the timer is not invalidated. As we call `invalidate` inside the `deinit` of the view-model method, the timer gets never invalidated.
+In other words, the run loop strongly retains the timer, and the timer strongly retains its target. As long as the timer remains valid, the view model remains alive.
 
-#### Workaround:
+Because `invalidate()` is called in `deinit`, and `deinit` is never reached, the timer is never invalidated.\
+The object is effectively kept alive by the run loop.
 
-From iOS 10.0 we can use the method `scheduledTimer(withTimeInterval:repeats:block:)` instead and pass a `weak` reference to `self` in the closure, in order to prevent a retain cycle.
+#### Recommended approach
+
+Starting in iOS 10, prefer the block-based API `scheduledTimer(withTimeInterval:repeats:block:)`. By capturing `self` weakly, you avoid this retention issue entirely:
 
 ```swift
 init(interval: TimeInterval = 1.0) {
-  timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { [weak self] _ in
+  timer = Timer.scheduledTimer(
+    withTimeInterval: interval,
+    repeats: true
+  ) { [weak self] _ in
     self?.timerDidFire()
-  })
+  }
 }
 ```
 
-For iOS version below 10.0, we can use `DispatchSourceTimer` instead. There is a great article from [Daniel Galasko](https://twitter.com/danielgalasko) on how to do that: [A Background Repeating Timer in Swift](https://medium.com/@danielgalasko/a-background-repeating-timer-in-swift-412cecfd2ef9)
+For earlier system versions, consider using `DispatchSourceTimer` instead. A detailed discussion of this approach can be found in Daniel Galasko’s article: [A Background Repeating Timer in Swift](https://medium.com/@danielgalasko/a-background-repeating-timer-in-swift-412cecfd2ef9)
 
-**Notice:**
-Even for non-repeating timers, you should be aware of that strong reference, because the corresponding object won't get deallocated until the timer has fired.
+**Note:**
+This behavior also applies to non-repeating timers. Even if a timer fires only once, its target will not be deallocated until the timer has fired or been invalidated.
 
 ## #31 – Initialize `DateFormatter` with formatting options
 
-🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved with the class function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring).
+🚀 Basic formatting, which requires only setting `dateStyle` and `timeStyle`, can be achieved using the function [localizedString(from:dateStyle:timeStyle:)](https://developer.apple.com/documentation/foundation/dateformatter/1415241-localizedstring).
 
-In case you need further formatting options, the following extension allows you to directly initialize a `DateFormatter` with all available options:
+When you need additional customization, you can streamline configuration by initializing `DateFormatter` with a configuration closure. The following convenience initializer enables an expressive setup:
 
 ```swift
 extension DateFormatter {
@@ -919,7 +1100,7 @@ extension DateFormatter {
 }
 ```
 
-Use it like this:
+E.g. creating a formatter configured with localized date and time styles:
 
 ```swift
 let dateFormatter = DateFormatter {
@@ -929,15 +1110,17 @@ let dateFormatter = DateFormatter {
 }
 ```
 
+Or specify a custom date format:
+
 ```swift
 let dateFormatter = DateFormatter {
   $0.dateFormat = "E, d. MMMM"
 }
 ```
 
-Feel free to bring this extension to other formatters, like e.g. [DateComponentsFormatter](https://developer.apple.com/documentation/foundation/datecomponentsformatter) or [DateIntervalFormatter](https://developer.apple.com/documentation/foundation/dateintervalformatter), as well.
+This pattern generalizes well to other formatter types, including [`DateComponentsFormatter`](https://developer.apple.com/documentation/foundation/datecomponentsformatter) and [`DateIntervalFormatter`](https://developer.apple.com/documentation/foundation/dateintervalformatter), providing a consistent and readable configuration style across Foundation.
 
-**Update:** Starting with Swift 4 we can use key-paths instead of closures:
+Starting with **Swift 4**, we can use key paths instead of closures:
 
 ```swift
 protocol Builder {}
@@ -954,7 +1137,7 @@ extension Builder {
 extension Formatter: Builder {}
 ```
 
-Use it like this:
+This approach enables a chainable configuration style:
 
 ```swift
 let dateFormatter = DateFormatter()
@@ -962,6 +1145,8 @@ let dateFormatter = DateFormatter()
   .set(\.dateStyle, to: .long)
   .set(\.timeStyle, to: .short)
 ```
+
+Or configure a number formatter similarly:
 
 ```swift
 let numberFormatter = NumberFormatter()
@@ -971,31 +1156,36 @@ let numberFormatter = NumberFormatter()
 
 Based on: [Vadim Bulavin – KeyPath Based Builder](https://twitter.com/V8tr/status/1242846971188183047)
 
-## #30 – Map latitude and longitude to X and Y on a coordinate system
+## #30 – Mapping latitude and longitude to X and Y on a coordinate system
 
-🌍 Not really an iOS specific topic but something to keep in mind 😃
+🌍 When working with `CLLocationCoordinate2D`, it’s important to be clear about how geographic coordinates map onto a 2D coordinate system.
 
-> On a standard north facing map, latitude is represented by horizontal lines, which go up and down (North and South) the Y axis. It's easy to think that since they are horizontal lines, they would be on the x axis, but they are not.
-> So similarly, the X axis is Longitude, as the values shift left to right (East and West) along the X axis. Confusing for the same reason since on a north facing map, these lines are vertical.
+On a standard, north-up map:
 
-https://gis.stackexchange.com/a/68856
+- **Latitude maps to the Y-axis.**\
+  Lines of latitude run east–west, but their values change as you move north or south. As a result, latitude corresponds to vertical movement along the Y-axis.
 
-The following graphics illustrate the quote above:
+- **Longitude maps to the X-axis.**\
+  Lines of longitude run north–south, but their values change as you move east or west. This aligns longitude with horizontal movement along the X-axis.
+
+This can feel counterintuitive at first (especially since latitude lines are horizontal and longitude lines are vertical), but the key is to focus on which direction the values increase or decrease, not the orientation of the lines themselves.
+
+The following graphics illustrate this relationship visually:
 
 | Latitude                                     | Longitude                                       |
 | :------------------------------------------- | :---------------------------------------------- |
 | [![Latitude][latitude--thumbnail]][latitude] | [![Longitude][longitude--thumbnail]][longitude] |
 
-#### Further iOS related information:
+#### Further iOS-related information
 
-- [Displaying Maps](https://apple.co/2q61aNU)
-- [CLLocationCoordinate2D](https://apple.co/2O1bIYn)
+- [Displaying Maps](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/MapKit/MapKit.html)
+- [CLLocationCoordinate2D](https://developer.apple.com/documentation/corelocation/cllocationcoordinate2d)
 
-## #29 - Encapsulation
+## #29 – Encapsulation
 
-🚪 When working on a continuously evolving code base, one of the biggest challenges is to keep things nicely encapsulated. Having clear defined APIs avoids sharing implementation details with other types and therefore prevent unwanted side-effects.
+🚪 In a codebase that’s constantly evolving, maintaining strong encapsulation is essential. Clearly defined APIs help limit surface area, keeping implementation details private and reducing unintended coupling.
 
-Even notification receivers or outlets can be marked as private.
+Even notification observers and outlets can be declared `private` when they’re not part of a type’s public contract.
 
 ```swift
 final class KeyboardViewModel {
@@ -1003,7 +1193,8 @@ final class KeyboardViewModel {
   // MARK: - Public Properties
 
   /// Boolean flag, whether the keyboard is currently visible.
-  /// We assume that this property has to be accessed from the view controller, therefore we allow public read-access.
+  /// We assume that this property has to be accessed from the view controller,
+  /// therefore we allow public read-access.
   private(set) var isKeyboardVisible = false
 
   // MARK: - Instance Lifecycle
@@ -1040,7 +1231,7 @@ final class KeyboardViewModel {
 
 ## #28 – Remove `UITextView` default padding
 
-↔ With the following code the default padding from an `UITextView` can be removed:
+↔ The following code removes the default padding from a `UITextView`:
 
 ```swift
 // This brings the left edge of the text to the left edge of the container
@@ -1052,7 +1243,7 @@ textView.textContainerInset = .zero
 
 Source: https://stackoverflow.com/a/18987810/3532505
 
-The above code can also be applied inside the interface builder within the "User Defined Runtime Attributes" section. Just add the following lines there:
+You can achieve the same result directly in Interface Builder using **User Defined Runtime Attributes**. Add the following entries to your `UITextView`:
 
 | Key Path                          | Type   | Value            |
 | :-------------------------------- | :----- | :--------------- |
@@ -1061,11 +1252,13 @@ The above code can also be applied inside the interface builder within the "User
 
 ## #27 – Name that color
 
-🎨 Not an iOS specific topic, but if your designer comes up with the 9th gray tone and you somehow need to find a proper name inside your code, check out this site: [Name That Color](http://chir.ag/projects/name-that-color/). It automatically generates a name for the given color 🧙‍
+🎨 While not iOS-specific, [Name That Color](http://chir.ag/projects/name-that-color/) is a helpful resource when you need a meaningful name for your Swift color constants. It automatically generates a descriptive name for any given hex color value.
 
 ## #26 – Structure classes using `// MARK: -`
 
-🔖 Using `// MARK:` we can add some additional information that is shown in the quick jump bar. Adding a dash at the end (`// MARK: -`) causes a separation line to show up. Using this technique we can structure classes and make them easier to read.
+🔖 Use `// MARK:` to organize your Swift files with named sections that appear in Xcode’s Jump Bar.
+
+Adding a dash (`// MARK: -`) inserts a visual separator, making large files easier to scan and navigate.
 
 ```swift
 final class StructuredViewController: UIViewController {
@@ -1112,11 +1305,11 @@ final class StructuredViewController: UIViewController {
 
 ## #25 – Structure test cases
 
-⚠️ Splitting test cases into `Given`, `When`, `Then` increases the readability and helps understanding complex tests.
+⚠️ Organizing tests into `Given`, `When`, `Then` improves readability and helps with understanding complex tests.
 
-- In the `Given` phase we setup all preconditions for the test, e.g. configuring mock objects.
-- In the `When` phase we call the function we want to test.
-- In the `Then` phase we verify the actual results against our expected results using `XCTAssert` methods.
+- `Given` establishes the context by setting up preconditions, such as configuring mock objects or test data.
+- `When` performs the action under test.
+- `Then` verifies the outcome by asserting that the results match expectations.
 
 #### Example when using XCTest
 
@@ -1131,12 +1324,6 @@ final class MapViewModelTestCase: XCTestCase {
     super.setUp()
 
     // ...
-  }
-
-  override func tearDown() {
-    // ...
-
-    super.tearDown()
   }
 
   func testLocateUser() {
@@ -1193,31 +1380,33 @@ struct MapViewModelTestCase {
 
 > The only time you should be using implicitly unwrapped optionals is with @IBOutlets.
 > In every other case, it is better to use a non-optional or regular optional property.
-> Yes, there are cases in which you can probably "guarantee" that the property will never be nil when used,
+> Yes, there are cases in which you can probably "guarantee" that the property will never be `nil` when used,
 > but it is better to be safe and consistent. Similarly, don't use force unwraps.
 
 Source: https://github.com/linkedin/swift-style-guide
 
-Using the patterns shown underneath, we can easily unwrap optionals or use early return to stop further code executing, if an optional is `nil`.
+Using the patterns shown below, we can safely unwrap optionals or use an early return to stop further code execution when an optional is `nil`.
 
 ```swift
 if let value = value {
-  // Do something with value here..
+  // Use the unwrapped value.
 }
 ```
 
 ```swift
 guard let value = value else {
-  // Write a comment, why to exit here.
+  // Explain why execution cannot continue.
   return
 }
 
-// Do something with value here..
+// Use the unwrapped value.
 ```
 
-## #23 – Always check for possible dividing through zero
+By embracing optionals and handling them explicitly, you make failure states visible and your code more predictable.
 
-💥 We should always make sure that a certain value is **NOT** zero before dividing through it.
+## #23 – Guard against division by zero
+
+💥 Before performing a division, ensure the divisor is nonzero. This avoids undefined behavior, and can prevent crashes or incorrect program output.
 
 ```swift
 final class ImageViewController: UIViewController {
@@ -1242,28 +1431,40 @@ final class ImageViewController: UIViewController {
 
 ## #22 – Animate `alpha` and update `isHidden` accordingly
 
-🦋 Using the following gist we can animate the `alpha` property and update the `isHidden` flag accordingly: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
+🦋 This lightweight extension lets you animate a view’s `alpha` value while automatically managing its `isHidden` state: [fxm90/UIView+AnimateAlpha.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 
-## #21 – Create custom notification
+## #21 – Define a custom notification
 
-📚 For creating custom notifications we first should have a look on how to name them properly:
+📚 When introducing custom notifications, adhere to established Cocoa naming conventions.
+
+Notification names should be composed as follows:
 
 > [Name of associated class] + [Did | Will] + [UniquePartOfName] + Notification
 
-Source: [Coding Guidelines for Cocoa](https://apple.co/2PPywfa)
+This pattern improves clarity, avoids collisions, and aligns with Apple’s APIs.
 
-We create the new notification by extending the corresponding class:
+Source: [Coding Guidelines for Cocoa](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html)
+
+#### Defining the notification name
+
+Define custom notifications by extending `Notification.Name`:
 
 ```swift
 extension Notification.Name {
-  static let AccountServiceDidLoginUser = Notification.Name("AccountServiceDidLoginUserNotification")
+  static let AccountServiceDidLoginUser =
+    Notification.Name("AccountServiceDidLoginUserNotification")
 }
 ```
 
-And afterwards post it like this:
+Using a static constant ensures the notification name is defined in one place and remains type-safe throughout your codebase.
+
+#### Posting the notification
+
+Post the notification from the owning type:
 
 ```swift
 final class AccountService {
+
   func login() {
     NotificationCenter.default.post(
       name: .AccountServiceDidLoginUser,
@@ -1273,28 +1474,34 @@ final class AccountService {
 }
 ```
 
-For Objective-C support we further need to extend `NSNotification`:
+#### Objective-C interoperability
+
+To make the notification available to Objective-C, extend `NSNotificationName`:
 
 ```swift
-@objc extension NSNotification {
-  static let AccountServiceDidLoginUser = Notification.Name.AccountServiceDidLoginUser
+@objc
+extension NSNotificationName {
+  static let AccountServiceDidLoginUser =
+    Notification.Name.AccountServiceDidLoginUser
 }
 ```
 
-Then, we can post it like this:
+The notification can then be posted from Objective-C:
 
 ```
-[NSNotificationCenter.defaultCenter post:NSNotification.AccountServiceDidLoginUser
-                                  object:self];
+[[NSNotificationCenter defaultCenter] postNotificationName:NSNotification.AccountServiceDidLoginUser
+                                                    object:self];
 ```
 
-By extending `Notification.Name` we make sure our notification names are unique.
+**Note:** The `object` parameter should always refer to the sender of the notification. Use the `userInfo` dictionary to attach additional contextual data when needed.
 
-**Notice:** The object parameter should always contain the object, that is triggering the notification. If you need to pass custom data, use the `userInfo` parameter.
+## #20 – Overriding `UIStatusBarStyle` the elegant way
 
-## #20 – Override `UIStatusBarStyle` the elegant way
+✌️ A clean way to manage the status bar appearance is to introduce a dedicated property and update the system whenever it changes.
 
-✌️ Using a custom property, combined with the observer `didSet` we can call `setNeedsStatusBarAppearanceUpdate()` to apply a new status-bar style:
+By combining a custom property with a `didSet` observer, you can call `setNeedsStatusBarAppearanceUpdate()` to prompt UIKit to re-evaluate the status bar style and apply the new appearance.
+
+This approach keeps state changes explicit, localized, and easy to reason about.
 
 ```swift
 final class SomeViewController: UIViewController {
@@ -1302,7 +1509,7 @@ final class SomeViewController: UIViewController {
   // MARK: - Public Properties
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
-    return customBarStyle
+    customBarStyle
   }
 
   // MARK: - Private Properties
@@ -1315,9 +1522,9 @@ final class SomeViewController: UIViewController {
 }
 ```
 
-## #19 – Log extension on `String` using swift literal expressions
+## #19 – Log extension on `String` using Swift literal expressions
 
-👌 Swift contains some special literals:
+👌 Swift provides several built-in literal expressions that capture contextual information at the call site:
 
 | Literal   | Type   | Value                                            |
 | :-------- | :----- | :----------------------------------------------- |
@@ -1328,35 +1535,36 @@ final class SomeViewController: UIViewController {
 
 Source: [Swift.org – Expressions](https://docs.swift.org/swift-book/ReferenceManual/Expressions.html)
 
-Especially with default parameters those expressions are really useful, as in that case the expression is evaluated at the call site.
-We could use a [simple extension on String](https://gist.github.com/fxm90/08a187c5d6b365ce2305c194905e61c2) to create a basic logger:
+These expressions are especially useful as default parameter values, since they are evaluated at the call site.
+
+By combining this behavior with a [simple extension on `String`](https://gist.github.com/fxm90/08a187c5d6b365ce2305c194905e61c2), you can build a lightweight logging API that automatically captures file, function, and line information:
 
 ```swift
 "Lorem Ipsum Dolor Sit Amet 👋".log(level: .info)
 ```
 
-That would create the following output:
+This produces output similar to the following:
 
-```
-ℹ️ – 2018/09/16 19:46:45.189 - ViewController.swift - viewDidLoad():15
-> Lorem Ipsum Dolor Sit Amet 👋
-```
+> ℹ️ 2026-02-09 21:35:00.000 [String+Log.swift:59] viewDidLoad() - Lorem Ipsum Dolor Sit Amet 👋
 
-## #18 – Use gitmoji
+If you need more flexibility, consider using Apple's unified logging system (`OSLog`) for production apps.
 
-😃 Not an iOS specific topic, but I'd like to use [gitmoji](https://gitmoji.carloscuesta.me/) for my commit messages, e.g. `TICKET-NUMBER - ♻️ :: Description` (Credits go to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern).
-To easily create the corresponding emojis for the type of commit, you can use this [alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow).
+## #18 – Use Gitmoji for commit messages
 
-## #17 – Initialize a constant based on a condition
+😃 While not specific to iOS development, [gitmoji](https://gitmoji.dev/) provides a standardized set of emojis for commit messages — for example, `TICKET-NUMBER - ♻️ :: Description` (credit to [Martin Knabbe](https://twitter.com/martin_knabbe) for that pattern).
 
-👏 A very readable way of initializing a constant after the declaration.
+To streamline emoji insertion for each commit type, you can use this [Alfred workflow](https://github.com/ai0/alfred-gitmoji-workflow), which allows you to insert the appropriate emoji directly from the keyboard.
+
+## #17 – Initialize a constant conditionally
+
+👏 Swift makes it easy to initialize a `let` constant using conditional logic, while keeping your code clear and safe from unintended mutation.
 
 ```swift
 let startCoordinate: CLLocationCoordinate2D
 if let userCoordinate = userLocationService.userCoordinate, CLLocationCoordinate2DIsValid(userCoordinate) {
   startCoordinate = userCoordinate
 } else {
-  // We don't have a valid user location, so we fallback to Hamburg.
+  // We don't have a valid user location, so we fall back to Hamburg.
   startCoordinate = CLLocationCoordinate2D(
     latitude: 53.5582447,
     longitude: 9.647645
@@ -1364,15 +1572,15 @@ if let userCoordinate = userLocationService.userCoordinate, CLLocationCoordinate
 }
 ```
 
-This way we can avoid using a variable and prevent any mutation of `startCoordinate` in further code.
+This approach avoids using a `var` and prevents any accidental mutation of `startCoordinate` later on.
 
-**Note:** Starting from Swift 5.9 we can use `if` and `switch` expressions to further reduce the lines of code required for an assignment.
+Starting from **Swift 5.9**, `if` and `switch` expressions allow an even more concise approach:
 
 ```swift
 let startCoordinate = if let userCoordinate = userLocationService.userCoordinate, CLLocationCoordinate2DIsValid(userCoordinate) {
   userCoordinate
 } else {
-  // We don't have a valid user location, so we fallback to Hamburg.
+  // We don't have a valid user location, so we fall back to Hamburg.
   CLLocationCoordinate2D(
     latitude: 53.5582447,
     longitude: 9.647645
@@ -1380,18 +1588,18 @@ let startCoordinate = if let userCoordinate = userLocationService.userCoordinate
 }
 ```
 
-## #16 – Why `viewDidLoad` might be called before `init` has finished
+## #16 – Why `viewDidLoad` can be called before initialization completes
 
-⚡️ Be aware that the method `viewDidLoad` is being called immediately on accessing `self.view` in the initializer.
+⚡️ Be aware that `viewDidLoad()` may be invoked if you access `self.view` from within a view controller’s initializer.
 
-This happens because the view is not loaded yet, but the property `self.view` shouldn't return `nil`.
+At that point, the view hierarchy has not yet been loaded. However, the view property is guaranteed to return a non-`nil` value. To satisfy that guarantee, UIKit loads the view immediately, which in turn triggers `viewDidLoad()` — even though initialization has not yet completed.
 
-Therefore the view controller will load the view immediately and call the corresponding method `viewDidLoad` afterwards.
+As a result, code in `viewDidLoad()` may run earlier than expected if `self.view` is accessed during initialization.
 
 #### Example:
 
 ```swift
-final class ViewDidLoadBeforeInitViewController: UIViewController {
+final class SomeViewController: UIViewController {
 
   // MARK: - Instance Lifecycle
 
@@ -1400,7 +1608,7 @@ final class ViewDidLoadBeforeInitViewController: UIViewController {
 
     view.isHidden = true
 
-    print("📝 :: `\(#function)` did finish!")
+    print("`\(#function)` did finish!")
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -1408,7 +1616,7 @@ final class ViewDidLoadBeforeInitViewController: UIViewController {
 
     view.isHidden = true
 
-    print("📝 :: `\(#function)` did finish!")
+    print("`\(#function)` did finish!")
   }
 
   // MARK: - View Lifecycle
@@ -1416,7 +1624,7 @@ final class ViewDidLoadBeforeInitViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print("📝 :: `\(#function)` did finish!")
+    print("`\(#function)` did finish!")
   }
 }
 ```
@@ -1424,101 +1632,134 @@ final class ViewDidLoadBeforeInitViewController: UIViewController {
 The code will output log statements in the following order:
 
 ```
-📝 :: `viewDidLoad()` did finish.
-📝 :: `init(nibName:bundle:)` did finish.
+`viewDidLoad()` did finish!
+`init(nibName:bundle:)` did finish!
 ```
 
 Source: https://stackoverflow.com/a/5808477
 
-More on view life cycle: [Work with View Controllers](https://apple.co/2q8Jf9y)
-
 ## #15 – Capture iOS Simulator video
 
-📹 A small tutorial on how create a video of what's happening in the simulator.
+📹 Starting with Xcode 12.5, the iOS Simulator includes built-in support for capturing screenshots and recording video.
 
-1. Run your App in the simulator
-2. Open terminal
-3. Run one of the following commands:
+- Press **⌘ + R** to start or stop a screen recording.
+- Press **⌘ + S** to capture a screenshot.
 
-- To take a screenshot: `xcrun simctl io booted screenshot`
-- To take a video: `xcrun simctl io booted recordVideo <filename>.<file extension>`
+These features are available directly in the Simulator app and remove the need to use the `xcrun simctl` command-line utility for basic capture workflows.
 
-4. Press ctrl + c to stop recording the video.
+For more advanced use cases, such as configuring the simulator environment, the `simctl` command-line tool remains available.
 
-For example:
+For example, you can **override the status bar time** to produce consistent screenshots or recordings:
 
 ```
-xcrun simctl io booted recordVideo ~/appVideo.mp4
+xcrun simctl status_bar booted override --time '9:41'
 ```
 
-Source: https://stackoverflow.com/a/41141801
+## #14 – Xcode shortcuts
 
-In case you want to **further customise the simulator**, e.g. by setting a custom battery level, check out this amazing tool by [Paul Hudson](https://twitter.com/twostraws): **[ControlRoom](https://github.com/twostraws/ControlRoom)**
+🏃‍♂️ If you spend a lot of time in Xcode, a few well-chosen keyboard shortcuts can save you a lot of time. Here are some essential shortcuts that make everyday development more fluid.
 
-## #14 – Xcode open file in focused editor
+#### Navigation & Search
 
-🏃‍♂️ Shortcuts are a great way to increase productivity. I often use `CMD[⌘] + Shift[⇧] + O` to quickly open a file or `CMD[⌘]  + Shift[⇧] +  J` to focus the current file in the project navigator etc.
+- **⌘ + ⇧ + O**\
+  Open Quickly lets you instantly search across your project for files, classes, methods, symbols, and more.
 
-But when you ‘Quick Open’ a file via cmd-shift-O, it opens in the ‘Primary Editor’ on the left — even if the right editor pane is currently focused.
+- **⌘ + ⇧ + J**\
+  Highlights the currently open file in the Project Navigator. This is especially useful when working in large or modular projects.
 
-By going to `Settings » Navigation » Navigation` and there checking `Uses Focused Editor`, we can tell Xcode to always open files in the currently focused pane.
+- **⌘ + L**
+  Jump directly to a specific line number. Ideal when reviewing logs, stack traces, or collaborating in code reviews.
 
-Source: [Jesse Squires – Improving the assistant editor](https://www.jessesquires.com/blog/xcode-tip-improving-assistant-editor/)
+- **⌘ + ⇧ + F**
+  Search across your entire project for text matches, with powerful filtering options.
+
+#### Editing & Refactoring
+
+- **⌘ + ⌃ + E**\
+  Select all occurrences within the current scope. A useful shortcut for local refactoring.
+
+- **⌘ + ⌥ + /**\
+  Insert a structured documentation comment template, making it easy to document APIs with consistency.
+
+- **⌃ + M**\
+  Format arguments to multiple lines.
+
+- **⌃ + ⇧ + Click**\
+  Create multiple cursors for simultaneous editing across different lines. (See also [\#42 – Xcode multi-cursor editing](#42--xcode-multi-cursor-editing))
+
+#### Build, Run & Test
+
+- **⌘ + R**\
+  Build and run your app.
+
+- **⌘ + B**\
+  Build without running — useful for quick validation.
+
+- **⌘ + U**\
+  Run your test suite.
+
+- **⌃ + ⌥ + ⌘ + G**\
+  Repeat your most recent test or run action, whether it was a single test or an entire test class.
+
+#### SwiftUI & Previews
+
+- **⌘ + ⌥ + Enter**\
+  This toggles the SwiftUI preview.
 
 ## #13 – Handle optionals in test cases
 
-✅ Using `XCTUnwrap` we can safely unwrap optionals in test-cases. If the optional is `nil`, only the current test-case will fail, but the app won't crash and all other test-cases will continue to be executed.
+✅ Using `XCTUnwrap`, we can safely unwrap optionals in test cases. If the optional is `nil`, only the current test case fails, but the app does not crash and all other test cases continue to run.
 
-In the example below, we initialize a view model with a list of bookings. Using the method `fetchBooking(byUUID:)` we search for a given booking. But as we might pass an invalid identifier, the response of the method is an optional booking object. Using `XCTUnwrap` we can easily unwrap the response.
+In the example below, we initialize a view model with a list of bookings. The method `findBooking(byUUID:)` returns an optional, because an invalid identifier might be passed. Using `XCTUnwrap`, we can safely unwrap the result.
 
 #### Example when using XCTest
 
 ```swift
 final class BookingViewModelTestCase: XCTestCase {
 
-  func test_fetchBookingByUUID_shouldReturnCorrectBooking() throws {
+  func test_findBookingByUUID_shouldReturnCorrectBooking() throws {
     // Given
     let mockedBooking = Booking(uuid: "some-uuid")
     let viewModel = BookingViewModel(bookings: [mockedBooking])
 
     // When
-    let fetchedBooking = try XCTUnwrap(
-      viewModel.fetchBooking(byUUID: "some-uuid")
+    let receivedBooking = try XCTUnwrap(
+      viewModel.findBooking(byUUID: "some-uuid")
     )
 
     // Then
-    XCTAssertEqual(fetchedBooking, mockedBooking)
+    XCTAssertEqual(receivedBooking, mockedBooking)
   }
 }
 ```
 
 #### Example when using Swift Testing
 
-In Swift Testing, we can create similar behavior using the `#require` macro.
+In Swift Testing, we can achieve similar behavior using the `#require` macro.
 
 ```swift
 struct BookingViewModelTestCase {
 
   @Test
-  func fetchBookingByUUID_shouldReturnCorrectBooking() throws {
+  func findBookingByUUID_shouldReturnCorrectBooking() throws {
     // Given
     let mockedBooking = Booking(uuid: "some-uuid")
     let viewModel = BookingViewModel(bookings: [mockedBooking])
 
     // When
-    let fetchedBooking = try #require(
-      viewModel.fetchBooking(byUUID: "some-uuid")
+    let receivedBooking = try #require(
+      viewModel.findBooking(byUUID: "some-uuid")
     )
 
     // Then
-    #expect(fetchedBooking == mockedBooking)
+    #expect(receivedBooking == mockedBooking)
   }
 }
 ```
 
 ## #12 – Safe access to an element at index
 
-⛑ Using the range operator, we can easily create an extension to safely return an array element at the specified index, or `nil` if the index is outside the bounds.
+⛑ Using the range operator, we can create an `Array` extension that safely returns an element at the specified index, or `nil` if the index is out of bounds.
 
 ```swift
 extension Array {
@@ -1534,8 +1775,8 @@ extension Array {
 
 let fruits = ["Apple", "Banana", "Cherries", "Kiwifruit", "Orange", "Pineapple"]
 
-let banana = fruits[safe: 2]
-let pineapple = fruits[safe: 6]
+let banana = fruits[safe: 1]
+let pineapple = fruits[safe: 5]
 
 // Does not crash, but contains nil.
 let invalid = fruits[safe: 7]
@@ -1543,9 +1784,9 @@ let invalid = fruits[safe: 7]
 
 ## #11 – Check whether a value is part of a given range
 
-💡 Instead of writing `x >= 10 && x <= 100`, we can write `10 ... 100  ~=  x`.
+💡 Instead of writing verbose range checks like `x >= 10 && x <= 100`, Swift allows you to use the pattern match operator (`~=`) or the `contains(_:)` method for clearer, more readable code.
 
-#### Example:
+#### Using the pattern match operator
 
 ```swift
 let statusCode = 200
@@ -1556,7 +1797,7 @@ let isClientErrorStatusCode = 400 ... 499 ~= statusCode
 let isServerErrorStatusCode = 500 ... 599 ~= statusCode
 ```
 
-Another (more readable way) for checking whether a value is part of a given range can be achieved using the `contains` method:
+#### Using `contains(_:)` (often more readable)
 
 ```swift
 let statusCode = 200
@@ -1569,91 +1810,119 @@ let isServerErrorStatusCode = (500 ... 599).contains(statusCode)
 
 ## #10 – Use `compactMap` to filter `nil` values
 
-🎛 Using `compactMap` we can filter out any `nil` values of an array.
+🎛 When working with collections in Swift, it’s common to encounter optional values.
+
+Rather than manually unwrapping or filtering them, use `compactMap` to transform a collection while automatically discarding any `nil` values.
 
 ```swift
-struct ItemDataModel {
-  let title: String?
+struct Product {
+  let name: String
+  let price: Double?
 }
 
-struct ItemViewModel {
-  let title: String
-}
+let products = [
+  Product(name: "MacBook Air", price: 999.99),
+  Product(name: "Mouse", price: nil),
+  Product(name: "Keyboard", price: 79.99),
+  Product(name: "Monitor", price: nil),
+  Product(name: "USB Cable", price: 12.99),
+]
 
-extension ItemViewModel {
+// Extract only products with valid prices.
+let availablePrices = products.compactMap(\.price)
 
-  /// Convenience initializer, that maps the data-model from the server to our view-model
-  /// if all required properties are available.
-  init?(dataModel: ItemDataModel) {
-    guard let title = dataModel.title else {
-      return nil
-    }
+// Output: [999.99, 79.99, 12.99]
+print(availablePrices)
 
-    self.init(title: title)
-  }
-}
-
-final class ListViewModel {
-  /// ...
-
-  func mapToItemViewModel(response: [ItemDataModel]) -> ([ItemViewModel]) {
-    // Using `compactMap` we filter out invalid data-models automatically.
-    response.compactMap { ItemViewModel(dataModel: $0) }
-  }
-}
+// Output: Total value: $1092.97
+let totalValue = availablePrices.reduce(0, +)
+print("Total value: $\(totalValue)")
 ```
 
-## #09 – Prefer `Set` instead of array for unordered lists without duplicates
+## #09 – Prefer `Set` instead of `Array` for unordered lists without duplicates
 
 👫 **Advantage over `Array`:**
 
-- Constant Lookup time O(1), as a `Set` stores its members based on hash value.
+- Constant lookup time O(1), since a `Set` stores its members based on hash value.
 
 **Disadvantage compared to `Array`:**
 
 - No guaranteed order.
-- Can't contain duplicate values.
-- All items we want to store must conform to `Hashable` protocol.
+- Cannot contain duplicate values.
+- All stored elements must conform to the `Hashable` protocol.
 
-For further examples and use-cases please have a look at ["The power of sets in Swift" (by John Sundell)](https://medium.com/@johnsundell/the-power-of-sets-in-swift-57be8b223da0).
+For further examples and use cases, refer to ["The power of sets in Swift" (by John Sundell)](https://medium.com/@johnsundell/the-power-of-sets-in-swift-57be8b223da0).
 
-## #08 – Remove all sub-views from `UIView`
+## #08 – Adding and removing child view controllers
 
-📭 A small extension to remove all sub-views.
+👶 This `UIViewController` extension provides a reusable API for adding and removing child view controllers, including lifecycle calls and full-size layout constraints.
 
 ```swift
-extension UIView {
-  func removeAllSubviews() {
-    subviews.forEach { $0.removeFromSuperview() }
+extension UIViewController {
+
+  /// Inserts a child view controller and installs its view in the hierarchy.
+  func insert(_ child: UIViewController) {
+    guard child.parent == nil else { return }
+
+    addChild(child)
+
+    child.view.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(child.view)
+
+    NSLayoutConstraint.activate([
+      child.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      child.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      child.view.topAnchor.constraint(equalTo: view.topAnchor),
+      child.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+    ])
+
+    child.didMove(toParent: self)
+  }
+
+  /// Removes a child view controller and its view from the hierarchy.
+  func remove(_ child: UIViewController) {
+    guard child.parent === self else { return }
+
+    child.willMove(toParent: nil)
+    child.view.removeFromSuperview()
+    child.removeFromParent()
   }
 }
 ```
 
+The constraint setup pins the child’s view to all four edges of its parent and can be **further extracted into a `UIView` extension** if this pattern is used more broadly.
+
+See [\#45 – Pin a view to its superview](#45--pin-a-view-to-its-superview) for more details on what this looks like.
+
 ## #07 – Animate image change on `UIImageView`
 
-✍️ Easily (ex)change an image with using a transition (note that the `.transitionCrossDissolve` is the key to get this working).
+✍️ When updating the image of a `UIImageView`, a subtle cross-dissolve transition creates a smooth, polished effect. By using `.transitionCrossDissolve`, you can seamlessly animate between images with just a few lines of code:
 
 ```swift
 extension UIImageView {
   func updateImageWithTransition(_ image: UIImage?, duration: TimeInterval) {
-    UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: { () -> Void in
+    UIView.transition(
+      with: self,
+      duration: duration,
+      options: .transitionCrossDissolve
+    ) {
       self.image = image
-    })
+    }
   }
 }
 ```
 
 ## #06 – Change `CALayer` without animation
 
-👨‍🎨 CALayer has a default implicit animation duration of [0.25 seconds](https://apple.co/2PVTCsB). Using the following extension we can do changes without an animation:
+👨‍🎨 `CALayer` has a default implicit animation duration of [0.25 seconds](<https://developer.apple.com/documentation/quartzcore/calayer/add(_:forkey:)>). The following extension allows you to update layer properties instantly, without triggering these implicit animations:
 
 ```swift
 extension CALayer {
-  final class func performWithoutAnimation(_ runWithoutAnimation: () -> Void) {
+  final class func performWithoutAnimation(_ actionsWithoutAnimation: () -> Void) {
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.0)
 
-    runWithoutAnimation()
+    actionsWithoutAnimation()
 
     CATransaction.commit()
   }
@@ -1672,24 +1941,25 @@ override class var layerClass: AnyClass {
 > That way you can reduce the amount of layers, and don't have to do any manual layout.
 > [John Sundell](https://twitter.com/johnsundell/status/1000099872580816897)
 
-This is useful to e.g. add a linear gradient behind an image. Furthermore we could change the gradient-color based on the time of the day, without having to add multiple images to our app.
+This is e.g. useful for adding a linear gradient behind an image. This way, we could change the gradient color based on the time of day, without bundling multiple images in the app.
+
 ![Example][overwrite-layer-class]
 
 You can see the full code for the example in my gist for the [Vertical Gradient Image View](https://gist.github.com/fxm90/9604b0a067af46f68b80c6968736558d).
 
 ## #04 – Handle notifications in test cases
 
-📬 Examples on how to test notifications in test cases:
+📬 When working with `NotificationCenter`, you often want to make sure the right notifications are posted. Here’s a quick way to test them.
 
 - [XCTest – Assert notification (not) triggered](https://gist.github.com/fxm90/23dc7debc5ee8245237c08e5af8679bc)
 - [XCTest – Use custom notification center in test case and assert notification (not) triggered](https://gist.github.com/fxm90/3c6f146ed977100d21f0a1f3e7bb37a2)
 
-## #03 – Use `didSet` on outlets to setup components
+## #03 – Use `didSet` on outlets to set up components
 
-👏 By using `didSet` on outlets we can setup our view components (declared in a storyboard or xib) in a very readable way:
+👏 Using `didSet` on `@IBOutlet`s is a neat trick to configure your view components (declared in a storyboard or XIB) in a concise and readable manner:
 
 ```swift
-final class FooBarViewController: UIViewController {
+final class ExampleViewController: UIViewController {
 
   // MARK: - Outlets
 
@@ -1699,21 +1969,17 @@ final class FooBarViewController: UIViewController {
       button.setTitle(viewModel.disabledTitle, for: .disabled)
     }
   }
-
-  // MARK: - Private Properties
-
-  private var viewModel = FooBarViewModel()
 }
 ```
 
-## #02 – Most readable way to check whether an array contains a value (`isAny(of:)`)
+## #02 – A readable way to check whether a value exists in a set of candidates (`isAny(of:)`)
 
-✨ A small extension to check whether a value is part of a list of candidates, in a very readable way (by [John Sundell](https://twitter.com/johnsundell/status/943510426586959873))
+✨ A lightweight `Equatable` extension that improves readability when checking whether a value matches one of several candidates. This pattern was popularized by [John Sundell](https://twitter.com/johnsundell/status/943510426586959873).
 
 ```swift
 extension Equatable {
   func isAny(of candidates: Self...) -> Bool {
-    return candidates.contains(self)
+    candidates.contains(self)
   }
 }
 ```
@@ -1737,25 +2003,76 @@ let hasSafeAreas = [.iPhoneX, .iPhone11].contains(device)
 let hasSafeAreas = device.isAny(of: .iPhoneX, .iPhone11)
 ```
 
-## #01 – Override `self` in escaping closure, to get a strong reference to `self`
+## #01 – Memory management: `weak self` in closures vs. tasks
 
-🚸 To avoid retain cycles we often have to pass a `weak` reference to `self` into closures. By using the following pattern, we can get a strong reference to `self` for the lifetime of the closure.
+🚸 To prevent retain cycles, closures commonly capture `self` weakly. However, the implementation differs between traditional closures and modern Swift Concurrency.
+
+#### Escaping closures
+
+For escaping completion handlers, capture `self` weakly to avoid retain cycles. Then, promote it to a strong reference for the duration of the closure’s execution.
+
+Since Swift 5.7, this can be expressed using the shorthand optional binding syntax.
 
 ```swift
-someService.request() { [weak self] response in
-  guard let self = self else { return }
+documentService.fetch { [weak self] document in
+    // Creates a strong reference for the duration of this closure.
+    guard let self else { return }
 
-  self.doSomething(with: response)
+    updateUI(document)
 }
 ```
 
-**Notice:** The above works as of Swift 4.2. Before you have to use:
+#### Swift concurrency (`Task`)
 
-```
-guard let `self` = self else { return }
+Inside a `Task`, capturing `self` is implicit. You don’t need to explicitly write `self.` to reference instance members — but `self` is still strongly retained for the lifetime of the task.
+
+That distinction becomes important for long-running or suspended tasks.
+
+##### Avoid early unwrapping in long-running tasks
+
+```swift
+Task { [weak self] in
+  // `self` is retained strongly until the task completes.
+  guard let self else { return }
+
+  let document = await documentService.fetch()
+  updateUI(document)
+}
 ```
 
-There is a great article about [when to use `weak self` and why it's needed](https://matteomanferdini.com/swift-weak-self/).
+Although `self` is captured weakly, unwrapping it at the beginning creates a strong reference that remains alive until the entire task finishes.
+
+If the task is long-running, `self` (e.g. a view controller) will be kept in memory even after it should have been deallocated.
+
+##### Prefer late or conditional access
+
+To allow `self` to be released while the task is suspended, defer unwrapping until the moment you need it. Or use a conditional access.
+
+```swift
+Task { [weak self, documentService] in
+  let document = await documentService.fetch()
+
+  // `self` may deallocate while the fetch is in progress.
+  self?.updateUI(document)
+}
+```
+
+##### Long-lived tasks and async sequences
+
+When working with long-running loops or `AsyncSequence` values, re-evaluate the existence of `self` on each iteration. This ensures `self` can be released between iterations.
+
+```swift
+Task { [weak self] in
+  for await value in stream {
+    guard let self else {
+      // Exit the loop when `self` has been deallocated.
+      break
+    }
+
+    process(value)
+  }
+}
+```
 
 [overwrite-layer-class]: Assets/overwrite-layer-class.jpg
 [latitude]: Assets/latitude.jpg
